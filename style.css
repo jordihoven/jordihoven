@@ -191,6 +191,10 @@ footer .section-intro {
     text-align: center;
 }
 
+/* TODO: Verwijder als af is */
+.project3, .project4 {
+    opacity: .5;
+}
 
 /* Responsiveness */
 @media only screen and (min-width: 1600px) {
