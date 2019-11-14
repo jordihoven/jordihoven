@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+*{font-family: 'Open Sans', sans-serif;}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+body {
+    padding: 5vw 10vw;
+}
+
+h1 {
+    font-size: 3em;
+    color: #010101;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: 400;
+    color: #999999;
+}
+
+h3 {
+    font-size: 2em;
+    font-weight: 700;
+    color: #010101;
+    margin: 0;
+}
+
+p {
+    font-size: 1.5em;
+    font-weight: 400;
+    color: #999999;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* FIXME: Is this good practice? */
+*:focus {
+    outline: none;
+}
+
+/* Intro */
+#intro h1, #intro h2 {
+    text-align: center;
+}
+
+#intro {
+    margin-bottom: 10%;
+}
+
+/* Portfolio */
+.section-intro {
+    margin-bottom: 7.5%;
+}
+
+.portfolio-card {
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0px 5px 21px -10px rgba(0, 0, 0, 0.3);
+    height: 475px;
+    width: 100%;
+
+    transition: all .3s ease-in-out;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Portfolio cards */
+.upper-card {
+    height: 275px;
+    width: 100%;
+    background-color: #ffffff;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.upper-card img, .upper-card video {
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.imdb {
+    background-color: #f9f9fb;
+  }
+
+.gulpener {
+    background-color: #f9eee5;
+}
+
+.lower-card {
+    height: 175px;
+    width: 85%;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding: 5% 5%;
+}
+
+.lower-card h1 {
+    font-size: 1.5em;
+}
+
+.lower-card h2 {
+    font-size: 1em;
+    font-weight: 700;
+}
+
+.lower-card p {
+    font-size: .75em;
+    text-transform: uppercase;
+}
+
+/* Portfolio grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "project1 project2" "project3 project4";
+    grid-gap: 50px 50px;
+  }
+  
+  .project1 {
+       grid-area: project1;
+    }
+  
+  .project2 { grid-area: project2; }
+  
+  .project3 { grid-area: project3; }
+  
+  .project4 { grid-area: project4; }
+
+/* Footer */
+footer .section-intro {
+    margin-top: 10%;
+}
+
+.social-card {
+    background-color: #ffffff;
+    box-shadow: 0px 5px 21px -10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    height: 175px;
+    width: 225px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.social-card:hover {
+    animation: blob .4s 1 ease-in-out;
+}
+
+.social-card p {
+    color: #1D1D1F;
+    font-size: 1em;
+    font-weight: 700;
+}
+
+/* Footer grid */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "instagram github mail";
+    align-items: center;
+    justify-items: start;
+    margin-bottom: 10%;
+  }
+  
+  .instagram { grid-area: instagram; }
+  
+  .github { grid-area: github; }
+  
+  .mail { grid-area: mail; }
+
+.netlify {
+    color: #00AC9E;
+}
+
+.copyright {
+    font-size: .9em;
+    text-align: center;
+}
+
+
+/* Responsiveness */
+@media only screen and (min-width: 1600px) {
+    body {
+    padding: 5vw 20vw;
+    }
+  }
+
+/* Tablet */
+@media screen and (max-width: 992px) {
+
+    body {
+        padding: 5vw 5vw;
+    }
+    
+    h1 {
+        font-size: 2.5em;
+    }
+    
+    h2 {
+        font-size: 1.25em;
+    }
+    
+    h3 {
+        font-size: 2em;
+    }
+    
+    p {
+        font-size: 1.25em;
+    }
+
+    .portfolio-grid {
+        grid-gap: 25px 25px;
+      }
+
+    .portfolio-card {
+        height: 350px;
+    }
+    
+    /* Portfolio cards */
+    .upper-card {
+        height: 200px;
+    }
+    
+    .lower-card {
+        height: 100px;
+        padding: 5% 5%;
+    }
+    
+    .lower-card h1 {
+        font-size: 1em;
+    }
+    
+    .lower-card h2 {
+        font-size: .75em;
+    }
+    
+    .lower-card p {
+        font-size: .5em;
+    }
+
+    .social-card {
+        height: 150px;
+        width: 175px;
+    }
+    
+    .social-card p {
+        font-size: .75em;
+    }
+    
+  }
+
+/* Phone */
+@media screen and (max-width: 600px) {
+
+    #intro h1, #intro h2 {
+        text-align: start;
+    }
+
+    body {
+        padding: 5vw 5vw;
+    }
+    
+    h1 {
+        font-size: 3em;
+        margin-bottom: 0;
+    }
+    
+    h2 {
+        font-size: 1.25em;
+    }
+    
+    h3 {
+        font-size: 1.5em;
+    }
+    
+    p {
+        font-size: 1.25em;
+    }
+
+    #intro {
+        margin-bottom: 15%;
+    }
+
+    .portfolio-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "project1"
+        "project2"
+        "project3"
+        "project4";
+        grid-gap: 50px 50px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "instagram"
+        "github"
+        "mail";
+        align-items: center;
+        justify-items: stretch;
+        margin-bottom: 10%;
+        grid-gap: 20px 0;
+      }
+
+      .social-card {
+        height: 50px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .social-card p {
+        font-size: 1em;
+        margin-left: 15px;
+    }
+
+    #insta, #git, #mail {
+        height: 25px;
+        width: 25px;
+    }
+
+
+  }
+
+@keyframes blob {
+    0% {transform: scale(1)}
+    50% {transform: scale(1.05)}
+    100% {transform: scale(1)}
+}
