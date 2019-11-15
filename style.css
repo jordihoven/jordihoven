@@ -345,7 +345,7 @@ footer .section-intro {
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
     html, body, #socials {
-        background-color: #1D1D1F;
+        background-color: #000000;
         color: #f2f2f2;
     }
 
@@ -358,7 +358,7 @@ footer .section-intro {
     }
 
     .lower-card, .portfolio-card {
-        background-color: #000000;
+        background-color: #1D1D1F;
     }
 
     .lower-card h1 {
@@ -370,7 +370,7 @@ footer .section-intro {
     }
 
     .social-card {
-        background-color: #000000
+        background-color: #1D1D1F;
     }
 
     .social-card p {
@@ -380,24 +380,6 @@ footer .section-intro {
     #insta, #git, #mail {
         color: #999999;
     }
-
-    /* .dark {
-        display: block;
-    }
-    .light {
-        display: none;
-    } */
-
-  }
-
-@media (prefers-color-scheme: light) {
-
-    /* .light {
-        display: block;
-    }
-    .dark {
-        display: none;
-    } */
   }
 
 @keyframes blob {
