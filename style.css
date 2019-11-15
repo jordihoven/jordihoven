@@ -207,7 +207,7 @@ footer .section-intro {
 @media screen and (max-width: 992px) {
 
     body {
-        padding: 5vw 5vw;
+        padding: 15vw 5vw 10vw 5vw;
     }
     
     h1 {
@@ -272,10 +272,6 @@ footer .section-intro {
 
     #intro h1, #intro h2 {
         text-align: start;
-    }
-
-    body {
-        padding: 5vw 5vw;
     }
     
     h1 {
@@ -343,8 +339,6 @@ footer .section-intro {
         height: 25px;
         width: 25px;
     }
-
-
   }
 
 @keyframes blob {
