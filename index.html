@@ -16,17 +16,20 @@
     <!-- Website title -->
     <title>Jordi Hoven | Bsc Engineering</title>
 
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
 </head>
 
 <body>
 
     <div id="intro">
-        <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="250">Jordi Hoven</h1>
-        <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="550">Bsc engineering student, momenteel <br>
+        <h1 class="first animated fadeInUp">Jordi Hoven</h1>
+        <h2 class="second animated fadeInUp">Bsc engineering student, momenteel <br>
             geobsedeerd met kunstmatige intelligentie</h2>
     </div>
 
-    <div id="portfolio" data-aos="zoom-in-up" data-aos-delay="850" data-aos-duration=1500>
+    <div id="portfolio" class="third animated fadeInUp">
         <div class="section-intro">
             <h3>Studie projecten</h3>
             <p>Een aantal projecten die ik tijdens mijn <br> engineering studie heb mogen ontwikkelen.</p>
@@ -37,7 +40,7 @@
             <a target="_blank" href="https://gulpener.netlify.com/">
                 <div class="portfolio-card project1">
                     <div class="gulpener upper-card">
-                        <video preload muted autoplay loop playsinline>
+                        <video preload="none" muted="muted" autoplay="autoplay" loop="loop" playsinline="playsinline">
                             <source src="/portfolio/gulpener.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -53,7 +56,7 @@
             <a target="_blank" href="https://imdbscraper.netlify.com/">
                 <div class="portfolio-card project2">
                     <div class="imdb upper-card">
-                        <video preload muted autoplay loop playsinline>
+                        <video preload="metadata" muted autoplay loop playsinline>
                             <source src="/portfolio/imdbscraper_light.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -95,7 +98,7 @@
     </div>
 
     <footer>
-        <div class="section-intro" data-aos="fade-up" data-aos-duration="1000">
+        <div class="section-intro" data-aos="fade-up" data-aos-duration="500">
             <h3>Meer over mij weten?</h3>
             <p>Bekijk mijn socials media, code van gemaakte projecten <br> of stuur me een bericht</p>
         </div>
@@ -123,7 +126,7 @@
             </a>
 
         </div>
-        <p class="copyright">Ontworpen en geprogrammeerd door Jordi Hoven
+        <p class="copyright" data-aos="fade-up">Ontworpen en geprogrammeerd door Jordi Hoven
             <br> Gehost op <a target="_blank" href="https://netlify.com" class="netlify">Netlify</a></p>
     </footer>
 

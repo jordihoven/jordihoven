@@ -1,6 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
 *{font-family: 'Open Sans', sans-serif;}
 
+
+/* Animation styling */
+.first {
+    animation-delay: .5s;
+}
+
+.second {
+    animation-delay: .75s;
+}
+
+.third {
+    animation-delay: 1s;
+}
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+/* General styling */
 html, body {
     margin: 0;
     padding: 0;
@@ -198,7 +218,7 @@ footer .section-intro {
 }
 
 /* TODO: Verwijder als af is */
-.project3, .project4 {
+.project4 {
     opacity: .5;
 }
 
