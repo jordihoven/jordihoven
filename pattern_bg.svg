@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1802.09" height="953.312" viewBox="0 0 1802.09 953.312">
+  <g id="Group_37" data-name="Group 37" transform="translate(-59.583 -34.692)" opacity="0.75">
+    <g id="Path_15" data-name="Path 15" transform="translate(1324.441 100.06) rotate(-98)" fill="none" opacity="0.892">
+      <path d="M0,0H57.876V57.876H0Z" stroke="none"/>
+      <path d="M 4.999996185302734 5.000003814697266 L 4.999996185302734 52.8764762878418 L 52.87644958496094 52.8764762878418 L 52.87644958496094 5.000003814697266 L 4.999996185302734 5.000003814697266 M -3.814697265625e-06 3.814697265625e-06 L 57.87644958496094 3.814697265625e-06 L 57.87644958496094 57.8764762878418 L -3.814697265625e-06 57.8764762878418 L -3.814697265625e-06 3.814697265625e-06 Z" stroke="none" fill="#8d9c81"/>
+    </g>
+    <g id="Ellipse_5" data-name="Ellipse 5" transform="matrix(-0.875, -0.485, 0.485, -0.875, 1421.505, 950.794)" fill="none" stroke="#ff8686" stroke-width="5" opacity="0.937">
+      <ellipse cx="47.977" cy="47.977" rx="47.977" ry="47.977" stroke="none"/>
+      <ellipse cx="47.977" cy="47.977" rx="45.477" ry="45.477" fill="none"/>
+    </g>
+    <g id="Ellipse_7" data-name="Ellipse 7" transform="matrix(0.951, 0.309, -0.309, 0.951, 1791.576, 345.481)" fill="none" stroke="#ff8686" stroke-width="5" opacity="0.853">
+      <ellipse cx="36.852" cy="36.852" rx="36.852" ry="36.852" stroke="none"/>
+      <ellipse cx="36.852" cy="36.852" rx="34.352" ry="34.352" fill="none"/>
+    </g>
+    <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(1008.201 568.625)" fill="none" stroke="#ff8686" stroke-width="5" opacity="0.963">
+      <ellipse cx="45.016" cy="48.599" rx="45.016" ry="48.599" stroke="none"/>
+      <ellipse cx="45.016" cy="48.599" rx="42.516" ry="46.099" fill="none"/>
+    </g>
+    <g id="Rectangle_81" data-name="Rectangle 81" transform="translate(1724.744 715.961) rotate(149)" fill="none" stroke="#8d9c81" stroke-width="5" opacity="0.827">
+      <rect width="73.128" height="73.128" stroke="none"/>
+      <rect x="2.5" y="2.5" width="68.128" height="68.128" fill="none"/>
+    </g>
+    <g id="Rectangle_76" data-name="Rectangle 76" transform="matrix(0.035, 0.999, -0.999, 0.035, 802.307, 885.415)" fill="none" stroke="#8d9c81" stroke-width="5" opacity="0.996">
+      <rect width="48.705" height="48.705" stroke="none"/>
+      <rect x="2.5" y="2.5" width="43.705" height="43.705" fill="none"/>
+    </g>
+    <g id="Rectangle_75" data-name="Rectangle 75" transform="translate(498.418 681.899) rotate(-112)" fill="none" stroke="#8d9c81" stroke-width="5" opacity="0.808">
+      <rect width="49.806" height="49.806" stroke="none"/>
+      <rect x="2.5" y="2.5" width="44.806" height="44.806" fill="none"/>
+    </g>
+    <g id="Rectangle_72" data-name="Rectangle 72" transform="translate(82.087 988.004) rotate(-112)" fill="none" stroke="#8d9c81" stroke-width="5" opacity="0.898">
+      <rect width="60.074" height="60.074" stroke="none"/>
+      <rect x="2.5" y="2.5" width="55.074" height="55.074" fill="none"/>
+    </g>
+    <g id="Rectangle_71" data-name="Rectangle 71" transform="matrix(0.809, 0.588, -0.588, 0.809, 196.956, 214.383)" fill="none" stroke="#8d9c81" stroke-width="5" opacity="0.827">
+      <rect width="78.878" height="78.878" stroke="none"/>
+      <rect x="2.5" y="2.5" width="73.878" height="73.878" fill="none"/>
+    </g>
+  </g>
+</svg>
