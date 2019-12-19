@@ -5,7 +5,7 @@
 
 /* Pattern background */
 body {
-    background: url(test.svg) no-repeat top center;
+    background: url(pattern_bg.svg) no-repeat top center;
 }
 
 /* Animation styling */
