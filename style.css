@@ -351,8 +351,9 @@ footer .section-intro {
         font-size: 1.25em;
     }
 
-    #intro {
-        margin-bottom: 15%;
+    /* Margin between sections */
+    #intro, #portfolio {
+        margin-bottom: 30%;
     }
 
     .portfolio-grid {
