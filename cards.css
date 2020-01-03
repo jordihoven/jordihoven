@@ -1,0 +1,85 @@
+/*Resets*/
+/* html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0; 
+    background: #111517;
+  } */
+
+  #parent-socialcards {
+    position: relative;
+    height: 300px;
+    width: 100%;
+  }
+  
+  /*Card styling*/
+  .card {
+    background-color: #ffffff;
+    box-shadow: 0px 5px 21px -10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    height: 175px;
+    width: 225px;
+    position: absolute;
+    top: 0%;
+    left: 0%;  
+    transition: all .2s ease-in-out;
+
+    /* Centering content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .card p {
+    color: #1D1D1F;
+    font-size: 1em;
+    font-weight: 700;
+}
+
+.card {
+  background: #ffffff !important;
+}  
+
+  /*Animation*/
+  .card:nth-child(1) {
+    background: #6b76ff;
+    transform: translateX(0px);
+  }
+  
+  .card:nth-child(2) {
+    background: #87e5da;
+    transform: translateX(100px);
+  }
+  
+  .card:nth-child(3) {
+    background: #6900ff;
+    transform: translateX(200px);
+  }
+  
+  /*Hover for first card*/
+  .card:nth-child(1):hover + .card:nth-child(2){
+    transform: translateX(200px);
+  }
+  
+  .card:nth-child(1):hover ~ .card:nth-child(3) {
+    transform: translateX(350px);
+  }
+  
+  .card:nth-child(1):hover {
+    transform: translateY(-30px);
+  }
+  
+  /*Hover for second card*/
+  .card:nth-child(2):hover + .card:nth-child(3){
+    transform: translateX(300px);
+  }
+  
+  .card:nth-child(2):hover {
+    transform: translate(100px, -30px);
+  }
+  
+  /*Hover for third card*/
+  .card:nth-child(3):hover {
+    transform: translate(200px, -30px);
+  }

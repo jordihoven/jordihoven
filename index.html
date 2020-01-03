@@ -7,29 +7,34 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Personal CSS -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cards.css">
     <!-- Feather icons CDN -->
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
-    <!-- Website title -->
-    <title>Jordi Hoven | Bsc Engineering</title>
-
     <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!-- Website title -->
+    <title>Jordi Hoven | Bsc Engineering</title>
 
 </head>
 
 <body class="second animated fadeIn">
 
     <div id="intro">
+        <h3 class="first animated fadeInUp intro-ikben">👋 Ik ben</h3>
         <h1 class="first animated fadeInUp">Jordi Hoven</h1>
-        <h2 class="second animated fadeInUp">Bsc engineering student, momenteel <br>
+        <h2 class="third animated fadeIn">Bsc student engineering, momenteel <br>
             geobsedeerd met kunstmatige intelligentie</h2>
     </div>
 
     <div id="portfolio" class="third animated fadeInUp">
+        <div class="recent">
+            <p>RECENT WERK</p>
+        </div>
+
         <div class="section-intro">
             <h3>Studie projecten</h3>
             <p>Een aantal projecten die ik tijdens mijn <br> engineering studie heb mogen ontwikkelen.</p>
@@ -68,7 +73,7 @@
                 </div>
             </a>
 
-            <a target="_blank" href="#">
+            <a target="_blank" href="https://www.youtube.com/watch?v=MdBeDVJ9dEw&feature=youtu.be">
                 <div class="portfolio-card project3">
                     <div class="upper-card">
                         <img src="/portfolio/senseHog.PNG" alt="" srcset="">
@@ -99,6 +104,9 @@
 
     <footer>
         <div class="section-intro" data-aos="fade-up" data-aos-duration="500">
+            <div class="recent">
+                <p>KOM IN CONTACT</p>
+            </div>
             <h3>Meer over mij weten?</h3>
             <p>Bekijk mijn social media, code van gemaakte projecten <br> of stuur me een bericht</p>
         </div>
@@ -126,6 +134,24 @@
             </a>
 
         </div>
+
+        <!-- Social cards -->
+        <!-- <div id="parent-socialcards" data-aos="fade-up" data-aos-duration="500">
+            <a href="#" class="card">
+                <i id="insta" data-feather="instagram" color="black" height="50px" width="50px"></i>
+                <p>Volg mijn blog</p>
+            </a>
+            <a href="#" class="card">
+                <i id="git" data-feather="github" color="black" height="50px" width="50px"></i>
+                <p>Bekijk projecten</p>
+            </a>
+            <a href="mailto:hovenjordi@gmail.com?subject= Hi Jordi! 👋" class="card">
+                <i id="mail" data-feather="inbox" color="black" height="50px" width="50px"></i>
+                <p>Stuur een bericht</p>
+            </a>
+        </div> -->
+
+        <!-- Copyright -->
         <p class="copyright">Ontworpen en geprogrammeerd door Jordi Hoven
             <br> Gehost op <a target="_blank" href="https://netlify.com" class="netlify">Netlify</a></p>
     </footer>

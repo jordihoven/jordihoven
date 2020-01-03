@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
 *{font-family: 'Open Sans', sans-serif;}
 
-
-
 /* Pattern background */
 body {
-    background: url(pattern_bg.svg) no-repeat top center;
+    /* background: url(pattern_bg.svg) no-repeat top center; */
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 75%, rgba(250,250,250,1) 100%);
 }
 
 /* Animation styling */
@@ -30,8 +30,6 @@ body {
 html, body {
     margin: 0;
     padding: 0;
-    /* background-color: #f5f5f5; */
-    background-color: #fafafa;
 }
 
 body {
@@ -40,21 +38,18 @@ body {
 
 h1 {
     font-size: 3em;
-    /* color: #010101; */
-    color: #3d4350;
+    color: #010101;
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 1.1em;
     font-weight: 400;
-    /* color: #999999; */
-    color: #828286;
+    color: #999999;
 }
 
 h3 {
     font-size: 2em;
     font-weight: 700;
-    /* color: #010101; */
     color: #3d4350;
     margin: 0;
 }
@@ -62,7 +57,6 @@ h3 {
 p {
     font-size: 1.5em;
     font-weight: 400;
-    /* color: #999999; */
     color: #828286;
     margin: 0;
 }
@@ -79,15 +73,32 @@ a {
 /* Intro */
 #intro h1, #intro h2 {
     text-align: center;
+    margin: 0 0 15px 0;
 }
 
 #intro {
-    margin-bottom: 10%;
+    margin: 5% 0 10% 0;
+}
+
+.intro-ikben {
+    font-size: 1em;
+    text-align: center;
+    color: #010101;
+    /* Center text relative to Jordi Hoven */
+    margin-right: 3%;
 }
 
 /* Portfolio */
+.recent p {
+    font-size: .8em;
+    font-weight: 700;
+    color: #B3B3B3;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
 .section-intro {
-    margin-bottom: 7.5%;
+    margin-bottom: 5%;
 }
 
 .portfolio-card {
@@ -120,6 +131,7 @@ a {
     border-top-right-radius: 12px;
 }
 
+/* Give padding same color as the videos */
 .imdb {
     background-color: #f9f9fb;
   }
@@ -148,6 +160,7 @@ a {
     font-size: .75em;
     text-transform: uppercase;
     font-weight: 700;
+    letter-spacing: 1.5px;
 }
 
 /* Portfolio grid */
@@ -155,7 +168,9 @@ a {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-template-areas: "project1 project2" "project3 project4";
+    grid-template-areas: 
+        "project1 project2" 
+        "project3 project4";
     grid-gap: 50px 50px;
   }
   
@@ -206,6 +221,7 @@ footer .section-intro {
     align-items: center;
     justify-items: start;
     margin-bottom: 10%;
+    width: 80%;
   }
   
   .instagram { grid-area: instagram; }
@@ -214,6 +230,7 @@ footer .section-intro {
   
   .mail { grid-area: mail; }
 
+/* Hosting and copyright text */
 .netlify {
     color: #00AC9E;
 }
@@ -229,6 +246,8 @@ footer .section-intro {
 }
 
 /* Responsiveness */
+
+/* Larger screens */
 @media only screen and (min-width: 1600px) {
     body {
     padding: 5vw 20vw;
@@ -303,11 +322,15 @@ footer .section-intro {
 @media screen and (max-width: 600px) {
 
     /* Pattern background */
-    body {
-        background: none;
-    }
+    /* body {
+        background: url(pattern_bg.svg) no-repeat top right;
+    } */
 
     #intro h1, #intro h2 {
+        text-align: start;
+    }
+
+    .intro-ikben {
         text-align: start;
     }
     
@@ -356,6 +379,7 @@ footer .section-intro {
         justify-items: stretch;
         margin-bottom: 10%;
         grid-gap: 20px 0;
+        width: 100%;
       }
 
       .social-card {
@@ -387,6 +411,10 @@ footer .section-intro {
 
     #intro h1 {
         color: #F5F5F7
+    }
+
+    .intro-ikben {
+        color: #F5F5F7;
     }
 
     #portfolio h3 {
