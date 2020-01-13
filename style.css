@@ -115,6 +115,10 @@ a {
     box-shadow: 0px 10px 21px -10px rgba(0, 0, 0, 0.3)
 }
 
+.portfolio-card:active, .portfolio-card:focus {
+    transform: translateY(5px);
+}
+
 /* Portfolio cards */
 .upper-card {
     height: 275px;
