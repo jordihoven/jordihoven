@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
 *{font-family: 'Open Sans', sans-serif;}
 
-/* Pattern background */
-body {
-    /* background: url(pattern_bg.svg) no-repeat top center; */
-    /* background: rgb(255,255,255); */
-    /* background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 75%, rgba(250,250,250,1) 100%); */
+.i4things {
+    color: #3F83FE;
+    font-weight: 700;
+    transition: all .3s ease-in-out;
+    padding: 1px 5px;
+}
+
+.i4things:hover {
+    background-color: #3F83FE;
+    color: white;
 }
 
 /* Animation styling */
@@ -38,13 +43,12 @@ body {
 
 h1 {
     font-size: 3em;
-    color: #010101;
+    color: #002C31;
 }
 
 h2 {
     font-size: 1.1em;
-    font-weight: 400;
-    color: #999999;
+    color: #002C31;
 }
 
 h3 {
@@ -72,39 +76,34 @@ a {
 
 /* Intro */
 #intro h1, #intro h2 {
-    text-align: center;
-    margin: 0 0 15px 0;
+    margin: 0 0 40px 0;
 }
 
 #intro {
     margin: 5% 0 10% 0;
 }
 
-.intro-ikben {
-    font-size: 1em;
-    text-align: center;
-    color: #010101;
-    /* Center text relative to Jordi Hoven */
-    margin-right: 3%;
+#intro h2 {
+    font-weight: 700;
 }
 
 /* Portfolio */
-.recent p {
+.section-intro p {
     font-size: .8em;
     font-weight: 700;
     color: #B3B3B3;
     letter-spacing: 1.5px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-.section-intro {
+/* .section-intro {
     margin-bottom: 5%;
-}
+} */
 
 .portfolio-card {
-    border-radius: 12px;
-    background-color: #ffffff;
-    box-shadow: 0px 5px 21px -10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    background-color: #f3f3f3;
+    /* box-shadow: 0px 5px 21px -10px rgba(0, 0, 0, 0.3); */
     height: 475px;
     width: 100%;
     transition: all .3s ease-in-out;
@@ -112,7 +111,7 @@ a {
 
 .portfolio-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0px 10px 21px -10px rgba(0, 0, 0, 0.3)
+    /* box-shadow: 0px 10px 21px -10px rgba(0, 0, 0, 0.3) */
 }
 
 .portfolio-card:active, .portfolio-card:focus {
@@ -124,15 +123,15 @@ a {
     height: 275px;
     width: 100%;
     background-color: #ffffff;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .upper-card img, .upper-card video {
     height: 100%;
     width: 100%;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 /* Give padding same color as the videos */
@@ -188,15 +187,20 @@ a {
   
   .project4 { grid-area: project4; }
 
+  /* TODO: Delete when img is fixed */
+  .project4 {
+      opacity: .5
+  }
+
 /* Footer */
 footer .section-intro {
     margin-top: 10%;
 }
 
 .social-card {
-    background-color: #ffffff;
-    box-shadow: 0px 5px 21px -10px rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
+    background-color: #f3f3f3;
+    /* box-shadow: 0px 5px 21px -10px rgba(0, 0, 0, 0.3); */
+    border-radius: 5px;
     height: 175px;
     width: 225px;
     display: flex;
@@ -207,7 +211,6 @@ footer .section-intro {
 
 .social-card:hover {
     animation: blob .4s 1 ease-in-out;
-    box-shadow: 0px 10px 21px -10px rgba(0, 0, 0, 0.3)
 }
 
 .social-card p {
@@ -244,9 +247,8 @@ footer .section-intro {
     text-align: center;
 }
 
-/* TODO: Verwijder als af is */
 .project4 {
-    opacity: .5;
+    height: auto;
 }
 
 /* Responsiveness */
@@ -329,15 +331,6 @@ footer .section-intro {
     /* body {
         background: url(pattern_bg.svg) no-repeat top right;
     } */
-
-    #intro h1, #intro h2 {
-        text-align: start;
-    }
-
-    .intro-ikben {
-        text-align: start;
-    }
-    
     h1 {
         font-size: 3em;
         margin-bottom: 0;
@@ -416,10 +409,6 @@ footer .section-intro {
 
     #intro h1 {
         color: #F5F5F7
-    }
-
-    .intro-ikben {
-        color: #F5F5F7;
     }
 
     #portfolio h3 {
