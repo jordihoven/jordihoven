@@ -1,0 +1,25 @@
+.intro {
+    margin: 5% 0 10% 0;
+}
+
+a {
+    text-decoration: none;
+    color: #002C31;
+    transition: all .3s ease-in-out;
+}
+
+a:hover {
+    background-color: #F3F3F3;
+    color: #000000;
+    border-radius: 2px;
+    text-decoration: underline; 
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+
+    h1, h2, p, a {
+        background-color: #000000;
+        color: #f2f2f2;
+    }
+  }
