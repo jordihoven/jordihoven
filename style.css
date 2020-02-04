@@ -230,6 +230,7 @@ footer .section-intro {
     justify-items: start;
     margin-bottom: 10%;
     width: 80%;
+    grid-gap: 20px;
   }
   
   .instagram { grid-area: instagram; }
