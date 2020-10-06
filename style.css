@@ -13,6 +13,18 @@
     color: white;
 }
 
+.drinkz {
+    color: #F4C790;
+    font-weight: 700;
+    transition: all .3s ease-in-out;
+    padding: 1px 5px;
+}
+
+.drinkz:hover {
+    background-color: #F4C790;
+    color: black;
+}
+
 /* Animation styling */
 .first {
     animation-delay: .5s;
