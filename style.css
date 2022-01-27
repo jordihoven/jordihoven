@@ -17,20 +17,20 @@ html { background-color: var(--almost-white);}
     font-size: var(--rem);
 }
 
-.i4things, .drinkz {
+.i4things, .drinkz, .netlify {
     color: var(--kinda-grey);
-    transition: all .3s ease-in-out;
-    padding: 1px 5px;
 }
 
 .i4things:hover {
-    background-color: #3F83FE;
-    color: white;
+    color: #3F83FE;
 }
 
 .drinkz:hover {
-    background-color: #F4C790;
-    color: black;
+    color: #F4C790;
+}
+
+.netlify:hover {
+    color: #30AAB0;
 }
 
 /* General styling */
