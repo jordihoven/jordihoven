@@ -1,143 +1,52 @@
+<!-- TODO: To get the video to only start playing on mouseHover use: onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" -->
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- To get the video to only start playing on mouseHover use: onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" -->
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Personal CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
-    <!-- Feather icons CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/sal.js@0.8.5/dist/sal.css">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <!-- Website title -->
-    <title>Jordi Hoven | Bsc Engineering</title>
-
+    <title>Jordi Hoven</title>
 </head>
-
-<body class="second animated fadeIn">
-
-    <div id="intro">
-        <h1 class="first animated fadeInUp">Hi, 👋 Ik ben Jordi — <br> Product Designer.</h1>
-        <h2 class="third animated fadeIn">Momenteel bezig met het ontwerpen van een gebruiksvriendelijk Smart Home Platform voor <a target="_blank" href="https://www.i4things.eu/" class="i4things">i4things.eu</a> en het verstoren van de drankindustrie met <a target="_blank" href="https://www.drinkz.nl/" class="drinkz">Drinkz</a>
-        </h2>
-    </div>
-
-    <div id="portfolio" class="third animated fadeInUp">
-        <div class="section-intro">
-            <p>BEKIJK MIJN RECENTE PROJECTEN</p>
-        </div>
-
-        <div class="portfolio-grid">
-
-            <a target="_blank" href="https://gulpener.netlify.com/">
-                <div class="portfolio-card project1">
-                    <div class="gulpener upper-card">
-                        <video preload="auto" muted="muted" autoplay="autoplay" loop="loop" playsinline="playsinline">
-                            <source src="/portfolio/gulpener-small.mp4" type="video/mp4">
-                        </video>
-                    </div>
-
-                    <div class="lower-card">
-                        <h1>Eigen bier <br> samenstellen en brouwen</h1>
-                        <h2>Ontwikkeling en ontwerp webapplicatie</h2>
-                    </div>
-                </div>
-            </a>
-
-            <a target="_blank" href="https://imdbscraper.netlify.com/">
-                <div class="portfolio-card project2">
-                    <div class="imdb upper-card">
-                        <video preload="metadata" muted autoplay loop playsinline>
-                            <source src="/portfolio/imdbscraper-small.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="lower-card">
-                        <h1>IMDb zoekmachine <br> versimpeld</h1>
-                        <h2>De bekende database in een eenvoudig jasje</h2>
-                    </div>
-                </div>
-            </a>
-
-            <a target="_blank" href="https://www.youtube.com/watch?v=MdBeDVJ9dEw&feature=youtu.be">
-                <div class="portfolio-card project3">
-                    <div class="upper-card">
-                        <img src="/portfolio/senseHog.PNG" alt="" srcset="">
-                    </div>
-                    <div class="lower-card">
-                        <h1>Zintuigprikkeling <br> voor kinderen met autisme</h1>
-                        <h2>Ontwerp en ontwikkeling van AutoCad Fusion360 model</h2>
-                    </div>
-                </div>
-            </a>
-
-            <a target="_blank" href="https://github.com/Jordakoes/herkennenSlaappatronen">
-                <div class="portfolio-card project4">
-                    <div class="upper-card">
-                        <img src="/portfolio/matlab.png" height="50px" alt="" srcset="">
-                    </div>
-                    <div class="lower-card">
-                        <h1>Categoriseren van <br> slaappatronen</h1>
-                        <h2>Trainen van een supervised learning model in Matlab</h2>
-                    </div>
-                </div>
-            </a>
-
-        </div>
-    </div>
-
-    <footer>
-        <div class="section-intro" data-aos="fade-up" data-aos-duration="500">
-            <div class="section-intro">
-                <p>KOM IN CONTACT</p>
-            </div>
-        </div>
-
-        <div class="footer-grid">
-            <a target="_blank" href="https://www.instagram.com/jordi.codes/">
-                <div class="social-card instagram" data-aos="fade-up" data-aos-delay="100">
-                    <i id="insta" data-feather="instagram" color="black" height="50px" width="50px"></i>
-                    <p>Volg mijn blog</p>
-                </div>
-            </a>
-
-            <a target="_blank" href="https://github.com/jordakoes">
-                <div class="social-card github" data-aos="fade-up" data-aos-delay="200">
-                    <i id="git" data-feather="github" color="black" height="50px" width="50px"></i>
-                    <p>Bekijk projecten</p>
-                </div>
-            </a>
-
-            <a target="_blank" href="mailto:hello@jordihoven.nl?subject=Hi Jordi 👋">
-                <div class="social-card mail" data-aos="fade-up" data-aos-delay="300">
-                    <i id="mail" data-feather="inbox" color="black" height="50px" width="50px"></i>
-                    <p>Stuur een bericht</p>
-                </div>
-            </a>
-
-        </div>
-
-        <!-- Copyright -->
-        <p class="copyright">Ontworpen en geprogrammeerd door Jordi Hoven
-            <br> Gehost op <a target="_blank" href="https://netlify.com" class="netlify">Netlify</a></p>
+<body>
+    <header data-sal="slide-up" data-sal-duration="300">
+        <h2>Jordi Hoven — <br> Product Designer, momenteel bezig met het verstoren van de drankenindustrie met<a target="_blank" href="https://www.drinkz.nl/" class="drinkz">drinkz.nl</a> en het herdenken van smart home met <a target="_blank" href="https://www.i4things.eu/" class="i4things">i4things.eu</a>.</h2>
+    </header>
+    <main data-sal="slide-up" data-sal-duration="300" class="grid">
+        <a href="https://drinkz.nl" class="grid-item drinkz.nl">
+            <img src="portfolio/drinkz-demo.gif">
+            <h3>Drinkz.nl</h3>
+            <p>Een digitale slijterij. Shopify eCommerce.</p>
+        </a>
+        <a href="https://imdbscraper.netlify.com/" class="grid-item imdb">
+            <img src="portfolio/scraper-demo.gif" alt="IMDb scraper demo video">
+            <h3>IMDb Scraper</h3>
+            <p>De bekende filmbibliotheek, in een verspimpeld jasje.</p>
+        </a>
+        <a href="https://github.com/jordihoven/storefront" class="grid-item storefront">
+            <img src="portfolio/storefront-demo.gif" alt="placeholder img">
+            <h3>Shopify Storefront</h3>
+            <p>Basically een headless Shopify winkel. Overal te gebruiken.</p>
+        </a>
+        <a href="https://github.com/jordihoven/herkennenSlaappatronen" class="grid-item matlab">
+            <img src="portfolio/matlab.png" alt="een dag aan bewegingsdata">
+            <h3>Slaap AI</h3>
+            <p>Het voorspellen van slaappatronen met een accelerometer en Matlab.</p>
+        </a>
+    </main>
+    <footer data-sal="slide-up" data-sal-duration="300">
+        <p>Gehost op Netlify</p>
     </footer>
 
     <!-- Javascript -->
+    <script src="https://unpkg.com/sal.js@0.8.5/dist/sal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="script.js"></script>
 
-    <!-- AOS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-
 </body>
-
 </html>

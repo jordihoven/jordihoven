@@ -1,9 +1,25 @@
-@import url('https://fonts.googleapis.com/css?family=Sarabun:400,700&display=swap');
-*{font-family: 'Sarabun', sans-serif;}
+/* Settings */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
+*{font-family: 'Space Grotesk', sans-serif;}
 
-.i4things {
-    color: #3F83FE;
-    font-weight: 700;
+html { background-color: var(--almost-white);}
+
+/* Variables */
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --almost-black: #121212;
+    --almost-white: #f2f2f2;
+    --kinda-grey: #6A6D77;
+
+    --base-font-size: 12px;
+    --fluid-typography-ratio: .5;
+    --rem: calc(var(--base-font-size) + var(--fluid-typography-ratio) * 1vw);
+    font-size: var(--rem);
+}
+
+.i4things, .drinkz {
+    color: var(--kinda-grey);
     transition: all .3s ease-in-out;
     padding: 1px 5px;
 }
@@ -13,34 +29,9 @@
     color: white;
 }
 
-.drinkz {
-    color: #F4C790;
-    font-weight: 700;
-    transition: all .3s ease-in-out;
-    padding: 1px 5px;
-}
-
 .drinkz:hover {
     background-color: #F4C790;
     color: black;
-}
-
-/* Animation styling */
-.first {
-    animation-delay: .5s;
-}
-
-.second {
-    animation-delay: .75s;
-}
-
-.third {
-    animation-delay: 1s;
-}
-
-.animated {
-    animation-duration: 1s;
-    animation-fill-mode: both;
 }
 
 /* General styling */
@@ -51,34 +42,31 @@ html, body {
 
 body {
     padding: 5vw 10vw;
-}
-
-h1 {
-    font-size: 3em;
-    color: #002C31;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 h2 {
-    font-size: 1.5em;
-    color: #002C31;
+    font-size: 1.5rem;
+    font-weight: 400;
 }
 
 h3 {
-    font-size: 2em;
+    font-size: 1.2rem;
     font-weight: 700;
-    color: #3d4350;
-    margin: 0;
+    margin: .5rem 0;
 }
 
 p {
-    font-size: 1.5em;
+    font-size: 1rem;
     font-weight: 400;
-    color: #828286;
+    color: var(--kinda-grey);
     margin: 0;
 }
 
 a {
     text-decoration: none;
+    color: inherit; /* removing the blue link color */
 }
 
 /* FIXME: Is this good practice? */
@@ -86,372 +74,50 @@ a {
     outline: none;
 }
 
-/* Intro */
-#intro h1, #intro h2 {
-    margin: 0 0 40px 0;
-}
-
-#intro {
-    margin: 5% 0 10% 0;
-}
-
-#intro h2 {
-    font-weight: 700;
-    max-width: 65%;
-}
-
-/* Portfolio */
-.section-intro p {
-    font-size: .8em;
-    font-weight: 700;
-    color: #B3B3B3;
-    letter-spacing: 1.5px;
-    margin-bottom: 15px;
-}
-
-/* .section-intro {
-    margin-bottom: 5%;
-} */
-
-.portfolio-card {
-    border-radius: 0px;
-    background-color: #f3f3f3;
-    /* box-shadow: 0px 5px 21px -10px rgba(0, 0, 0, 0.3); */
-    height: 300px;
-    width: 100%;
-    transition: all .3s ease-in-out;
-}
-
-.portfolio-card:hover {
-    transform: translateY(-5px);
-    /* box-shadow: 0px 10px 21px -10px rgba(0, 0, 0, 0.3) */
-}
-
-/* Portfolio cards */
-.upper-card {
-    height: 275px;
-    width: 100%;
-    background-color: #ffffff;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
-
-.upper-card img, .upper-card video {
-    height: 100%;
-    width: 100%;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
-
-/* Give padding same color as the videos */
-.imdb {
-    background-color: #f9f9fb;
-  }
-
-.gulpener {
-    background-color: #f9eee5;
-}
-
-.lower-card {
-    max-width: 100%;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    padding: 5%;
-    background-color: #F3F3F3;
-}
-
-.lower-card h1 {
-    font-size: 1.5em;
-}
-
-.lower-card h2 {
-    font-size: 1em;
-    font-weight: 400;
-}
-
-.lower-card p {
-    font-size: .75em;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-}
-
-/* Portfolio grid */
-.portfolio-grid {
+.grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: 
-        "project1 project2" 
-        "project3 project4";
-    grid-gap: 50px 50px;
-  }
-
-  .project1, .project2, .project3, .project4 {
-      border-radius: 5px;
-  }
-  
-  .project1 {
-       grid-area: project1;
-    }
-  
-  .project2 { grid-area: project2; }
-  
-  .project3 { grid-area: project3; }
-  
-  .project4 { grid-area: project4; }
-
-  /* TODO: Delete when img is fixed */
-  .project4 {
-      opacity: .5
-  }
-
-/* Footer */
-footer .section-intro {
-    margin-top: 10%;
-}
-
-.social-card {
-    background-color: #f3f3f3;
-    /* box-shadow: 0px 5px 21px -10px rgba(0, 0, 0, 0.3); */
-    border-radius: 5px;
-    height: 175px;
-    width: 225px;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: column;
-}
-
-.social-card:hover {
-    animation: blob .4s 1 ease-in-out;
-}
-
-.social-card p {
-    color: #1D1D1F;
-    font-size: 1em;
-    font-weight: 700;
-}
-
-/* Footer grid */
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: "instagram github mail";
     align-items: center;
-    justify-items: start;
-    margin-bottom: 10%;
-    width: 80%;
-    grid-gap: 20px;
-  }
-  
-  .instagram { grid-area: instagram; }
-  
-  .github { grid-area: github; }
-  
-  .mail { grid-area: mail; }
-
-/* Hosting and copyright text */
-.netlify {
-    color: #00AC9E;
+    grid-template-columns: repeat(auto-fit,minmax(15rem, 1fr));
+    grid-auto-rows: auto;
+    gap: 1rem;
+    margin-top: 4rem;
 }
 
-.copyright {
-    font-size: .9em;
+/* Card */
+.grid-item {
+    background-color: var(--white);
+    height: calc(100% - 2rem);
+    padding: 1rem;
+    transition: all .3s ease-in-out;
+    display: block; /* TODO: check if needed */
 }
 
-.project4 {
+.grid-item:hover {
+    transform: translateY(-5px);
+}
+
+.grid img {
     height: auto;
+    width: 100%;
+    max-height: 10rem;
+    object-fit: cover;
 }
 
-/* Responsiveness */
+header {
+    max-width: 75%;
+}
 
-/* Larger screens */
-@media only screen and (min-width: 1600px) {
-    body {
-    padding: 5vw 20vw;
-    }
-  }
+footer {
+    margin-top: 5rem;
+    text-align: left;
+}
 
-/* Tablet */
-@media screen and (max-width: 992px) {
-
-    body {
-        padding: 15vw 5vw 10vw 5vw;
+@media only screen and (max-width: 600px) {
+    header {
+        max-width: 100%;
     }
-    
-    h1 {
-        font-size: 2.5em;
+    footer {
+        text-align: center;
     }
-    
-    h2 {
-        font-size: 1.25em;
-    }
-    
-    h3 {
-        font-size: 2em;
-    }
-    
-    p {
-        font-size: 1.25em;
-    }
-
-    .portfolio-grid {
-        grid-gap: 25px 25px;
-      }
-
-    .portfolio-card {
-        height: 350px;
-    }
-    
-    /* Portfolio cards */
-    .upper-card {
-        height: 200px;
-    }
-    
-    .lower-card {
-        height: 100px;
-        padding: 5% 5%;
-    }
-    
-    .lower-card h1 {
-        font-size: 1em;
-    }
-    
-    .lower-card h2 {
-        font-size: .75em;
-    }
-    
-    .lower-card p {
-        font-size: .5em;
-    }
-
-    .social-card {
-        height: 150px;
-        width: 175px;
-    }
-    
-    .social-card p {
-        font-size: .75em;
-    }
-    
-  }
-
-/* Phone */
-@media screen and (max-width: 600px) {
-
-    /* Pattern background */
-    /* body {
-        background: url(pattern_bg.svg) no-repeat top right;
-    } */
-    h1 {
-        font-size: 3em;
-        margin-bottom: 0;
-    }
-    
-    h2 {
-        font-size: 1.25em;
-    }
-    
-    h3 {
-        font-size: 1.5em;
-    }
-    
-    p {
-        font-size: 1.25em;
-    }
-
-    /* Margin between sections */
-    #intro, #portfolio {
-        margin-bottom: 30%;
-    }
-
-    .portfolio-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-        grid-template-areas: 
-        "project1"
-        "project2"
-        "project3"
-        "project4";
-        grid-gap: 50px 50px;
-      }
-
-      .footer-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-template-areas: 
-        "instagram"
-        "github"
-        "mail";
-        align-items: center;
-        justify-items: stretch;
-        margin-bottom: 10%;
-        grid-gap: 20px 0;
-        width: 100%;
-      }
-
-      .social-card {
-        height: 50px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
-    }
-
-    .social-card p {
-        font-size: 1em;
-        margin-left: 15px;
-    }
-
-    #insta, #git, #mail {
-        height: 25px;
-        width: 25px;
-    }
-  }
-
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-    html, body, #socials {
-        background-color: #000000;
-        color: #f2f2f2;
-    }
-
-    #intro h1, h2, #portfolio h3 {
-        color: #F5F5F5
-    }
-
-    .lower-card, .portfolio-card {
-        background-color: #1D1D1F;
-    }
-
-    .lower-card h1 {
-        color: #F2F2F2;
-    }
-
-    footer h3 {
-        color: #F5F5F7;
-    }
-
-    .social-card {
-        background-color: #1D1D1F;
-    }
-
-    .social-card p {
-        color: #f2f2f2;
-    }
-
-    #insta, #git, #mail {
-        color: #999999;
-    }
-  }
-
-@keyframes blob {
-    0% {transform: scale(1)}
-    50% {transform: scale(1.05)}
-    100% {transform: scale(1)}
 }
