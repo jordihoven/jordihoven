@@ -141,6 +141,7 @@ footer {
     html { background-color: var(--black); }
     h2, h3, p { color: var(--almost-white);}
     .grid-item { background-color: var(--almost-black);}
+    .button { background-color: var(--almost-black); color: var(--almost-white);}
 }
 
 /* Responsivness */
