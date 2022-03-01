@@ -17,16 +17,13 @@ html { background-color: var(--almost-white);}
     font-size: var(--rem);
 }
 
-.i4things, .drinkz, .netlify {
+.intergrin, .netlify {
     color: var(--kinda-grey);
 }
 
-.i4things:hover {
-    color: #3F83FE;
-}
-
-.drinkz:hover {
-    color: #F4C790;
+.intergrin:hover {
+    color: #8694C6;
+    cursor: pointer;
 }
 
 .netlify:hover {
