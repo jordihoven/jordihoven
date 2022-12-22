@@ -8,8 +8,10 @@ html { background-color: var(--almost-white);}
 :root {
     --black: #000000;
     --white: #ffffff;
-    --almost-black: #121212;
-    --almost-white: #f2f2f2;
+    --almost-black: #1d1d1d;
+    --dark-stroke: #282828;
+    --almost-white: #fafafa;
+    --stroke: #e4e4e4;
     --kinda-grey: #6A6D77;
     --base-font-size: 12px;
     --fluid-typography-ratio: .5;
@@ -68,7 +70,6 @@ a {
 .socials {
     display: flex;
     gap: 1rem;
-
 }
 
 .feather {
@@ -81,7 +82,7 @@ a {
     align-items: center;
     outline: none;
     border-radius: 0;
-    border: none;
+    border: 1px solid var(--stroke);
     background-color: var(--white);
     padding: 1rem;
     width: 10rem;
@@ -109,6 +110,7 @@ a {
     background-color: var(--white);
     height: calc(100% - 2rem);
     padding: 1rem;
+    border: 1px solid var(--stroke);
     transition: all .3s ease-in-out;
     display: block; /* TODO: check if needed */
 }
@@ -137,8 +139,8 @@ footer {
 @media (prefers-color-scheme: dark) {
     html { background-color: var(--black); }
     h2, h3, p { color: var(--almost-white);}
-    .grid-item { background-color: var(--almost-black);}
-    .button { background-color: var(--almost-black); color: var(--almost-white);}
+    .grid-item { background-color: var(--almost-black); border: 1px solid var(--dark-stroke);}
+    .button { background-color: var(--almost-black); color: var(--almost-white); border: 1px solid var(--dark-stroke);}
 }
 
 /* Responsivness */
