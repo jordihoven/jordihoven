@@ -176,15 +176,10 @@ header p {
     color: var(--kinda-grey);
 }
 
-footer {
-    margin-top: 5rem;
-    text-align: left;
-}
-
 /* Darkmode */
 @media (prefers-color-scheme: dark) {
     html { background-color: var(--black); }
-    h2, h3, p { color: var(--almost-white);}
+    h1, h2, h3, p { color: var(--almost-white);}
     .grid-item { background-color: var(--almost-black); border: 1px solid var(--dark-stroke);}
     .button { background-color: var(--almost-black); color: var(--almost-white); border: 1px solid var(--dark-stroke);}
 }
@@ -196,8 +191,5 @@ footer {
     }
     header {
         max-width: 100%;
-    }
-    footer {
-        text-align: center;
     }
 }
