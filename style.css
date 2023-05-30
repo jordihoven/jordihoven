@@ -10,9 +10,9 @@ html { background-color: var(--almost-white);}
     --black: #000000;
     --white: #ffffff;
     --almost-black: #1d1d1d;
-    --dark-stroke: #282828;
     --almost-white: #fafafa;
     --stroke: #e4e4e4;
+    --dark-stroke: #282828;
     --kinda-grey: #888888;
     /* typography */
     --heading: 2rem;
