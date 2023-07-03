@@ -8,11 +8,9 @@ Build in Angular, in the Netherlands.
 - [X] Setup folder structure, based on Atomic Design
 - [X] Add feathericons
 - [X] Build icon component (check other repo's)
-- [] Build button component
-    -[X] Button component with style and icon
-    -[] Ability to work as an a tag, eg do href's
-- [] Build projects component
+- [ ] Build button component
+- [ ] Build projects component
 
 #### Pages to build
-- [] Add books (?)
-- [] Add uses (?)
+- [ ] Add books (?)
+- [ ] Add uses (?)
