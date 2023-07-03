@@ -3,8 +3,14 @@ Originally build with plain HTML, CSS and Javascript. Migrated to Angular.
 
 #### ToDo
 - [x] Migrate vanilla html, css and javascript to Angular
-- [] Update build command in Netlify
+- [X] Update build command in Netlify
+- [X] Setup folder structure, based on Atomic Design
+- [] Build button component
+- [] Build icon component (check other repo's)
 - [] Add feathericons
-- [] Build 'recent projects component'
+- [] Build projects component
+
+- [] Update app.component to use button, icon and project components instead of html elements
+
 - [] Add books (?)
 - [] Add uses (?)
