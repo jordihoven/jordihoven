@@ -1,0 +1,48 @@
+/* Base button styles... */
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--xs-spacing);
+    width: fit-content;
+    border-radius: 8px;
+    padding: 8px 12px;
+    border: 1px solid var(--stroke);
+    color: var(--black);
+    background-color: var(--white);
+    transition: all 0.3s ease-in-out;
+    white-space: nowrap;
+}
+  
+:host:hover {
+    filter: brightness(95%);
+    cursor: pointer;
+}
+  
+:host[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: brightness(100%);
+}
+  
+/* Option styles */
+:host.ml--primary {
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+}
+  
+:host.ml--secondary {
+    background-color: var(--white);
+    color: var(--black);
+    border: none;
+}
+
+/* darkmode */
+@media (prefers-color-scheme: dark) {
+    :host {
+        border: 1px solid var(--dark-stroke);
+        color: var(--white);
+        background-color: var(--darkgrey);
+    }
+}

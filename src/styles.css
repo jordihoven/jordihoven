@@ -91,17 +91,11 @@ h2, h3, p, a {
     margin-top: var(--s-spacing);
 }
 
-.feather {
-    margin-right: .5rem;
-    height: 16px;
-    width: 16px;
-    color: var(--kinda-grey);
-}
-
 .button {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: var(--xs-spacing);
     outline: none;
     border-radius: 6px;
     border: 1px solid var(--stroke);

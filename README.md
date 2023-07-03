@@ -1,16 +1,18 @@
 ## Personal portfolio website
-Originally build with plain HTML, CSS and Javascript. Migrated to Angular.
+My personal spot on the internet, a digital garden where i tend to my recent projects, books, hobbies and other things i might want to share.
+Build in Angular, in the Netherlands.
 
-#### ToDo
+### ToDo
 - [x] Migrate vanilla html, css and javascript to Angular
 - [X] Update build command in Netlify
 - [X] Setup folder structure, based on Atomic Design
+- [X] Add feathericons
+- [X] Build icon component (check other repo's)
 - [] Build button component
-- [] Build icon component (check other repo's)
-- [] Add feathericons
+    -[X] Button component with style and icon
+    -[] Ability to work as an a tag, eg do href's
 - [] Build projects component
 
-- [] Update app.component to use button, icon and project components instead of html elements
-
+#### Pages to build
 - [] Add books (?)
 - [] Add uses (?)

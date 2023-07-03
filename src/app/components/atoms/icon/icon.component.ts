@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-icon',
+  selector: 'Icon',
   templateUrl: './icon.component.html',
   styleUrls: ['./icon.component.css']
 })
-export class IconComponent {
 
+export class IconComponent {
+  @Input('feather-icon')
+  featherIcon: string = 'home';
 }
