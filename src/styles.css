@@ -31,6 +31,9 @@ html { background-color: var(--almost-white);}
     --l-spacing: 40px;
     --xl-spacing: 64px;
     --huge-spacing: 8rem;
+
+    /* interactions */
+    --squish: cubic-bezier(.5,-.1,.1,1.5)
 }
 
 .intergrin, .netlify {
@@ -102,7 +105,7 @@ h2, h3, p, a {
     background-color: var(--white);
     padding: 12px 16px;
     font-size: 14px;
-    transition: all .3s ease-in-out;
+    transition: .4s var(--squish) all;
 }
 
 .button:hover {
@@ -130,7 +133,7 @@ h2, h3, p, a {
     padding: 1rem;
     border: 1px solid var(--stroke);
     border-radius: 8px;
-    transition: all .3s ease-in-out;
+    transition: .4s var(--squish) all;
 }
 
 .grid-item h3 {
@@ -144,7 +147,7 @@ h2, h3, p, a {
 }
 
 .grid-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px);    
 }
 
 .grid img {
