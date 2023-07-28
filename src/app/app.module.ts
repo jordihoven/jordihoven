@@ -11,6 +11,7 @@ import { DockComponent } from './components/molecules/dock/dock.component';
 
 //import modules
 import { IconModule } from './components/atoms/icon/icon.module';
+import { FooterComponent } from './components/molecules/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { IconModule } from './components/atoms/icon/icon.module';
     ButtonComponent,
     IconComponent,
     ProjectComponent,
-    DockComponent
+    DockComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

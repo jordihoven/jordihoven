@@ -14,6 +14,7 @@ html { background-color: var(--almost-white);}
     --stroke: #e4e4e4;
     --dark-stroke: #282828;
     --kinda-grey: #888888;
+    --dark-grey: #444444;
     /* typography */
     --heading: 2rem;
     --subheading: 1.25rem;
@@ -31,22 +32,8 @@ html { background-color: var(--almost-white);}
     --l-spacing: 40px;
     --xl-spacing: 64px;
     --huge-spacing: 8rem;
-
     /* interactions */
     --squish: cubic-bezier(.5,-.1,.1,1.5)
-}
-
-.intergrin, .netlify {
-    color: var(--kinda-grey);
-}
-
-.intergrin:hover {
-    color: #8694C6;
-    cursor: pointer;
-}
-
-.netlify:hover {
-    color: #30AAB0;
 }
 
 /* General styling */
@@ -57,7 +44,7 @@ html, body {
 
 body {
     padding: 4rem 1rem;
-    max-width: 994px;
+    max-width: 720px;
     margin: 0 auto;
 }
 
@@ -68,6 +55,12 @@ h1 {
   }
   
 h2, h3 {  /* since we only use headings and subheadings, the h3 is the same as h2... */
+    font-size: var(--subheading);
+    font-weight: var(--semibold);
+    margin: 0;
+}
+
+h3 {
     font-size: var(--subheading);
     font-weight: var(--semibold);
     margin: 0;
@@ -127,29 +120,6 @@ h2, h3, p, a {
     margin-top: 2rem;
 }
 
-.grid-item {
-    background-color: var(--white);
-    height: calc(100% - 2rem);
-    padding: 1rem;
-    border: 1px solid var(--stroke);
-    border-radius: 8px;
-    transition: .4s var(--squish) all;
-}
-
-.grid-item h3 {
-    font-family: 'Lora', serif;
-    margin-top: 12px;
-}
-
-.grid-item p {
-    color: var(--kinda-grey);
-    padding-top: var(--xs-spacing);
-}
-
-.grid-item:hover {
-    transform: translateY(-5px);    
-}
-
 .grid img {
     height: 100vh;
     width: 100%;
@@ -160,17 +130,35 @@ h2, h3, p, a {
 }
 
 header {
-    max-width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-spacing);
 }
 
-header h1 {
+header h1, header h2, header p, header span, header a {
     font-family: 'Lora', serif; 
     font-weight: 400;
-    margin: 0 0 12px 0;
+    line-height: 1.4;
+}
+
+header h2 {
+    color: var(--kinda-grey)
 }
 
 header p {
     color: var(--kinda-grey);
+}
+
+header .highlighted {
+    color: var(--dark-grey);
+}
+
+.intergrin {
+    color: #8694C6;
+}
+
+.intergrin:hover {
+    cursor: pointer;
 }
 
 /* Darkmode */

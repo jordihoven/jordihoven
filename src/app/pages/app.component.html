@@ -1,11 +1,19 @@
+<!-- 
+<Dock></Dock>
+<Header></Header>
+<main>
+    <Projects></Projects>
+    <Workexperience></Workexperience>
+    <Drawings></Drawings>
+</main>
+<Footer></Footer> 
+-->
+
 <header>
   <h1>jordi hoven —</h1>
-  <p>Product Designer, momenteel bezig met het ontwerpen van producten bij <a class="intergrin" href="https://intergrin.nl" target="_blank">Intergrin</a></p>
-  <div class="socials">
-    <!-- <Button>
-        <Icon feather-icon="instagram"></Icon>
-        <span>Instagram</span>
-    </Button> -->
+  <h2>Product ontwikkelaar, momenteel bezig met het bouwen van digitale producten bij <a class="intergrin" href="https://intergrin.nl" target="_blank">Intergrin</a>.</h2>
+  <h2>In mijn vrije tijd <span class="highlighted">brouw ik v60 koffie</span>, kijk ik bijna dagelijks <span class="highlighted">een film</span>, dabble ik in <span class="highlighted">calisthenics</span> en ben ik geobsedeerd met <span class="highlighted">stoicisme</span>.</h2>
+  <!-- <div class="socials">
       <a href="https://www.instagram.com/jordidotdesign/" target="_blank" class="button">
           <Icon feather-icon="instagram"></Icon>
           Instagram
@@ -14,37 +22,13 @@
           <Icon feather-icon="mail"></Icon>
           Stuur Bericht
       </a>
-  </div>
+  </div> -->
 </header>
-<main class="grid">
-  <a href="https://dailyreflections.netlify.app/" class="grid-item dailyreflections">
-      <img src="../../assets/dailyreflections.gif">
-      <h3>Daily reflections</h3>
-      <p>Een digitaal dagboek, gebouwd met Angular en Firebase.</p>
-  </a>
-  <a href="https://gonnacatchemall.netlify.app/" class="grid-item PokeApi">
-      <img src="../assets/pokeapi.png">
-      <h3>Angular PokeApi</h3>
-      <p>De Angular Tour of Heroes, maar dan met Pokemons.</p>
-  </a>
-  <a href="https://drinkz.nl" class="grid-item drinkz.nl">
-      <img src="../assets/drinkz-demo.gif">
-      <h3>Drinkz.nl</h3>
-      <p>Een digitale slijterij. Shopify eCommerce.</p>
-  </a>
-  <a href="https://imdbscraper.netlify.com/" class="grid-item imdb">
-      <img src="../assets/scraper-demo.gif" alt="IMDb scraper demo video">
-      <h3>IMDb Scraper</h3>
-      <p>De bekende filmbibliotheek, in een versimpeld jasje.</p>
-  </a>
-  <a href="https://github.com/jordihoven/storefront" class="grid-item storefront">
-      <img src="../assets/storefront-demo.gif" alt="placeholder img">
-      <h3>Shopify Storefront</h3>
-      <p>Een Headless Shopify door Storefront API.</p>
-  </a>
-  <a href="https://github.com/jordihoven/herkennenSlaappatronen" class="grid-item matlab">
-      <img src="../assets/matlab.png" alt="een dag aan bewegingsdata">
-      <h3>Slaap AI</h3>
-      <p>Het voorspellen van slaappatronen met een accelerometer en Matlab.</p>
-  </a>
+<main>
+    <section id="projects" class="grid">
+        <ng-container *ngFor="let project of projects">
+            <Project [project]="project"></Project>
+        </ng-container>
+    </section>
 </main>
+<Footer></Footer>
