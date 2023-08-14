@@ -12,6 +12,7 @@ import { DockComponent } from './components/molecules/dock/dock.component';
 //import modules
 import { IconModule } from './components/atoms/icon/icon.module';
 import { FooterComponent } from './components/molecules/footer/footer.component';
+import { HeaderComponent } from './components/molecules/header/header.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FooterComponent } from './components/molecules/footer/footer.component'
     IconComponent,
     ProjectComponent,
     DockComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

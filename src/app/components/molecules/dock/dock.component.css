@@ -1,0 +1,23 @@
+:host {
+    background-color: var(--white);
+    border: 1px solid var(--stroke);
+    border-radius: 6px;
+    padding: 4px;
+    color: var(--kinda-grey);
+    display: flex;
+    width: fit-content;
+    gap: var(--xs-spacing);
+    margin-bottom: var(--m-spacing);
+}
+
+.link {
+    padding: 2px 8px;
+    border-radius: 6px;
+    transition: all .3s ease-in-out;
+}
+
+.link:hover {
+    cursor: pointer;
+    background-color: var(--surface);
+    color: var(--black);
+}

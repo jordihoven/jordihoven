@@ -1,6 +1,10 @@
 /* Settings */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lora&display=swap');
-* { font-family: 'Inter', sans-serif;}
+
+* { 
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
 /* font-family: 'Lora', serif; */
 
 html { background-color: var(--almost-white);}
@@ -12,6 +16,7 @@ html { background-color: var(--almost-white);}
     --almost-black: #1d1d1d;
     --almost-white: #fafafa;
     --stroke: #e4e4e4;
+    --surface: #f2f2f2;
     --dark-stroke: #282828;
     --kinda-grey: #888888;
     --dark-grey: #444444;
@@ -33,7 +38,9 @@ html { background-color: var(--almost-white);}
     --xl-spacing: 64px;
     --huge-spacing: 8rem;
     /* interactions */
-    --squish: cubic-bezier(.5,-.1,.1,1.5)
+    --squish: cubic-bezier(.5,-.1,.1,1.5);
+    /* others */
+    --radius: 8px;
 }
 
 /* General styling */
@@ -44,7 +51,7 @@ html, body {
 
 body {
     padding: 4rem 1rem;
-    max-width: 720px;
+    max-width: calc(688px + 4rem);
     margin: 0 auto;
 }
 
