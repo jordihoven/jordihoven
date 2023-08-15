@@ -23,6 +23,12 @@
     height: 267px;
 }
 
+.card-header {
+    display: flex;
+    gap: var(--xs-spacing);
+    align-items: center;
+}
+
 @media (prefers-color-scheme: dark) {
     :host { background-color: var(--almost-black); border: 1px solid var(--dark-stroke);}
 }

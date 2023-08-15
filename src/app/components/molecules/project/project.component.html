@@ -1,5 +1,8 @@
-<a href="{{ project.webLink}}" class="grid-item">
-    <p>{{ project.title }}</p>
+<a href="{{ project.webLink}}" target="_blank" class="grid-item">
+    <div class="card-header">
+        <Icon type="hasIcon" feather-icon="{{ project.icon }}"></Icon>
+        <p>{{ project.title }}</p>
+    </div>
     <img src="{{ project.imageLink }}">
     <p>{{ project.description }}</p>
 </a>

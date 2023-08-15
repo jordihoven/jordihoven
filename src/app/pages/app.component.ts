@@ -12,30 +12,35 @@ export class AppComponent {
   projects: ProjectData[] = [
     {
       title: 'Project • Daily reflections',
+      icon: 'github',
       description: 'Een digitaal dagboek, gebouwd met Angular en Firebase.',
       imageLink: '../../assets/dailyreflections.gif',
       webLink: 'https://dailyreflections.netlify.app/'
     },
     {
       title: 'Project • Drinkz',
+      icon: 'coffee',
       description: 'Een digitale slijterij. Shopify eCommerce.',
       imageLink: '../../assets/drinkz-demo.gif',
       webLink: 'https://drinkz.nl/'
     },
     {
       title: 'Project • PokeAPI',
+      icon: 'play',
       description: 'De Angular Tour of Heroes, maar dan met Pokemons.',
       imageLink: '../../assets/pokeapi.png',
       webLink: 'https://gonnacatchemall.netlify.app/'
     },
     {
       title: 'Project • Shopify Storefront',
+      icon: 'shopping-bag',
       description: 'Een Headless Shopify door Storefront API.',
       imageLink: '../../assets/storefront-demo.gif',
       webLink: 'https://github.com/jordihoven/storefront'
     },
     {
       title: 'Project • IMDb Scraper',
+      icon: 'film',
       description: 'De bekende filmbibliotheek, in een versimpeld jasje.',
       imageLink: '../../assets/scraper-demo.gif',
       webLink: 'https://imdbscraper.netlify.com'

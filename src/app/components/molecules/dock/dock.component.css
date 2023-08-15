@@ -1,7 +1,7 @@
 :host {
     background-color: var(--white);
     border: 1px solid var(--stroke);
-    border-radius: 6px;
+    border-radius: var(--radius);
     padding: 4px;
     color: var(--kinda-grey);
     display: flex;

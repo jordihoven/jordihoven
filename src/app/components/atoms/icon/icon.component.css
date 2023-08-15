@@ -1,7 +1,23 @@
+:host {
+    display: flex;
+    width: fit-content;
+}
+
 /* Resets for all feather-icons... */
 i-feather {
     display: flex;
     height: 16px;
     width: 16px;
     color: var(--kinda-grey);
+}
+
+/* Icon with gradient wrapper */
+:host.ml--hasIcon {
+    padding: 4px;
+    border-radius: 6px;
+    background: linear-gradient(#A180FF, #7047E5);
+}
+
+:host.ml--hasIcon i-feather {
+    color: white;
 }
