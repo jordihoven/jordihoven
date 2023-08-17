@@ -6,13 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './pages/app.component';
 import { ButtonComponent } from './components/atoms/button/button.component';
 import { IconComponent } from './components/atoms/icon/icon.component';
-import { ProjectComponent } from './components/molecules/project/project.component';
 import { DockComponent } from './components/molecules/dock/dock.component';
+import { ProjectComponent } from './components/molecules/project-card/project-card.component';
 
 //import modules
 import { IconModule } from './components/atoms/icon/icon.module';
 import { FooterComponent } from './components/molecules/footer/footer.component';
 import { HeaderComponent } from './components/molecules/header/header.component';
+import { BookCardComponent } from './components/molecules/book-card/book-card.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HeaderComponent } from './components/molecules/header/header.component'
     ProjectComponent,
     DockComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    BookCardComponent
   ],
   imports: [
     BrowserModule,

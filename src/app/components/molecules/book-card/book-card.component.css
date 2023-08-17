@@ -1,0 +1,39 @@
+:host {
+    background-color: var(--white);
+    padding: 12px;
+    border: 1px solid var(--stroke);
+    border-radius: 8px;
+    transition: .4s var(--squish) all;
+}
+
+:host p {
+    color: var(--kinda-grey);
+}
+
+:host:hover {
+    transform: translateY(-5px);    
+}
+
+:host a {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    /* figure out how to make this responsive! */
+    height: 267px;
+}
+
+.card-header {
+    display: flex;
+    gap: var(--xs-spacing);
+    align-items: center;
+}
+
+#book-img {
+    object-fit: contain;
+    background-color: var(--surface);
+    padding: 8px 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    :host { background-color: var(--almost-black); border: 1px solid var(--dark-stroke);}
+}
