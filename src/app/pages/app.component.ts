@@ -13,8 +13,10 @@ export class AppComponent {
 
   allCards: (Project | Book)[] = [...projects, ...books];
   customOrder: number[] = [1, 2, 3]; // Define the custom order of cards using the order property
-  sortedCards: (Project | Book)[] = this.sortCardsByCustomOrder(this.customOrder, this.allCards);
-
+  sortedCards: (Project | Book)[] = [
+    ...this.sortCardsByCustomOrder(this.customOrder, this.allCards),
+    ...this.allCards.filter(card => !this.customOrder.includes(card.order || 0))
+  ];
   private sortCardsByCustomOrder(customOrder: number[], cards: (Project | Book)[]): (Project | Book)[] {
     return customOrder
       .map(order => cards.find(card => card.order === order))

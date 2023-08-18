@@ -51,7 +51,7 @@ html, body {
 
 body {
     padding: 4rem 1rem;
-    max-width: calc(688px + 4rem);
+    max-width: calc(1024px + 4rem);
     margin: 0 auto;
 }
 
