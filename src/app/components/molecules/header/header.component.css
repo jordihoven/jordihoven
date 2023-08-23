@@ -1,0 +1,23 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    gap: var(--xs-spacing);
+}
+
+:host h1, :host h2, :host p, :host span, :host a {
+    font-family: 'Lora', serif; 
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+:host h2 {
+    color: var(--kinda-grey)
+}
+
+:host p {
+    color: var(--kinda-grey);
+}
+
+:host .highlighted {
+    color: var(--dark-grey);
+}
