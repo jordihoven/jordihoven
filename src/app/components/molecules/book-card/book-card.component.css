@@ -1,37 +1,46 @@
 :host {
-    background-color: var(--white);
-    padding: 12px;
-    border: 1px solid var(--stroke);
-    border-radius: 8px;
-    transition: .4s var(--squish) all;
+  background-color: var(--white);
+  padding: 12px;
+  border: 1px solid var(--stroke);
+  border-radius: 8px;
+  transition: 0.4s var(--squish) all;
 }
 
 :host p {
-    color: var(--kinda-grey);
+  color: var(--kinda-grey);
 }
 
 :host:hover {
-    transform: translateY(-5px);    
+  /* transform: translateY(-5px); */
+  filter: brightness(0.99);
+}
+
+:host:active {
+  transform: scale(0.993);
 }
 
 :host a {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .card-header {
-    display: flex;
-    gap: var(--xs-spacing);
-    align-items: center;
+  display: flex;
+  gap: var(--xs-spacing);
+  align-items: center;
 }
 
 #book-img {
-    object-fit: contain;
-    background-color: var(--surface);
-    padding: 8px 0;
+  object-fit: contain;
+  background-color: var(--surface);
+  padding: var(--m-spacing) 0;
+  max-height: 25rem;
 }
 
 @media (prefers-color-scheme: dark) {
-    :host { background-color: var(--almost-black); border: 1px solid var(--dark-stroke);}
+  :host {
+    background-color: var(--almost-black);
+    border: 1px solid var(--dark-stroke);
+  }
 }

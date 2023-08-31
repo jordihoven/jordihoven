@@ -1,23 +1,23 @@
 :host {
-    display: flex;
-    flex-direction: column;
-    gap: var(--xs-spacing);
+  display: flex;
+  flex-direction: column;
+  gap: var(--m-spacing);
+  margin-bottom: var(--l-spacing);
 }
 
-:host h1, :host h2, :host p, :host span, :host a {
-    font-family: 'Lora', serif; 
-    font-weight: 400;
-    line-height: 1.4;
+.name {
+  color: var(--dark-grey);
+  font-weight: var(--medium);
 }
 
-:host h2 {
-    color: var(--kinda-grey)
+.now {
+  color: var(--kinda-grey);
 }
 
-:host p {
-    color: var(--kinda-grey);
+.past {
+  color: var(--kinda-grey);
 }
 
 :host .highlighted {
-    color: var(--dark-grey);
+  color: var(--dark-grey);
 }
