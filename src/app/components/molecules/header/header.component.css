@@ -24,9 +24,18 @@
 }
 
 .link {
-  transition: all 0.3s ease-in-out;
-  text-decoration: var(--stroke) wavy underline;
   color: var(--kinda-grey);
+  transition: all 0.3s ease-in-out;
+  text-decoration-color: var(--stroke);
+  text-decoration-style: wavy;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2.5px;
+  /* webkit text-decorations */
+  -webkit-text-decoration-color: var(--stroke);
+  -webkit-text-decoration-line: underline;
+  -webkit-text-decoration-style: wavy;
+  -webkit-text-decoration-thickness: 1px;
 }
 
 .link:hover {
