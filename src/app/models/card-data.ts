@@ -48,17 +48,16 @@ export const books: Book[] = [
     order: 6,
     title: 'Boek • Meditations',
     icon: 'book',
-    author:
-      'Een inzicht in het persoonlijke dagboek van de machtigste man op de planeet.',
-    coverImgUrl:
-      'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1421618636i/30659.jpg',
+    author: 'Een inzicht in het persoonlijke dagboek van de machtigste man op de planeet.',
+    coverImgUrl: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1421618636i/30659.jpg',
+    url: 'https://www.goodreads.com/book/show/30659.Meditations',
   },
   {
     order: 7,
     title: 'Boek • Daily Stoic',
     icon: 'book',
-    author: 'Ryan Holiday',
-    coverImgUrl:
-      'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1462161080i/29093292.jpg',
+    author: 'Ieders dagelijkse hoeveelheid stoicisme, verpakt in een boek met 365 wijze lessen.',
+    coverImgUrl: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1462161080i/29093292.jpg',
+    url: 'https://www.goodreads.com/book/show/29093292-the-daily-stoic',
   },
 ];
