@@ -1,5 +1,5 @@
 /* Settings */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lora&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400..600&family=Lora&display=swap");
 
 * {
   font-family: "Inter", sans-serif;
@@ -54,7 +54,7 @@ body {
 
 body {
   padding: 4rem;
-  max-width: calc(700px + 8rem);
+  max-width: calc(600px + 8rem);
   margin: 0 auto;
 }
 

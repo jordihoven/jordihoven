@@ -1,15 +1,15 @@
 <Dock></Dock>
 <Header></Header>
 <main>
-    <section id="projects" class="grid">
-        <ng-container *ngFor="let card of sortedCards">
-            <ng-container *ngIf="isProject(card)">
-                <project-card [project]="card"></project-card>
-            </ng-container>
-            <ng-container *ngIf="isBook(card)">
-                <book-card [book]="card"></book-card>
-            </ng-container>
-        </ng-container>
-    </section>
+  <section id="projects" class="grid">
+    <ng-container *ngFor="let card of sortedCards">
+      <ng-container *ngIf="isProject(card)">
+        <project-card [project]="card"></project-card>
+      </ng-container>
+      <ng-container *ngIf="isBook(card)">
+        <book-card [book]="card"></book-card>
+      </ng-container>
+    </ng-container>
+  </section>
 </main>
 <Footer></Footer>

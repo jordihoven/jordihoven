@@ -1,8 +1,9 @@
 :host {
   display: flex;
   flex-direction: column;
-  gap: var(--m-spacing);
+  gap: var(--s-spacing);
   margin-bottom: var(--l-spacing);
+  line-height: 1.6;
 }
 
 .name {
@@ -19,5 +20,16 @@
 }
 
 :host .highlighted {
+  color: var(--dark-grey);
+}
+
+.link {
+  transition: all 0.3s ease-in-out;
+  text-decoration: var(--stroke) wavy underline;
+  color: var(--kinda-grey);
+}
+
+.link:hover {
+  text-decoration: var(--dark-grey) wavy underline;
   color: var(--dark-grey);
 }
