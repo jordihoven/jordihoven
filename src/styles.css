@@ -58,6 +58,29 @@ body {
   margin: 0 auto;
 }
 
+/* scrollbar styling */
+body::-webkit-scrollbar {
+  width: var(--s-spacing);
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  /* min-height: var(--scrollbar-size-min);
+  min-width: var(--scrollbar-size-min); */
+  background-color: var(--stroke);
+  border-radius: var(--radius);
+  border: 5px solid transparent;
+  background-clip: padding-box;
+}
+
+/* custom text selection color */
+::selection {
+  background: var(--surface);
+}
+
 h1 {
   font-size: var(--heading);
   font-weight: var(--semibold);
