@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let article of articles">
+    <a [routerLink]="['/writing', article.filename]">{{ article.title }}</a>
+  </li>
+</ul>

@@ -14,6 +14,12 @@ import { IconModule } from './components/atoms/icon/icon.module';
 import { FooterComponent } from './components/molecules/footer/footer.component';
 import { HeaderComponent } from './components/molecules/header/header.component';
 import { BookCardComponent } from './components/molecules/book-card/book-card.component';
+import { WritingComponent } from './components/molecules/writing/writing.component';
+import { ArticleComponent } from './components/molecules/article/article.component';
+
+import { MarkdownModule } from 'ngx-markdown'; // Import MarkdownModule
+import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -24,14 +30,13 @@ import { BookCardComponent } from './components/molecules/book-card/book-card.co
     DockComponent,
     FooterComponent,
     HeaderComponent,
-    BookCardComponent
+    BookCardComponent,
+    WritingComponent,
+    ArticleComponent,
+    HomeComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    IconModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, IconModule, MarkdownModule.forRoot(), HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
