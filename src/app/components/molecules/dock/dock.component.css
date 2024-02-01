@@ -11,7 +11,10 @@
 }
 
 .link {
-  padding: 2px 8px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 6px 8px;
   border-radius: 6px;
   transition: all 0.3s ease-in-out;
   font-size: 14px;
