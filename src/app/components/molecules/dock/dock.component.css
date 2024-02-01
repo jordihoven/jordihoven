@@ -25,3 +25,17 @@
   background-color: var(--surface);
   color: var(--black);
 }
+
+/* Darkmode */
+@media (prefers-color-scheme: dark) {
+  :host {
+    background-color: var(--almost-black);
+    color: var(--kinda-grey);
+    border: 1px solid var(--dark-grey);
+  }
+  :host .link:hover {
+    background-color: var(--dark-grey);
+    color: var(--almost-white)
+
+  }
+}

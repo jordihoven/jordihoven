@@ -195,6 +195,9 @@ a {
     color: var(--almost-white);
     border: 1px solid var(--dark-stroke);
   }
+  .name {
+    color: var(--almost-white) !important;
+  }
 }
 
 /* Responsivness */
