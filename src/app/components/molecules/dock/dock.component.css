@@ -1,5 +1,5 @@
 :host {
-  background-color: var(--white);
+  background: rgba( 255, 255, 255, 0.8 );
   border: 1px solid var(--stroke);
   border-radius: var(--radius);
   padding: 4px;
@@ -8,7 +8,14 @@
   width: fit-content;
   gap: var(--xs-spacing);
   margin-bottom: var(--m-spacing);
+  /* floating dock on scroll... */
+  position: sticky;
+  top: 1rem;
+  z-index: 5;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
+
 
 .link {
   display: flex;
@@ -29,7 +36,7 @@
 /* Darkmode */
 @media (prefers-color-scheme: dark) {
   :host {
-    background-color: var(--almost-black);
+    background: rgba( 29, 29, 29, 0.8 );
     color: var(--kinda-grey);
     border: 1px solid var(--dark-grey);
   }
