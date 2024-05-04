@@ -1,0 +1,29 @@
+:host {
+  border-radius: var(--radius);
+  color: var(--text);
+  display: flex;
+  width: fit-content;
+  gap: var(--xs-spacing);
+  margin-top: var(--xs-spacing);
+  margin-bottom: var(--m-spacing);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.link {
+  background-color: var(--background2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+  font-size: 14px;
+}
+
+.link:hover {
+  cursor: pointer;
+  background-color: var(--elevated)
+}

@@ -1,14 +1,14 @@
 :host {
+    color: var(--text2);
     margin-top: var(--xl-spacing);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: var(--kinda-grey);
     gap: var(--s-spacing)
 }
 
 #charizard {
-    width: 48px;
+    width: 40px;
     height: auto;
 }

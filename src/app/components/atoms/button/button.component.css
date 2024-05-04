@@ -7,7 +7,7 @@
     width: fit-content;
     border-radius: 8px;
     padding: 8px 12px;
-    border: 1px solid var(--stroke);
+    border: 1px solid var(--border);
     color: var(--black);
     background-color: var(--white);
     transition: all 0.3s ease-in-out;
@@ -36,13 +36,4 @@
     background-color: var(--white);
     color: var(--black);
     border: none;
-}
-
-/* darkmode */
-@media (prefers-color-scheme: dark) {
-    :host {
-        border: 1px solid var(--dark-stroke);
-        color: var(--white);
-        background-color: var(--darkgrey);
-    }
 }

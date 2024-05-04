@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './pages/app.component';
 import { ButtonComponent } from './components/atoms/button/button.component';
 import { IconComponent } from './components/atoms/icon/icon.component';
-import { DockComponent } from './components/molecules/dock/dock.component';
+import { LinksComponent } from './components/molecules/links/links.component';
 import { ProjectComponent } from './components/molecules/project-card/project-card.component';
 
 //import modules
@@ -21,7 +21,7 @@ import { BookCardComponent } from './components/molecules/book-card/book-card.co
     ButtonComponent,
     IconComponent,
     ProjectComponent,
-    DockComponent,
+    LinksComponent,
     FooterComponent,
     HeaderComponent,
     BookCardComponent

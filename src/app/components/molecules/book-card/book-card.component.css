@@ -1,13 +1,13 @@
 :host {
   background-color: var(--white);
   padding: 12px;
-  border: 1px solid var(--stroke);
+  border: 1px solid var(--border);
   border-radius: 8px;
   transition: 0.4s var(--squish) all;
 }
 
 :host p {
-  color: var(--kinda-grey);
+  color: var(--text);
 }
 
 :host:hover {
@@ -33,14 +33,7 @@
 
 #book-img {
   object-fit: contain;
-  background-color: var(--surface);
+  background-color: var(--elevated);
   padding: var(--m-spacing) 0;
   max-height: 15rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  :host {
-    background-color: var(--almost-black);
-    border: 1px solid var(--dark-stroke);
-  }
 }
