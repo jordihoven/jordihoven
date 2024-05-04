@@ -4,6 +4,7 @@
 * {
   font-family: "Inter", sans-serif;
   box-sizing: border-box;
+  border-color: var(--border);
 }
 
 html {
@@ -22,6 +23,7 @@ html {
   --text: #1a1a1a;
   --text2: #6e6e6e;
   --link: #0969da;
+  --selection: #eeeeee;
   /* typography */
   --heading: 2rem;
   --subheading: 1.25rem;
@@ -42,7 +44,7 @@ html {
   /* interactions */
   --squish: cubic-bezier(0.5, -0.1, 0.1, 1.5);
   /* others */
-  --radius: 8px;
+  --radius: 6px;
 }
 
 /* general styling */
@@ -76,7 +78,7 @@ body::-webkit-scrollbar-thumb {
 
 /* custom text selection color */
 ::selection {
-  background: var(--elevated);
+  background: var(--selection);
 }
 
 h1 {
@@ -174,7 +176,8 @@ a {
     --elevated: #2f2f2f;
     --text: #e2e2e2;
     --text2: #b2b2b2;
-    --link: #4493f8
+    --link: #4493f8;
+    --selection: #3d3d3d;
   }
 }
 
