@@ -5,6 +5,7 @@
   font-family: "Inter", sans-serif;
   box-sizing: border-box;
   border-color: var(--border);
+  scrollbar-gutter: stable;
 }
 
 html {
@@ -45,6 +46,9 @@ html {
   --squish: cubic-bezier(0.5, -0.1, 0.1, 1.5);
   /* others */
   --radius: 6px;
+
+  --transition: transition: all .3 ease-in-out;
+  
 }
 
 /* general styling */
@@ -55,7 +59,7 @@ body {
 }
 
 body {
-  padding: 4rem;
+  padding: 2rem 4rem;
   max-width: calc(620px + 8rem);
   margin: 0 auto;
 }

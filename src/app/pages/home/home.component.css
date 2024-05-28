@@ -2,3 +2,8 @@
     color: var(--text);
     font-weight: var(--medium);
 }
+
+:host {
+    display: block;
+    margin-top: var(--l-spacing);
+}
