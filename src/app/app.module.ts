@@ -9,6 +9,9 @@ import { IconComponent } from './components/atoms/icon/icon.component';
 import { LinksComponent } from './components/molecules/links/links.component';
 import { ProjectComponent } from './components/molecules/project-card/project-card.component';
 
+import { HomeComponent } from './pages/home/home.component';
+import { RecordsComponent } from './pages/records/records.component';
+
 //import modules
 import { IconModule } from './components/atoms/icon/icon.module';
 import { FooterComponent } from './components/molecules/footer/footer.component';
@@ -24,7 +27,9 @@ import { BookCardComponent } from './components/molecules/book-card/book-card.co
     LinksComponent,
     FooterComponent,
     HeaderComponent,
-    BookCardComponent
+    BookCardComponent,
+    HomeComponent,
+    RecordsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,13 +1,1 @@
-<p class="name">Jordi Hoven</p>
-<Links></Links>
-<Header></Header>
-<main>
-  <section id="projects" class="grid">
-    <ng-container *ngFor="let card of sortedCards">
-      <ng-container *ngIf="isProject(card)">
-        <project-card [project]="card"></project-card>
-      </ng-container>
-    </ng-container>
-  </section>
-</main>
-<Footer></Footer>
+<router-outlet></router-outlet>
