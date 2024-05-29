@@ -1,1 +1,13 @@
-<p>records works!</p>
+<section class="records-intro">
+    <p>Records</p>
+    <span>All records i own, and have listened to. Maybe with ratings, maybe with links. Not sure yet. For now. just enjoy :)</span>
+</section>
+
+<section class="records-grid">
+    <div *ngFor="let record of records" class="record">
+        <p>{{ record.artist }}</p>
+        <span>{{ record.albumName }}</span>
+        <img [src]="record.coverArt" alt="{{ record.albumName }}" class="cover-art" />
+        <a *ngIf="record.musicUrl" [href]="record.musicUrl" target="_blank" class="music-button">Listen Now</a>
+    </div>
+</section>

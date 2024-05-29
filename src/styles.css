@@ -85,6 +85,13 @@ body::-webkit-scrollbar-thumb {
   background: var(--selection);
 }
 
+h1, h2, h3, p {
+  color: var(--text);
+}
+span, a {
+  color: var(--text2);
+}
+
 h1 {
   font-size: var(--heading);
   font-weight: var(--semibold);
@@ -116,10 +123,7 @@ a {
   color: inherit;
 }
 
-h2,
-h3,
-p,
-a {
+h1, h2, h3, p, a {
   font-synthesis: none;
 }
 

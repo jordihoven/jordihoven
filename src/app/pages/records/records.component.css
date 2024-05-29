@@ -2,3 +2,31 @@
     display: block;
     margin-top: var(--l-spacing);
 }
+section.records-intro {
+    margin-bottom: var(--s-spacing);
+}
+section.records-intro p {
+    margin-bottom: var(--xs-spacing);
+}
+section.records-grid {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: var(--xs-spacing);
+}
+
+.record {
+    display: flex;
+    flex-direction: column;
+    gap: var(--xs-spacing);
+    padding: var(--xs-spacing);
+    background-color: var(--elevated);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+}
+.record:hover {
+    cursor: pointer;
+}
+
+.record img {
+    border-radius: var(--radius);
+}
