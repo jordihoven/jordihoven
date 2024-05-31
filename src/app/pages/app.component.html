@@ -1,8 +1,10 @@
-<div>
-    
-</div>
 <nav>
-    <a routerLink="/">Home</a>
-    <a routerLink="/records">Records</a>
+    <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+      <Icon feather-icon="home"></Icon>
+    </a>
+    <a routerLink="/records" routerLinkActive="active-link">
+      <Icon feather-icon="music"></Icon>
+    </a>
 </nav>
 <router-outlet></router-outlet>
+<Footer></Footer>

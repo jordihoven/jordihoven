@@ -10,7 +10,8 @@ section.records-intro p {
 }
 section.records-grid {
     display: grid; 
-    grid-template-columns: 1fr 1fr 1fr; 
+    /* grid-template-columns: 1fr 1fr 1fr;  */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--xs-spacing);
 }
 
@@ -22,11 +23,22 @@ section.records-grid {
     background-color: var(--elevated);
     border-radius: var(--radius);
     border: 1px solid var(--border);
+    transition: all .3s ease-in-out;
 }
 .record:hover {
     cursor: pointer;
+    filter: brightness(95%);
+    transform: translateY(-2px);
 }
 
 .record img {
     border-radius: var(--radius);
 }
+
+/* responsiveness */
+@media only screen and (max-width: 600px) {
+    section.records-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  

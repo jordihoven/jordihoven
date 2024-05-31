@@ -6,6 +6,8 @@
   box-sizing: border-box;
   border-color: var(--border);
   scrollbar-gutter: stable;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -59,7 +61,7 @@ body {
 }
 
 body {
-  padding: 2rem 4rem;
+  padding: 4rem 2rem 6rem 2rem;
   max-width: calc(620px + 8rem);
   margin: 0 auto;
 }
@@ -192,7 +194,7 @@ h1, h2, h3, p, a {
 /* responsiveness */
 @media only screen and (max-width: 600px) {
   body {
-    padding: 2rem 16px;
+    padding: 2rem 16px 6rem 16px;
   }
   header {
     max-width: 100%;
