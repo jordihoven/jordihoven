@@ -9,8 +9,16 @@ import { RecordInterface } from 'src/app/models/record-interface';
 })
 export class RecordsComponent implements OnInit {
   records: RecordInterface[] = [];
+  imageLoaded: boolean[] = [];
+
   constructor(private recordService: RecordsService) {}
+
   ngOnInit(): void {
     this.records = this.recordService.getRecords();
+    this.imageLoaded = new Array(this.records.length).fill(false);
+  }
+
+  setImageLoaded(index: number): void {
+    this.imageLoaded[index] = true;
   }
 }

@@ -10,7 +10,6 @@ section.records-intro p {
 }
 section.records-grid {
     display: grid; 
-    /* grid-template-columns: 1fr 1fr 1fr;  */
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--xs-spacing);
 }
@@ -31,8 +30,34 @@ section.records-grid {
     transform: translateY(-2px);
 }
 
+.record span, .record p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .record img {
     border-radius: var(--radius);
+}
+
+.img-placeholder {
+    width: 100%;
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+
+.loader {
+    animation: rotate 1.5s linear infinite;
 }
 
 /* responsiveness */
