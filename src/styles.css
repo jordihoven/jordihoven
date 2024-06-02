@@ -176,6 +176,11 @@ h1, h2, h3, p, a {
   border-radius: var(--radius);
 }
 
+.page-header {
+  color: var(--text);
+  font-weight: var(--medium);
+}
+
 /* darkmode */
 @media (prefers-color-scheme: dark) {
   /* replace color variables with dark variants */

@@ -3,7 +3,7 @@
     margin-top: var(--l-spacing);
 }
 section.records-intro {
-    margin-bottom: var(--s-spacing);
+    margin-bottom: var(--m-spacing);
 }
 section.records-intro p {
     margin-bottom: var(--xs-spacing);
@@ -38,6 +38,7 @@ section.records-grid {
 
 .record img {
     border-radius: var(--radius);
+    aspect-ratio: 1 / 1;
 }
 
 .img-placeholder {
