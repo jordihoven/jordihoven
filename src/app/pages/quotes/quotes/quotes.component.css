@@ -1,0 +1,14 @@
+section.quotes-intro {
+    margin-bottom: var(--m-spacing);
+}
+section.quotes-intro p {
+    margin-bottom: var(--xs-spacing);
+}
+
+.md {
+
+}
+
+.md p {
+    margin-bottom: var(--xs-spacing) !important;
+}

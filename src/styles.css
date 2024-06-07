@@ -181,6 +181,14 @@ h1, h2, h3, p, a {
   font-weight: var(--medium);
 }
 
+.md p {
+  margin-bottom: var(--s-spacing);
+  line-height: 28px;
+  border-radius: 6px;
+  padding: 4px 8px;
+  background: var(--background2);
+}
+
 /* darkmode */
 @media (prefers-color-scheme: dark) {
   /* replace color variables with dark variants */

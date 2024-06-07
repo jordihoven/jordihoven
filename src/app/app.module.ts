@@ -13,6 +13,7 @@ import { ProjectComponent } from './components/molecules/project-card/project-ca
 // import pages
 import { HomeComponent } from './pages/home/home.component';
 import { RecordsComponent } from './pages/records/records.component';
+import { QuotesComponent } from './pages/quotes/quotes/quotes.component';
 
 //import modules
 import { IconModule } from './components/atoms/icon/icon.module';
@@ -35,6 +36,7 @@ import { RecordsService } from './models/records.service';
     BookCardComponent,
     HomeComponent,
     RecordsComponent,
+    QuotesComponent,
   ],
   imports: [
     BrowserModule,
