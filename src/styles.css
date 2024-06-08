@@ -5,9 +5,10 @@
   font-family: "Inter", sans-serif;
   box-sizing: border-box;
   border-color: var(--border);
-  scrollbar-gutter: stable;
   margin: 0;
   padding: 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
 }
 
 html {
@@ -17,8 +18,8 @@ html {
 /* variables */
 :root {
   /* colors */
-  --black: #000000;
-  --white: #ffffff;
+  --black: #000;
+  --white: #fff;
   --background: #fafafa;
   --background2: #fff;
   --border: #e4e4e4;
@@ -26,7 +27,7 @@ html {
   --text: #1a1a1a;
   --text2: #6e6e6e;
   --link: #0969da;
-  --selection: #eeeeee;
+  --selection: #eee;
   /* typography */
   --heading: 2rem;
   --subheading: 1.25rem;
@@ -48,6 +49,7 @@ html {
   --squish: cubic-bezier(0.5, -0.1, 0.1, 1.5);
   /* others */
   --radius: 6px;
+  --rounded: 50px;
 
   --transition: transition: all .3 ease-in-out;
   
@@ -64,22 +66,6 @@ body {
   padding: 4rem 2rem 6rem 2rem;
   max-width: calc(620px + 8rem);
   margin: 0 auto;
-}
-
-/* scrollbar styling */
-body::-webkit-scrollbar {
-  width: var(--s-spacing);
-}
-
-body::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: var(--border);
-  border-radius: var(--radius);
-  border: 5px solid transparent;
-  background-clip: padding-box;
 }
 
 /* custom text selection color */

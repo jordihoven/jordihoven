@@ -2,9 +2,9 @@ nav {
     position: fixed;
     display: flex;
     gap: 4px;
-    padding: 4px;
+    padding: var(--xs-spacing);
     background-color: var(--background);
-    border-radius: var(--radius);
+    border-radius: var(--rounded);
     border: 1px solid var(--border);
     color: var(--text2);
     bottom: var(--s-spacing);
@@ -15,10 +15,9 @@ nav {
 
 nav a {
     display: flex;
-    padding: 6px 8px;
-    border-radius: var(--radius);
+    padding: var(--xs-spacing);
+    border-radius: var(--rounded);
     transition: all 0.3s ease-in-out;
-
 }
 nav a:hover {
     background-color: var(--elevated);
