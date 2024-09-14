@@ -3,7 +3,7 @@ import { Project, Book } from './card-interface';
 export const projects: Project[] = [
   {
     order: 1,
-    title: 'Project • Daily reflections',
+    title: 'Daily reflections',
     icon: 'github',
     description: 'Een digitaal dagboek, gebouwd met Angular en Firebase.',
     imgUrl: '../../assets/dailyreflections.gif',
@@ -11,15 +11,15 @@ export const projects: Project[] = [
   },
   {
     order: 2,
-    title: 'Project • Cinemagnet',
+    title: 'Cinemagnet',
     icon: 'film',
     description: 'Film zoekmachine, gebouwd met Vue3 en Netlify functions.',
     imgUrl: '../../assets/cinemagnet.png',
-    url: 'https://cinemagnet.netlify.com',
+    url: 'https://cinemagnet.netlify.app',
   },
   {
     order: 3,
-    title: 'Project • PokeAPI',
+    title: 'PokeAPI',
     icon: 'play',
     description: 'De Angular Tour of Heroes, maar dan met Pokemons.',
     imgUrl: '../../assets/pokeapi.png',
@@ -27,7 +27,7 @@ export const projects: Project[] = [
   },
   {
     order: 4,
-    title: 'Project • Drinkz',
+    title: 'Drinkz',
     icon: 'coffee',
     description: 'Een digitale slijterij. Shopify eCommerce.',
     imgUrl: '../../assets/drinkz-demo.gif',
@@ -35,7 +35,7 @@ export const projects: Project[] = [
   },
   {
     order: 5,
-    title: 'Project • Shopify Storefront',
+    title: 'Shopify Storefront',
     icon: 'shopping-bag',
     description: 'Een Headless Shopify door Storefront API.',
     imgUrl: '../../assets/storefront-demo.gif',
@@ -47,7 +47,7 @@ export const projects: Project[] = [
 export const books: Book[] = [
   {
     order: 6,
-    title: 'Boek • Meditations',
+    title: 'Meditations',
     icon: 'book',
     author: 'Een inzicht in het persoonlijke dagboek van de machtigste man op de planeet.',
     coverImgUrl: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1421618636i/30659.jpg',
@@ -55,7 +55,7 @@ export const books: Book[] = [
   },
   {
     order: 7,
-    title: 'Boek • Daily Stoic',
+    title: 'Daily Stoic',
     icon: 'book',
     author: 'Ieders dagelijkse hoeveelheid stoicisme, verpakt in een boek met 365 wijze lessen.',
     coverImgUrl: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1462161080i/29093292.jpg',
