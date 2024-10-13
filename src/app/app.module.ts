@@ -19,7 +19,6 @@ import { QuotesComponent } from './pages/quotes/quotes/quotes.component';
 import { IconModule } from './components/atoms/icon/icon.module';
 import { FooterComponent } from './components/molecules/footer/footer.component';
 import { HeaderComponent } from './components/molecules/header/header.component';
-import { BookCardComponent } from './components/molecules/book-card/book-card.component';
 
 // import services
 import { RecordsService } from './models/records.service';
@@ -33,7 +32,6 @@ import { RecordsService } from './models/records.service';
     LinksComponent,
     FooterComponent,
     HeaderComponent,
-    BookCardComponent,
     HomeComponent,
     RecordsComponent,
     QuotesComponent,

@@ -3,10 +3,8 @@
 <Header></Header>
 <main>
   <section id="projects" class="grid">
-    <ng-container *ngFor="let card of sortedCards">
-      <ng-container *ngIf="isProject(card)">
-        <project-card [project]="card"></project-card>
-      </ng-container>
+    <ng-container *ngFor="let project of projects">
+      <project-card [project]="project"></project-card>
     </ng-container>
   </section>
 </main>
