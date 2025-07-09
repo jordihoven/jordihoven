@@ -1,14 +1,18 @@
 :host {
-    color: var(--text2);
-    margin-top: var(--xl-spacing);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: var(--s-spacing)
+  color: var(--text2);
+  margin-top: var(--xl-spacing);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: var(--s-spacing);
 }
 
 #charizard {
-    width: 40px;
-    height: auto;
+  width: 40px;
+  height: auto;
+}
+
+.greyish {
+  color: var(--text2);
 }
