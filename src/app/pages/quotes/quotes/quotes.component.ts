@@ -3,9 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { marked } from 'marked';
 
 @Component({
-  selector: 'Quotes',
-  templateUrl: './quotes.component.html',
-  styleUrl: './quotes.component.css'
+    selector: 'Quotes',
+    templateUrl: './quotes.component.html',
+    styleUrl: './quotes.component.css',
+    standalone: false
 })
 export class QuotesComponent implements OnInit {
 

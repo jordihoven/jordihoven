@@ -1,9 +1,10 @@
 import { Component, Input, Renderer2, ElementRef } from '@angular/core';
 
 @Component({
-  selector: 'Icon',
-  templateUrl: './icon.component.html',
-  styleUrls: ['./icon.component.css']
+    selector: 'Icon',
+    templateUrl: './icon.component.html',
+    styleUrls: ['./icon.component.css'],
+    standalone: false
 })
 
 export class IconComponent {

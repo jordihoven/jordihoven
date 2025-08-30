@@ -1,9 +1,10 @@
 import { Component, ElementRef, Input, Renderer2 } from '@angular/core';
 
 @Component({
-  selector: `Button`,
-  templateUrl: './button.component.html',
-  styleUrls: ['./button.component.css']
+    selector: `Button`,
+    templateUrl: './button.component.html',
+    styleUrls: ['./button.component.css'],
+    standalone: false
 })
 export class ButtonComponent {
   @Input('type') type!: 'primary' | 'secondary';
