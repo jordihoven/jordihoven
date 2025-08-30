@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 //import components
 import { AppRoutingModule } from './app-routing.module';
@@ -23,26 +23,19 @@ import { HeaderComponent } from './components/molecules/header/header.component'
 // import services
 import { RecordsService } from './models/records.service';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    ButtonComponent,
-    IconComponent,
-    ProjectComponent,
-    LinksComponent,
-    FooterComponent,
-    HeaderComponent,
-    HomeComponent,
-    RecordsComponent,
-    QuotesComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    IconModule,
-    HttpClientModule,
-  ],
-  providers: [RecordsService],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        ButtonComponent,
+        IconComponent,
+        ProjectComponent,
+        LinksComponent,
+        FooterComponent,
+        HeaderComponent,
+        HomeComponent,
+        RecordsComponent,
+        QuotesComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        IconModule], providers: [RecordsService, provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
