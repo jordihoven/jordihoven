@@ -4,9 +4,9 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-thoughts',
+  standalone: false,
   templateUrl: './thoughts.component.html',
   styleUrl: './thoughts.component.css',
-  standalone: false
 })
 export class ThoughtsComponent implements OnInit {
   private http = inject(HttpClient);
@@ -23,6 +23,10 @@ export class ThoughtsComponent implements OnInit {
 
   openThought(slug: string) {
     this.router.navigate(['/thought', slug]);
+  }
+
+  prettify(slug: string) {
+    return slug .split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
   }
 
 }

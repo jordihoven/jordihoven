@@ -1,28 +1,48 @@
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 4rem 2rem 6rem 2rem;
+  max-width: calc(620px + 8rem);
+  margin: 0 auto;
+}
+
+#page {
+  flex: 1;
+}
+
 nav {
-    position: fixed;
-    display: flex;
-    gap: 4px;
-    padding: var(--xs-spacing);
-    background-color: var(--background);
-    border-radius: var(--rounded);
-    border: 1px solid var(--border);
-    color: var(--text2);
-    bottom: var(--s-spacing);
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 69;
+  position: fixed;
+  display: flex;
+  gap: 4px;
+  padding: var(--xs-spacing);
+  background-color: var(--background);
+  border-radius: var(--rounded);
+  border: 1px solid var(--border);
+  color: var(--text2);
+  bottom: var(--s-spacing);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 69;
 }
 
 nav a {
-    display: flex;
-    padding: var(--xs-spacing);
-    border-radius: var(--rounded);
-    transition: all 0.3s ease-in-out;
+  display: flex;
+  padding: var(--xs-spacing);
+  border-radius: var(--rounded);
+  transition: all 0.3s ease-in-out;
 }
 nav a:hover {
-    background-color: var(--elevated);
+  background-color: var(--elevated);
 }
 
 .active-link {
-    background-color: var(--elevated);
+  background-color: var(--elevated);
+}
+
+/* mobile */
+@media only screen and (max-width: 600px) {
+  #app {
+    padding: 2rem 16px 6rem 16px;
+  }
 }

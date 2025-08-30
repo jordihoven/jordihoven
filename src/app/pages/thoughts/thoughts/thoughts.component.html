@@ -1,8 +1,10 @@
- <main style="padding:2rem">
-      <h1>Thoughts</h1>
-      <ul>
-        <li *ngFor="let thought of thoughts" (click)="openThought(thought)">
-          {{ thought }}
-        </li>
-      </ul>
-    </main>
+<section class="thoughts-intro">
+  <p class="page-header">Thoughts</p>
+  <span>Een aantal (on)gestructureerde gedachtes vanuit mijn Obsidian vault, die ik hier wil delen 🌱</span>
+</section>
+
+<section>
+  <div class="thoughts-list">
+    <div class="thought" *ngFor="let thought of thoughts" (click)="openThought(thought)">{{ prettify(thought) }}</div>
+  </div>
+</section>

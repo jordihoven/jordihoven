@@ -6,12 +6,9 @@ import { marked } from 'marked';
 
 @Component({
   selector: 'app-thought',
-  standalone: false, 
-  template: `
-    <main style="padding:2rem">
-      <article [innerHTML]="content"></article>
-    </main>
-  `,
+  standalone: false,
+  templateUrl: './thought.component.html',
+  styleUrl: './thought.component.css',
 })
 export class ThoughtComponent {
   private route = inject(ActivatedRoute);
@@ -20,23 +17,21 @@ export class ThoughtComponent {
 
   content: SafeHtml = '';
 
-ngOnInit() {
-  const slug = this.route.snapshot.paramMap.get('slug');
-  if (!slug) return;
+  ngOnInit() {
+    const slug = this.route.snapshot.paramMap.get('slug');
+    if (!slug) return;
 
-  const path = `/assets/thoughts/${slug}.md`;
+    const path = `/assets/thoughts/${slug}.md`;
 
-  this.http.get(path, { responseType: 'text' }).subscribe({
-    next: (md) => {
-      const html = marked.parse(md) as string;
-      this.content = this.sanitizer.bypassSecurityTrustHtml(html);
-    },
-    error: (err) => {
-      console.error(err);
-      this.content = this.sanitizer.bypassSecurityTrustHtml(
-        '<p>Could not load this thought.</p>'
-      );
-    }
-  });
-}
+    this.http.get(path, { responseType: 'text' }).subscribe({
+      next: (md) => {
+        const html = marked.parse(md) as string;
+        this.content = this.sanitizer.bypassSecurityTrustHtml(html);
+      },
+      error: (err) => {
+        console.error(err);
+        this.content = this.sanitizer.bypassSecurityTrustHtml('<p>Could not load this thought.</p>');
+      },
+    });
+  }
 }

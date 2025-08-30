@@ -63,9 +63,9 @@ body {
 }
 
 body {
-  padding: 4rem 2rem 6rem 2rem;
+  /* padding: 4rem 2rem 6rem 2rem;
   max-width: calc(620px + 8rem);
-  margin: 0 auto;
+  margin: 0 auto; */
 }
 
 /* custom text selection color */
@@ -190,11 +190,31 @@ h1, h2, h3, p, a {
   }
 }
 
+/* markdown styles */
+
+article p {
+  color: var(--text2);
+  margin-bottom: var(--s-spacing)
+}
+
+article ul {
+  list-style-position: inside;
+  color: var(--text2);
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  gap: var(--xs-spacing);
+}
+
+article h1, article h2, article h3 {
+  font-size: 18px;
+  margin-bottom: var(--m-spacing);
+}
+
 /* responsiveness */
 @media only screen and (max-width: 600px) {
-  body {
-    padding: 2rem 16px 6rem 16px;
-  }
   header {
     max-width: 100%;
   }

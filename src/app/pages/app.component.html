@@ -1,16 +1,20 @@
-<nav>
+<div id="app">
+  <nav>
     <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
       <Icon feather-icon="home"></Icon>
-    </a>
-    <a routerLink="/records" routerLinkActive="active-link">
-      <Icon feather-icon="music"></Icon>
     </a>
     <a routerLink="/thoughts" routerLinkActive="active-link">
       <Icon feather-icon="book"></Icon>
     </a>
-    <a routerLink="/quotes" routerLinkActive="active-link">
-      <Icon feather-icon="feather"></Icon>
+    <a routerLink="/records" routerLinkActive="active-link">
+      <Icon feather-icon="music"></Icon>
     </a>
-</nav>
-<router-outlet></router-outlet>
-<Footer></Footer>
+    <!-- <a routerLink="/quotes" routerLinkActive="active-link">
+      <Icon feather-icon="feather"></Icon>
+    </a> -->
+  </nav>
+  <div id="page">
+    <router-outlet></router-outlet>
+  </div>
+  <Footer></Footer>
+</div>
