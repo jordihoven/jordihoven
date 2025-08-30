@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { withInterceptorsFromDi, HttpClientModule } from '@angular/common/http';
 
 //import components
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +15,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { RecordsComponent } from './pages/records/records.component';
 import { QuotesComponent } from './pages/quotes/quotes/quotes.component';
 
+import { ThoughtsComponent } from './pages/thoughts/thoughts/thoughts.component';
+
 //import modules
 import { IconModule } from './components/atoms/icon/icon.module';
 import { FooterComponent } from './components/molecules/footer/footer.component';
@@ -23,7 +25,7 @@ import { HeaderComponent } from './components/molecules/header/header.component'
 // import services
 import { RecordsService } from './models/records.service';
 
-@NgModule({ declarations: [
+@NgModule({  declarations: [
         AppComponent,
         ButtonComponent,
         IconComponent,
@@ -34,8 +36,9 @@ import { RecordsService } from './models/records.service';
         HomeComponent,
         RecordsComponent,
         QuotesComponent,
+        ThoughtsComponent,
     ],
-    bootstrap: [AppComponent], imports: [BrowserModule,
+    bootstrap: [AppComponent], imports: [ HttpClientModule, BrowserModule,
         AppRoutingModule,
-        IconModule], providers: [RecordsService, provideHttpClient(withInterceptorsFromDi())] })
+        IconModule], providers: [RecordsService] })
 export class AppModule { }

@@ -1,0 +1,8 @@
+ <main style="padding:2rem">
+      <h1>Thoughts</h1>
+      <ul>
+        <li *ngFor="let thought of thoughts" (click)="openThought(thought)">
+          {{ thought }}
+        </li>
+      </ul>
+    </main>
