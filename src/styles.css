@@ -15,6 +15,14 @@ html {
   background-color: var(--background);
 }
 
+/* global styles... */
+.intro {
+    margin-bottom: var(--m-spacing);
+}
+.intro p {
+    margin-bottom: var(--xs-spacing);
+}
+
 /* variables */
 :root {
   /* colors */

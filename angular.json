@@ -13,9 +13,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "outputPath": {
-              "base": "dist/jordihoven"
-            },
+            "outputPath": "dist/jordihoven",
             "index": "src/index.html",
             "polyfills": [
               "zone.js"

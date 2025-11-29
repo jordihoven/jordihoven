@@ -1,0 +1,16 @@
+<section class="intro">
+  <p class="page-header">Movies</p>
+  <span>A work in progress of showing my recent Letterboxd activities...</span>
+</section>
+
+<section class="film-grid">
+  @for (film of films; track film.title) {
+
+  <div class="film-item">
+    <p>{{ film.title }}</p>
+    <span>{{ film.rating }} / 5</span>
+    <img [src]="film.poster" alt="{{ film.title }}" class="cover-art" />
+  </div>
+
+  }
+</section>

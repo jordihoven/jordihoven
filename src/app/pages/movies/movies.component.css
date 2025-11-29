@@ -1,10 +1,10 @@
-section.records-grid {
+section.film-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--xs-spacing);
 }
 
-.record {
+.film-item {
   display: flex;
   flex-direction: column;
   gap: var(--xs-spacing);
@@ -14,47 +14,20 @@ section.records-grid {
   border: 1px solid var(--border);
   transition: all 0.3s ease-in-out;
 }
-.record:hover {
+
+.film-item:hover {
   cursor: pointer;
   filter: brightness(95%);
   transform: translateY(-2px);
 }
 
-.record span,
-.record p {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.record img {
+.film-item img {
   border-radius: var(--radius);
-  aspect-ratio: 1 / 1;
-}
-
-.img-placeholder {
-  width: 100%;
-  color: var(--text);
-  display: flex;
-  justify-content: center;
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.loader {
-  animation: rotate 1.5s linear infinite;
 }
 
 /* responsiveness */
 @media only screen and (max-width: 600px) {
-  section.records-grid {
+  section.film-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
