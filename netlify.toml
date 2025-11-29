@@ -4,6 +4,6 @@
   status = 200
 
 [build]
-  publish = "dist/jordihoven"
-  command = "ng build --prod"
+  publish = "dist/jordihoven/browser"
+  command = "ng build --configuration production" 
   functions = "./netlify/functions"
