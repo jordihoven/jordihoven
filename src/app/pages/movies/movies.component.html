@@ -7,9 +7,11 @@
   @for (film of films; track film.title) {
 
   <div class="film-item">
-    <p>{{ film.title }}</p>
-    <span>{{ film.rating }} / 5</span>
-    <img [src]="film.poster" alt="{{ film.title }}" class="cover-art" />
+    <!-- <p>{{ film.title }}</p> -->
+    <!-- <img [src]="film.poster" alt="{{ film.title }}" class="cover-art" /> -->
+    <app-blueray [poster]="film.poster"></app-blueray>
+    <app-rating [rating]="film.rating"></app-rating>
+    <!-- {{ film.diaryReview }} -->
   </div>
 
   }

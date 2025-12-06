@@ -1,3 +1,5 @@
+// letterboxd rss data, based on https://github.com/marcbouchenoire/marcbouchenoire.com/blob/main/src/app/data/get-latest-films.ts
+
 const { XMLParser } = require("fast-xml-parser");
 
 const LETTERBOXD_USERNAME = "stoicbean";
@@ -7,7 +9,7 @@ const LETTERBOXD_FILM_URL = (slug) => `${LETTERBOXD_URL}/film/${slug}/`;
 
 exports.handler = async (event, context) => {
   try {
-    const limit = parseInt(event.queryStringParameter?.limit) || 4;
+    const limit = parseInt(event.queryStringParameters.limit) || 4;
     // Fetch RSS feed server-side
     const xml = await fetch(LETTERBOXD_FEED).then((res) => res.text());
 
@@ -24,6 +26,11 @@ exports.handler = async (event, context) => {
         const [poster] = entry.description.match(/(http(s?):)([\s\w./|-])*\.jpg/) ?? [];
         const [, slug] = entry.link.match(/film\/([^/]*)\/?/) ?? [];
 
+        // get diary reviews...
+        const paragraphs = entry.description.match(/<p>.*?<\/p>/gs) || [];
+        const reviewHtml = paragraphs.slice(1).join("\n").trim();
+        const diaryReview = reviewHtml.replace(/<[^>]+>/g, "").trim();
+
         return {
           title: entry["letterboxd:filmTitle"],
           year: entry["letterboxd:filmYear"],
@@ -32,6 +39,7 @@ exports.handler = async (event, context) => {
           rewatch: entry["letterboxd:rewatch"] === "Yes",
           poster,
           url: LETTERBOXD_FILM_URL(slug),
+          diaryReview,
         };
       });
 

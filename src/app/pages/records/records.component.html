@@ -8,7 +8,7 @@
     <p>{{ record.artist }}</p>
     <span>{{ record.albumName }}</span>
     <img [hidden]="!imageLoaded[i]" [src]="record.coverArt" alt="{{ record.albumName }}" class="cover-art" (load)="setImageLoaded(i)" />
-    <Icon *ngIf="!imageLoaded[i]" class="img-placeholder loader" feather-icon="loader"></Icon>
+    <lucide-icon *ngIf="!imageLoaded[i]" name="loader" size="16" class="img-placeholder loader"></lucide-icon>
     <a *ngIf="record.musicUrl" [href]="record.musicUrl" target="_blank" class="music-button">Listen Now</a>
   </div>
 </section>

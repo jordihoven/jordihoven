@@ -1,17 +1,15 @@
 section.film-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--xs-spacing);
+  gap: var(--s-spacing);
 }
 
 .film-item {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: var(--xs-spacing);
-  padding: var(--xs-spacing);
-  background-color: var(--elevated);
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
   transition: all 0.3s ease-in-out;
 }
 
@@ -21,12 +19,8 @@ section.film-grid {
   transform: translateY(-2px);
 }
 
-.film-item img {
-  border-radius: var(--radius);
-}
-
 /* responsiveness */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 660px) {
   section.film-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }

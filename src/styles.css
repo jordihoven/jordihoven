@@ -70,12 +70,6 @@ body {
   padding: 0;
 }
 
-body {
-  /* padding: 4rem 2rem 6rem 2rem;
-  max-width: calc(620px + 8rem);
-  margin: 0 auto; */
-}
-
 /* custom text selection color */
 ::selection {
   background: var(--selection);
@@ -173,14 +167,29 @@ h1, h2, h3, p, a {
 .page-header {
   color: var(--text);
   font-weight: var(--medium);
+  font-size: 20px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.page-header span {
+  font-size: 18px;
 }
 
 .md p {
   margin-bottom: var(--s-spacing);
   line-height: 28px;
   border-radius: 6px;
-  padding: 4px 8px;
+  padding: 4px var(--xs-spacing);
   background: var(--background2);
+}
+
+/* lucide icon styling */
+.lucide-icon{
+  width: 16px;
+  height: 16px;
+  color: var(--text2)
 }
 
 /* darkmode */

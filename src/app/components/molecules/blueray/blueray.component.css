@@ -1,0 +1,147 @@
+img {
+  width: 100%;
+  border-radius: var(--radius);
+}
+
+/* bluray case from https://codepen.io/tbleckert */
+
+body {
+  background: #f6f5ee repeat;
+}
+
+article {
+  margin: 0 10px;
+}
+
+/* Default case template (Bluray) */
+.case {
+  display: inline-block;
+  aspect-ratio: 142/179;
+  border-radius: 5px;
+  position: relative;
+  z-index: 1;
+}
+
+.case:after {
+  width: 100%;
+  height: 10px;
+  border-radius: 20px;
+  content: "";
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  bottom: -5px;
+  -webkit-transform: perspective(600) rotateX(100deg);
+  -moz-transform: perspective(600) rotateX(100deg);
+  -ms-transform: perspective(600) rotateX(100deg);
+  -o-transform: perspective(600) rotateX(100deg);
+  transform: perspective(600) rotateX(100deg);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  left: 0;
+}
+
+.case > div {
+  width: 100%;
+  height: 100%;
+  background: #46b0e9;
+  background: rgba(70, 176, 233, 0.8);
+  border-radius: 8px 8px 5px 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 14px 3px 3px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.case > div:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 35px;
+  width: 100%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 10;
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  -o-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+.case > div > .img {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 1px 1px 1px 0;
+  border-radius: 0 4px 4px 0;
+  background: rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.case > div > .img:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 1px;
+  width: 2px;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  z-index: 3;
+}
+
+.case > div > .img:after {
+  content: "";
+  position: absolute;
+  top: -13px;
+  left: 1px;
+  right: -2px;
+  height: 15px;
+  border-top: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+}
+
+.case > div > .img > span {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 1px 1px 1px 0;
+  border-radius: 0 4px 4px 0;
+  background: rgba(255, 255, 255, 0.2);
+  display: block;
+  position: relative;
+}
+
+.case > div > .img > span:before {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 0;
+  height: 100%;
+  content: "";
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.case > div > .img > span:after {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 0;
+  height: 100%;
+  content: "";
+  box-shadow: 0 0 5px 3px rgba(255, 255, 255, 0.3);
+  z-index: 1;
+}
+
+.case > div > .img > span > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 0 3px 3px 0;
+}

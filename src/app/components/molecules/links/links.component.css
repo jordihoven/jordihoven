@@ -13,7 +13,6 @@
 .link {
   background-color: var(--background2);
   color: var(--text);
-  border: 1px solid var(--border);
   display: flex;
   gap: 4px;
   align-items: center;
@@ -25,5 +24,5 @@
 
 .link:hover {
   cursor: pointer;
-  background-color: var(--elevated)
+  background-color: var(--elevated);
 }

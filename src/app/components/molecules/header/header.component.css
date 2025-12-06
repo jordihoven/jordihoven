@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--s-spacing);
-  margin-bottom: var(--l-spacing);
+  margin: var(--m-spacing) 0;
   line-height: 1.6;
 }
 
@@ -10,11 +10,19 @@
   font-weight: var(--medium);
 }
 
-.past, :host .highlighted, .name{
+p {
+  font-size: 18px;
+}
+
+.past,
+:host .highlighted,
+.name {
   color: var(--text);
 }
 
-.now, .past, .link {
+.now,
+.past,
+.link {
   color: var(--text2);
 }
 

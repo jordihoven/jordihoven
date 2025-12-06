@@ -6,7 +6,6 @@ import { withInterceptorsFromDi, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './pages/app.component';
 import { ButtonComponent } from './components/atoms/button/button.component';
-import { IconComponent } from './components/atoms/icon/icon.component';
 import { LinksComponent } from './components/molecules/links/links.component';
 import { ProjectComponent } from './components/molecules/project-card/project-card.component';
 
@@ -18,27 +17,30 @@ import { QuotesComponent } from './pages/quotes/quotes/quotes.component';
 import { ThoughtsComponent } from './pages/thoughts/thoughts/thoughts.component';
 
 //import modules
-import { IconModule } from './components/atoms/icon/icon.module';
 import { FooterComponent } from './components/molecules/footer/footer.component';
 import { HeaderComponent } from './components/molecules/header/header.component';
 
 // import services
 import { RecordsService } from './models/records.service';
 
-@NgModule({  declarations: [
-        AppComponent,
-        ButtonComponent,
-        IconComponent,
-        ProjectComponent,
-        LinksComponent,
-        FooterComponent,
-        HeaderComponent,
-        HomeComponent,
-        RecordsComponent,
-        QuotesComponent,
-        ThoughtsComponent,
-    ],
-    bootstrap: [AppComponent], imports: [ HttpClientModule, BrowserModule,
-        AppRoutingModule,
-        IconModule], providers: [RecordsService] })
-export class AppModule { }
+// lucide icons
+import { LucideAngularModule, Code, Mail, Image, FileUser, Home, Popcorn, Music, Book, Star, StarHalf, Loader } from 'lucide-angular';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    ButtonComponent,
+    ProjectComponent,
+    LinksComponent,
+    FooterComponent,
+    HeaderComponent,
+    HomeComponent,
+    RecordsComponent,
+    QuotesComponent,
+    ThoughtsComponent,
+  ],
+  bootstrap: [AppComponent],
+  imports: [HttpClientModule, BrowserModule, AppRoutingModule, LucideAngularModule.pick({ Code, Mail, Image, FileUser, Home, Popcorn, Music, Book, Star, StarHalf, Loader })],
+  providers: [RecordsService],
+})
+export class AppModule {}
