@@ -1,7 +1,15 @@
-<span class="stars">
-  @for (star of fullStars(); track star) {
-  <lucide-icon name="star" size="16" color="var(--text2)"></lucide-icon>
-  } @if (hasHalfStar()) {
-  <lucide-icon name="star-half" size="16" color="var(--text2)"></lucide-icon>
-  }
+<span class="star-rating">
+  <span class="stars">
+    @for(star of totalStars; track $index) {
+    <lucide-icon name="star" class="empty-star" size="16" color="var(--text2)"></lucide-icon>
+    }
+  </span>
+
+  <span class="stars rating">
+    @for (star of fullStars(); track $index) {
+    <lucide-icon name="star" class="star" size="16" color="var(--text2)"></lucide-icon>
+    } @if (hasHalfStar()) {
+    <lucide-icon name="star-half" class="star" size="16" color="var(--text2)"></lucide-icon>
+    }
+  </span>
 </span>

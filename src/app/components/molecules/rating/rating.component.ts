@@ -12,6 +12,8 @@ export class RatingComponent {
   // rating prop...
   @Input() rating: string | number = 0;
 
+  totalStars = Array.from({ length: 5 });
+
   // Array of full stars (for iteration)
   fullStars = computed(() => Array.from({ length: Math.floor(Number(this.rating)) }));
 

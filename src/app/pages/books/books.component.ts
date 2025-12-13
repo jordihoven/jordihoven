@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { RatingComponent } from 'src/app/components/molecules/rating/rating.component';
-
 import { GoodreadsBook } from 'src/app/models/data-models';
+
+import { openLink } from 'src/app/utils/openLink';
 
 @Component({
   selector: 'app-books',
@@ -15,9 +16,7 @@ export class BooksComponent {
   loading = true;
   error = false;
 
-  openLink(url: string) {
-    window.open(url, '_blank');
-  }
+  openBook = openLink;
 
   async ngOnInit() {
     try {

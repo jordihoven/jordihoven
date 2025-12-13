@@ -3,8 +3,8 @@
 <Links></Links>
 <main>
   <section id="projects" class="grid">
-    <ng-container *ngFor="let project of projects">
-      <project-card [project]="project"></project-card>
-    </ng-container>
+    @for(project of projects; track project.title) {
+    <project-card [project]="project"></project-card>
+    }
   </section>
 </main>

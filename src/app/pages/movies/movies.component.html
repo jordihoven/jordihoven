@@ -6,7 +6,7 @@
 <section class="film-grid">
   @for (film of films; track film.title) {
 
-  <div class="film-item">
+  <div class="film-item" (click)="openFilm(film.url)">
     <app-blueray [poster]="film.poster"></app-blueray>
     <app-rating [rating]="film.rating"></app-rating>
   </div>

@@ -10,7 +10,6 @@
 }
 
 .book-item:hover {
-  filter: brightness(96%);
   cursor: pointer;
   transform: translateY(-2px);
   box-shadow: var(--shadow);
@@ -41,7 +40,8 @@
   padding: 0 var(--s-spacing);
 }
 
-.book-details .review {
+.book-details .review,
+.book-details .title {
   display: -webkit-box;
   line-clamp: 3;
   -webkit-line-clamp: 3;

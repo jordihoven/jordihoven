@@ -8,3 +8,14 @@ export interface GoodreadsBook {
   link: string;
   review: string;
 }
+
+export interface LetterboxdMovie {
+  url: string;
+  title: string;
+  year: string;
+  rating: number;
+  date: string;
+  rewatch: boolean;
+  poster: string;
+  diaryReview: string;
+}

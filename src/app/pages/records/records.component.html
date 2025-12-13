@@ -3,13 +3,17 @@
   <span>A fragment of my vinyl collection. Still figuring out how to auto-update this page... Fow now, enjoy 🤟</span>
 </section>
 
-<!-- TODO: rewrite to @for syntax... -->
 <section class="records-grid">
-  <div *ngFor="let record of records; let i = index" class="record">
+  @for(record of records; track record.albumName; let i = $index) {
+  <div class="record">
     <p>{{ record.artist }}</p>
     <span>{{ record.albumName }}</span>
     <img [hidden]="!imageLoaded[i]" [src]="record.coverArt" alt="{{ record.albumName }}" class="cover-art" (load)="setImageLoaded(i)" />
-    <lucide-icon *ngIf="!imageLoaded[i]" name="loader" size="16" class="img-placeholder loader"></lucide-icon>
-    <a *ngIf="record.musicUrl" [href]="record.musicUrl" target="_blank" class="music-button">Listen Now</a>
+    @if(!imageLoaded[i]) {
+    <lucide-icon name="loader" size="16" class="img-placeholder loader"></lucide-icon>
+    } @if(record.musicUrl) {
+    <a [href]="record.musicUrl" target="_blank" class="music-button">Listen Now</a>
+    }
   </div>
+  }
 </section>

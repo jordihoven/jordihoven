@@ -5,15 +5,14 @@
 
 <section class="book-grid">
   @for (book of books; track book.title) {
-
-  <div class="book-item" (click)="openLink(book.link)">
+  <div class="book-item" (click)="openBook(book.link)">
     @if(book.cover) {
     <div class="cover-wrapper">
       <img [src]="book.cover" alt="" />
     </div>
     }
     <div class="book-details">
-      <span>{{ book.title }}</span>
+      <span class="title">{{ book.title }}</span>
       @if(book.review) {
       <p class="review">{{ book.review }}</p>
       } @if(book.rating) {
@@ -21,6 +20,5 @@
       }
     </div>
   </div>
-
   }
 </section>

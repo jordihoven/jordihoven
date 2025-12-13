@@ -72,6 +72,19 @@ body {
   scrollbar-gutter: stable;
 }
 
+/* stars */
+svg.star {
+  fill: yellow;
+}
+svg.empty-star {
+  fill: var(--border);
+}
+
+svg.star,
+svg.empty-star {
+  stroke: none;
+}
+
 /* custom text selection color */
 ::selection {
   background: var(--selection);
