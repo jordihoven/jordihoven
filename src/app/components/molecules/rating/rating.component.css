@@ -1,5 +1,6 @@
 .star-rating {
   position: relative;
+  display: inline-block;
 }
 
 .stars {
@@ -10,4 +11,8 @@
 .rating {
   position: absolute;
   top: 0;
+  left: 0;
+  display: flex;
+  gap: 4px;
+  pointer-events: none;
 }
