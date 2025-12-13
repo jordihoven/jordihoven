@@ -74,7 +74,7 @@ body {
 
 /* stars */
 svg.star {
-  fill: yellow;
+  fill: oklch(82.8% 0.189 84.429);
 }
 svg.empty-star {
   fill: var(--border);
