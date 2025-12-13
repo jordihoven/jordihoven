@@ -1,6 +1,9 @@
 <section class="intro">
   <p class="page-header">Records</p>
-  <span>A fragment of my vinyl collection. Still figuring out how to auto-update this page... Fow now, enjoy 🤟</span>
+  <span
+    >A fragment of my vinyl collection. Still figuring out how to auto-update this page... For now,
+    enjoy 🤟</span
+  >
 </section>
 
 <section class="records-grid">
@@ -8,7 +11,13 @@
   <div class="record">
     <p>{{ record.artist }}</p>
     <span>{{ record.albumName }}</span>
-    <img [hidden]="!imageLoaded[i]" [src]="record.coverArt" alt="{{ record.albumName }}" class="cover-art" (load)="setImageLoaded(i)" />
+    <img
+      [hidden]="!imageLoaded[i]"
+      [src]="record.coverArt"
+      alt="{{ record.albumName }}"
+      class="cover-art"
+      (load)="setImageLoaded(i)"
+    />
     @if(!imageLoaded[i]) {
     <app-loader></app-loader>
     } @if(record.musicUrl) {
