@@ -1,8 +1,9 @@
 <section class="intro">
   <p class="page-header">Records</p>
-  <span>Mijn vinyl collectie. In de toekomst wellicht met ratings en links naar streamingsdiensten. Voor nu, enjoy 🤟</span>
+  <span>A fragment of my vinyl collection. Still figuring out how to auto-update this page... Fow now, enjoy 🤟</span>
 </section>
 
+<!-- TODO: rewrite to @for syntax... -->
 <section class="records-grid">
   <div *ngFor="let record of records; let i = index" class="record">
     <p>{{ record.artist }}</p>

@@ -7,6 +7,7 @@ import { ThoughtComponent } from './pages/thoughts/thought/thought.component';
 import { ThoughtsComponent } from './pages/thoughts/thoughts/thoughts.component';
 
 import { MoviesComponent } from './pages/movies/movies.component';
+import { BooksComponent } from './pages/books/books.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'thought/:slug', component: ThoughtComponent },
   { path: 'thoughts', component: ThoughtsComponent },
   { path: 'movies', component: MoviesComponent },
+  { path: 'books', component: BooksComponent },
 ];
 
 @NgModule({

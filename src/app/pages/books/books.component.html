@@ -1,0 +1,26 @@
+<section class="intro">
+  <p class="page-header">Books</p>
+  <span>Showcase of the book's i've read, with rating and review. Coming from my Goodreads shelf.</span>
+</section>
+
+<section class="book-grid">
+  @for (book of books; track book.title) {
+
+  <div class="book-item" (click)="openLink(book.link)">
+    @if(book.cover) {
+    <div class="cover-wrapper">
+      <img [src]="book.cover" alt="" />
+    </div>
+    }
+    <div class="book-details">
+      <span>{{ book.title }}</span>
+      @if(book.review) {
+      <p class="review">{{ book.review }}</p>
+      } @if(book.rating) {
+      <app-rating [rating]="book.rating"></app-rating>
+      }
+    </div>
+  </div>
+
+  }
+</section>
