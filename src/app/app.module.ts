@@ -11,7 +11,6 @@ import { ProjectComponent } from './components/molecules/project-card/project-ca
 
 // import pages
 import { HomeComponent } from './pages/home/home.component';
-import { RecordsComponent } from './pages/records/records.component';
 import { QuotesComponent } from './pages/quotes/quotes/quotes.component';
 
 import { ThoughtsComponent } from './pages/thoughts/thoughts/thoughts.component';
@@ -25,22 +24,18 @@ import { RecordsService } from './models/records.service';
 
 // lucide icons
 import { LucideAngularModule, Code, Mail, Image, FileUser, Home, Popcorn, Music, Book, Star, StarHalf, Loader } from 'lucide-angular';
+import { LoaderComponent } from 'src/app/components/molecules/loader/loader.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ButtonComponent,
-    ProjectComponent,
-    LinksComponent,
-    FooterComponent,
-    HeaderComponent,
-    HomeComponent,
-    RecordsComponent,
-    QuotesComponent,
-    ThoughtsComponent,
-  ],
+  declarations: [AppComponent, ButtonComponent, ProjectComponent, LinksComponent, FooterComponent, HeaderComponent, HomeComponent, QuotesComponent, ThoughtsComponent],
   bootstrap: [AppComponent],
-  imports: [HttpClientModule, BrowserModule, AppRoutingModule, LucideAngularModule.pick({ Code, Mail, Image, FileUser, Home, Popcorn, Music, Book, Star, StarHalf, Loader })],
+  imports: [
+    HttpClientModule,
+    BrowserModule,
+    AppRoutingModule,
+    LucideAngularModule.pick({ Code, Mail, Image, FileUser, Home, Popcorn, Music, Book, Star, StarHalf, Loader }),
+    LoaderComponent,
+  ],
   providers: [RecordsService],
 })
 export class AppModule {}

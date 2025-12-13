@@ -4,12 +4,12 @@
 </section>
 
 <section class="film-grid">
-  @for (film of films; track film.title) {
-
+  @for (film of films; track $index) {
   <div class="film-item" (click)="openFilm(film.url)">
     <app-blueray [poster]="film.poster"></app-blueray>
     <app-rating [rating]="film.rating"></app-rating>
   </div>
-
+  } @empty {
+  <app-loader></app-loader>
   }
 </section>

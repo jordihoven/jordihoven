@@ -1,6 +1,6 @@
 section.film-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
   gap: var(--s-spacing);
 }
 
@@ -17,11 +17,4 @@ section.film-grid {
   cursor: pointer;
   filter: brightness(95%);
   transform: translateY(-2px);
-}
-
-/* responsiveness */
-@media only screen and (max-width: 660px) {
-  section.film-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }

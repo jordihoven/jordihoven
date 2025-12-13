@@ -10,7 +10,7 @@
     <span>{{ record.albumName }}</span>
     <img [hidden]="!imageLoaded[i]" [src]="record.coverArt" alt="{{ record.albumName }}" class="cover-art" (load)="setImageLoaded(i)" />
     @if(!imageLoaded[i]) {
-    <lucide-icon name="loader" size="16" class="img-placeholder loader"></lucide-icon>
+    <app-loader></app-loader>
     } @if(record.musicUrl) {
     <a [href]="record.musicUrl" target="_blank" class="music-button">Listen Now</a>
     }

@@ -1,6 +1,6 @@
 section.records-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
   gap: var(--xs-spacing);
 }
 
@@ -12,7 +12,7 @@ section.records-grid {
   background-color: var(--elevated);
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  transition: all 0.3s ease-in-out;
+  transition: var(--transition);
 }
 .record:hover {
   cursor: pointer;
@@ -30,31 +30,4 @@ section.records-grid {
 .record img {
   border-radius: var(--radius);
   aspect-ratio: 1 / 1;
-}
-
-.img-placeholder {
-  width: 100%;
-  color: var(--text);
-  display: flex;
-  justify-content: center;
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.loader {
-  animation: rotate 1.5s linear infinite;
-}
-
-/* responsiveness */
-@media only screen and (max-width: 600px) {
-  section.records-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
