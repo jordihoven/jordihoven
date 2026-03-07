@@ -1,10 +1,6 @@
-My internet garden, where i share projects, books, hobbies and other things i might want to share.
+My internet garden, where i tend to my components. Everything you see is a work in progress. Nothing ever gets finished here, and that's why i like it so much.
 
-Build with Angular.
+### things i might do
 
-### ToDo
-- [x] show active route
-- [x] make dock component like [julien thibeaut](https://www.ibelick.com/)
-- [ ] maybe cut records component into smaller components?
-- [ ] fix scrollbar (seems to not have any border radius?)
-- [ ] use [api for coverarts](https://musicbrainz.org/doc/Cover_Art_Archive/API)
+- [ ] show Strava activity at /strava
+- [ ] show notes from my obsidian vault at /thoughts

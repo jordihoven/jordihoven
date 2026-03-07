@@ -1,0 +1,57 @@
+.activity-grid {
+  display: grid;
+  gap: var(--s-spacing);
+}
+
+.activity-card {
+  background: var(--background2);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.activity-card:hover {
+  cursor: pointer;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.activity-name {
+  font-size: var(--body);
+}
+
+.activity-media {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+}
+
+.activity-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.activity-info {
+  padding: var(--s-spacing);
+  display: flex;
+  flex-direction: column;
+  gap: var(--xs-spacing);
+}
+
+.activity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.activity-stats {
+  display: flex;
+  gap: var(--s-spacing);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}

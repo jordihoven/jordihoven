@@ -23,8 +23,10 @@ import { HeaderComponent } from './components/molecules/header/header.component'
 import { RecordsService } from './models/records.service';
 
 // lucide icons
-import { LucideAngularModule, Code, Mail, Image, FileUser, Home, Popcorn, Music, Book, Star, StarHalf, Loader } from 'lucide-angular';
+import { LucideAngularModule, Code, Mail, Image, FileUser, Home, Popcorn, Music, Book, Star, StarHalf, Loader, Activity } from 'lucide-angular';
 import { LoaderComponent } from 'src/app/components/molecules/loader/loader.component';
+
+import { StravaComponent } from './pages/strava/strava.component';
 
 @NgModule({
   declarations: [AppComponent, ButtonComponent, ProjectComponent, LinksComponent, FooterComponent, HeaderComponent, HomeComponent, QuotesComponent, ThoughtsComponent],
@@ -33,7 +35,7 @@ import { LoaderComponent } from 'src/app/components/molecules/loader/loader.comp
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    LucideAngularModule.pick({ Code, Mail, Image, FileUser, Home, Popcorn, Music, Book, Star, StarHalf, Loader }),
+    LucideAngularModule.pick({ Code, Mail, Image, FileUser, Home, Popcorn, Music, Book, Star, StarHalf, Loader, Activity }),
     LoaderComponent,
   ],
   providers: [RecordsService],

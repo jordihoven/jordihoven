@@ -1,0 +1,39 @@
+<section class="intro">
+  <p class="page-header">Strava</p>
+  <span>My recent runs & rides, synced using Strava API.</span>
+</section>
+
+<section class="activity-grid">
+  @for (activity of activities; track activity.id) {
+    <div class="activity-card" (click)="openLink(getStravaUrl(activity.id))">
+      @if (activity.photos) {
+        <div class="activity-media">
+          <img [src]="activity.photos.url" [alt]="activity.name" />
+        </div>
+      }
+      <div class="activity-info">
+        <div class="activity-header">
+          <span class="activity-type">{{ activity.type }}</span>
+          <span class="activity-date">{{ formatDate(activity.start_date_local) }}</span>
+        </div>
+        <h3 class="activity-name">{{ activity.name }}</h3>
+        <div class="activity-stats">
+          <div class="stat">
+            <span class="stat-label">Distance</span>
+            <span class="stat-value">{{ formatDistance(activity.distance) }}</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Time</span>
+            <span class="stat-value">{{ formatDuration(activity.moving_time) }}</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Elevation</span>
+            <span class="stat-value">{{ formatElevation(activity.total_elevation_gain) }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  } @empty {
+    <app-loader></app-loader>
+  }
+</section>
