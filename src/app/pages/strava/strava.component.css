@@ -18,6 +18,7 @@
 
 .activity-name {
   font-size: var(--body);
+  font-weight: 500;
 }
 
 .activity-media {
@@ -47,11 +48,25 @@
 
 .activity-stats {
   display: flex;
+  width: 100%;
   gap: var(--s-spacing);
 }
 
 .stat {
   display: flex;
+  flex: 1;
   flex-direction: column;
+  align-items: center;
   gap: 2px;
+}
+
+.stat-value {
+  color: var(--text1);
+  font-weight: 500;
+}
+
+.divider {
+  width: 100%;
+  border: 1px dashed #e4e4e4;
+  background-color: var(--stroke);
 }

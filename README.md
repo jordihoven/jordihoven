@@ -2,5 +2,5 @@ My internet garden, where i tend to my components. Everything you see is a work 
 
 ### things i might do
 
-- [ ] show Strava activity at /strava
+- [x] show Strava activity at /strava
 - [ ] show notes from my obsidian vault at /thoughts

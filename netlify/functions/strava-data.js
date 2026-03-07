@@ -40,7 +40,7 @@ exports.handler = async (event) => {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-      }
+      },
     );
 
     const activities = await response.json();
@@ -56,7 +56,7 @@ exports.handler = async (event) => {
     const formatted = activities.map((activity) => ({
       id: activity.id,
       name: activity.name,
-      type: activity.type,
+      sport_type: activity.sport_type,
       distance: activity.distance,
       moving_time: activity.moving_time,
       elapsed_time: activity.elapsed_time,
@@ -68,9 +68,7 @@ exports.handler = async (event) => {
       average_heartrate: activity.average_heartrate,
       kilojoules: activity.kilojoules,
       calories: activity.calories,
-      map: activity.map?.summary_polyline
-        ? { polyline: activity.map.summary_polyline }
-        : null,
+      map: activity.map?.summary_polyline ? { polyline: activity.map.summary_polyline } : null,
       photos: activity.photos?.primary
         ? {
             url: activity.photos.primary.urls[0],

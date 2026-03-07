@@ -13,10 +13,11 @@
       }
       <div class="activity-info">
         <div class="activity-header">
-          <span class="activity-type">{{ activity.type }}</span>
+          <span class="activity-type">{{ activity.sport_type }}</span>
           <span class="activity-date">{{ formatDate(activity.start_date_local) }}</span>
         </div>
         <h3 class="activity-name">{{ activity.name }}</h3>
+        <div class="divider"></div>
         <div class="activity-stats">
           <div class="stat">
             <span class="stat-label">Distance</span>
