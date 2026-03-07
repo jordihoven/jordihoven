@@ -61,12 +61,10 @@
 }
 
 .stat-value {
-  color: var(--text1);
+  color: var(--text);
   font-weight: 500;
 }
 
 .divider {
-  width: 100%;
-  border: 1px dashed #e4e4e4;
-  background-color: var(--stroke);
+  border: 1px dashed var(--border);
 }
