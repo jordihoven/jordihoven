@@ -57,6 +57,7 @@ html {
   --squish: cubic-bezier(0.5, -0.1, 0.1, 1.5);
   /* others */
   --radius: 6px;
+  --radius-xl: 12px;
   --rounded: 50px;
 
   --transition: all 0.3s ease-in-out;

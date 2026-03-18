@@ -1,0 +1,81 @@
+section.notes-intro {
+  margin-bottom: var(--m-spacing);
+}
+section.notes-intro p {
+  margin-bottom: var(--xs-spacing);
+}
+
+.notes-list {
+  display: grid;
+  place-content: flex-start center;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--xs-spacing);
+}
+
+.note {
+  background-color: var(--white);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: var(--s-spacing);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: var(--xs-spacing);
+  height: 17em;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+}
+
+.note:hover {
+  cursor: pointer;
+  transform: translateY(-2px);
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+  margin: 4px 0px;
+}
+
+.note-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 4px;
+}
+
+.note-title {
+  font-weight: var(--medium);
+  line-clamp: 2; /* For Chromium browsers */
+  -webkit-line-clamp: 2; /* For Safari and Firefox */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.note-date {
+  color: var(--text2);
+  font-size: 0.85em;
+}
+
+.note-preview {
+  color: var(--text2);
+  font-size: 0.9em;
+  line-height: 1.4;
+  margin: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .notes-list {
+    grid-template-columns: repeat(2, minmax(0px, 1fr));
+  }
+  .note {
+    aspect-ratio: unset;
+    height: 14em;
+    padding: var(--xs-spacing);
+  }
+}
