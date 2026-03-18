@@ -10,31 +10,30 @@
 - Date displayed in list view
 - Preview text (~200 chars) shown in list view
 - Loader while fetching
-- Only notes with `#share` tag are displayed (privacy filter)
+- Only notes in `/shared` folder are displayed (folder-based privacy)
 
 ## How to Share a Note
 
-Add `#share` anywhere in any Obsidian note you want displayed on your website:
+Move any Obsidian note to the `/shared` folder in your vault to display it on your website:
 
-```markdown
-# My Note
-
-Some content here...
-
-#share
+```
+your-vault/
+├── /shared/           ← Notes here are public
+│   ├── my-note.md     ← Shown on website
+│   └── another.md     ← Shown on website
+├── private-note.md    ← NOT shown (outside /shared)
+└── secret.md          ← NOT shown (outside /shared)
 ```
 
-That's it! The tag can be anywhere in the note - at the end, in the middle, doesn't matter. It's case-insensitive.
-
 **Privacy:**
-- Notes without `#share` are never exposed
+- Any note outside `/shared` is never exposed
 - Even if someone guesses a URL to a private note, they get a 404
-- Only shared notes appear on the website
+- Only notes in `/shared` appear on the website
 
 ## Future Improvements
 
 ### High Priority
-- **Fix GitHub Search API integration** - Currently using Contents API which requires fetching all files. Search API would be more efficient but has permission/query issues that need debugging.
+- None
 
 ### Medium Priority
 - Add custom title support (use title instead of filename)
@@ -51,30 +50,19 @@ That's it! The tag can be anywhere in the note - at the end, in the middle, does
 - Token is server-side only, hidden from client
 
 ### Privacy
-- Only notes containing `#share` (case-insensitive) are returned by the function
-- Both list and detail endpoints filter by this tag
+- Only notes in the `/shared` folder are returned by the function
+- Both list and detail endpoints only fetch from `/shared`
 - Direct URLs to private notes return 404
 
-### API Strategy (Current)
-- Uses GitHub Contents API to list all files in repo
-- Fetches content for each file to check for `#share`
-- Works well with small number of files in repo
-- Not ideal for repos with 500+ files
-
-### API Strategy (Desired)
-- Use GitHub Search API: `#share repo:jordihoven/notes language:markdown`
-- Would reduce API calls from N+1 to ~7
-- Needs debugging: query syntax or PAT permissions issue
-
 ### API Endpoints
-- Function: `/.netlify/functions/notes-data` (list shareable notes)
-- Function: `/.netlify/functions/notes-data?path=<filename>` (get single note content, must have `#share`)
+- Function: `/.netlify/functions/notes-data` (lists all notes in /shared)
+- Function: `/.netlify/functions/notes-data?path=<filename>` (gets single note content)
 - GitHub (internal to function): Uses GITHUB_TOKEN for authentication
 
 ### File Structure
 ```
 netlify/functions/
-└── notes-data.js          # Fetches from GitHub, filters by #share tag
+└── notes-data.js          # Fetches from GitHub /shared folder
 
 src/app/
 └── pages/
@@ -91,3 +79,15 @@ src/app/
 
 ### Environment Variables (Netlify)
 - `GITHUB_TOKEN`: Fine-grained Personal Access Token with read access to notes repo
+
+### Vault Structure (Obsidian)
+```
+your-vault/
+├── /shared/           ← Public notes (synced to GitHub)
+│   ├── note-1.md
+│   └── note-2.md
+├── /other-folders/    ← Private notes (not synced)
+│   └── private.md
+└── /more-private/     ← Private notes (not synced)
+    └── secret.md
+```

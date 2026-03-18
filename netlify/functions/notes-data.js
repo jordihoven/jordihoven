@@ -1,7 +1,7 @@
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const OWNER = 'jordihoven';
 const REPO = 'notes';
-const BASE_URL = `https://api.github.com/repos/${OWNER}/${REPO}/contents`;
+const BASE_URL = `https://api.github.com/repos/${OWNER}/${REPO}/contents/shared`;
 const COMMITS_URL = `https://api.github.com/repos/${OWNER}/${REPO}/commits`;
 
 const headers = {
@@ -28,10 +28,6 @@ async function getContent(path) {
   const res = await fetch(url, { headers });
   if (!res.ok) throw new Error(`Failed to fetch content: ${res.status}`);
   return res.text();
-}
-
-function isShareable(content) {
-  return content.toLowerCase().includes('#share');
 }
 
 function extractContent(content) {
@@ -63,12 +59,7 @@ exports.handler = async (event) => {
       if (!file) {
         return { statusCode: 404, body: JSON.stringify({ error: 'Note not found' }) };
       }
-      const content = await getContent(file.name);
-
-      if (!isShareable(content)) {
-        return { statusCode: 404, body: JSON.stringify({ error: 'Note not found' }) };
-      }
-
+      const content = await getContent(file.path);
       const cleanContent = extractContent(content);
       return { statusCode: 200, body: JSON.stringify({ content: cleanContent }) };
     }
@@ -76,13 +67,9 @@ exports.handler = async (event) => {
     const notes = await Promise.all(
       mdFiles.map(async (file) => {
         const [updatedAt, content] = await Promise.all([
-          getLastCommit(file.name),
-          getContent(file.name),
+          getLastCommit(file.path),
+          getContent(file.path),
         ]);
-
-        if (!isShareable(content)) {
-          return null;
-        }
 
         return {
           name: file.name,
@@ -94,12 +81,11 @@ exports.handler = async (event) => {
       })
     );
 
-    const shareableNotes = notes.filter(n => n !== null);
-    shareableNotes.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
+    notes.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
 
     return {
       statusCode: 200,
-      body: JSON.stringify(shareableNotes),
+      body: JSON.stringify(notes),
     };
   } catch (err) {
     console.error(err);

@@ -233,27 +233,48 @@ a {
 
 /* markdown styles */
 
-article p {
-  color: var(--text2);
-  margin-bottom: var(--s-spacing);
-}
-
-article ul {
-  list-style-position: inside;
-  color: var(--text2);
-}
-
 article {
   display: flex;
   flex-direction: column;
   gap: var(--xs-spacing);
 }
 
+article p {
+  color: var(--text2);
+  margin-bottom: var(--s-spacing);
+}
+
+article ul,
+article ol {
+  list-style-position: inside;
+  color: var(--text2);
+}
+
+article a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+article a:hover {
+  text-decoration: underline;
+}
+
 article h1,
-article h2,
+h2,
+h3 {
+  margin-bottom: var(--m-spacing);
+}
+
+article h1 {
+  font-size: 30px;
+}
+
+article h2 {
+  font-size: 20px;
+}
+
 article h3 {
   font-size: 18px;
-  margin-bottom: var(--m-spacing);
 }
 
 /* responsiveness */
