@@ -13,6 +13,13 @@ section.notes-intro p {
   gap: var(--xs-spacing);
 }
 
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
 .note {
   background-color: var(--background2);
   border-radius: var(--radius-xl);

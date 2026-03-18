@@ -11,6 +11,8 @@
 - Preview text (~200 chars) shown in list view
 - Loader while fetching
 - Only notes in `/shared` folder are displayed (folder-based privacy)
+- Wiki-links `[[note-name]]` converted to clickable links
+- Invalid wiki-links styled grey (broken links)
 
 ## How to Share a Note
 
@@ -29,6 +31,24 @@ your-vault/
 - Any note outside `/shared` is never exposed
 - Even if someone guesses a URL to a private note, they get a 404
 - Only notes in `/shared` appear on the website
+
+## Internal Links
+
+Obsidian wiki-links `[[note-name]]` are automatically converted to clickable links:
+
+```markdown
+See my note on [[zettelkasten]] for more info.
+```
+
+- **Valid links**: If the target note exists in `/shared`, shows as blue link → `/note/zettelkasten`
+- **Invalid links**: If target doesn't exist in `/shared`, shows as greyed out text with `cursor: not-allowed`
+
+## External Links
+
+External links (http/https URLs) automatically:
+- Open in new tab (`target="_blank"`)
+- Include `rel="noopener noreferrer"` for security
+- Display a small arrow-up-right icon (Lucide) after the link text
 
 ## Future Improvements
 

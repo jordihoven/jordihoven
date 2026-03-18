@@ -61,7 +61,8 @@ exports.handler = async (event) => {
       }
       const content = await getContent(file.path);
       const cleanContent = extractContent(content);
-      return { statusCode: 200, body: JSON.stringify({ content: cleanContent }) };
+      const availableNotes = mdFiles.map(f => f.name.replace('.md', ''));
+      return { statusCode: 200, body: JSON.stringify({ content: cleanContent, availableNotes }) };
     }
 
     const notes = await Promise.all(

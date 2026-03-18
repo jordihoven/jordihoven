@@ -2,7 +2,16 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { marked } from 'marked';
+import { marked, Renderer } from 'marked';
+
+const renderer = new Renderer();
+renderer.link = (href: string, title: string | null, text: string) => {
+  const isExternal = href && (href.startsWith('http://') || href.startsWith('https://'));
+  const attrs = isExternal ? ' target="_blank" rel="noopener noreferrer"' : '';
+  const titleAttr = title ? ` title="${title}"` : '';
+  return `<a href="${href}"${titleAttr}${attrs}>${text}</a>`;
+};
+marked.setOptions({ renderer });
 
 @Component({
   selector: 'app-note',
@@ -27,7 +36,16 @@ export class NoteComponent implements OnInit {
     try {
       const res = await fetch(`/.netlify/functions/notes-data?path=${encodeURIComponent(filename)}`);
       const data = await res.json();
-      const html = marked.parse(`# ${title}\n\n${data.content}`) as string;
+      let content = data.content;
+
+      content = content.replace(/\[\[([^\]]+)\]\]/g, (_: string, linkTitle: string) => {
+        const slug = linkTitle.toLowerCase().replace(/\s+/g, '-');
+        const isValid = data.availableNotes.includes(linkTitle);
+        const cssClass = isValid ? 'internal-link' : 'broken-link';
+        return `[${linkTitle}](/note/${slug} "${cssClass}")`;
+      });
+
+      const html = marked.parse(`# ${title}\n\n${content}`) as string;
       this.content = this.sanitizer.bypassSecurityTrustHtml(html);
     } catch (err) {
       console.error(err);

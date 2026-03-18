@@ -7,17 +7,21 @@
 </section>
 
 <section>
-  <div class="notes-list">
-    @for (note of notes; track note.name) {
-      <div class="note" (click)="openNote(note)">
-        <div class="note-header">
-          <p class="note-title">{{ prettify(note.name) }}</p>
-          <span class="note-date">{{ formatDate(note.updatedAt) }}</span>
-        </div>
-        <p class="note-preview">{{ note.preview }}</p>
-      </div>
-    } @empty {
+  @if (loading) {
+    <div class="loader-container">
       <app-loader></app-loader>
-    }
-  </div>
+    </div>
+  } @else {
+    <div class="notes-list">
+      @for (note of notes; track note.name) {
+        <div class="note" (click)="openNote(note)">
+          <div class="note-header">
+            <p class="note-title">{{ prettify(note.name) }}</p>
+            <span class="note-date">{{ formatDate(note.updatedAt) }}</span>
+          </div>
+          <p class="note-preview">{{ note.preview }}</p>
+        </div>
+      }
+    </div>
+  }
 </section>
