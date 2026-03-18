@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { withInterceptorsFromDi, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 //import components
 import { AppRoutingModule } from './app-routing.module';
@@ -13,8 +13,6 @@ import { ProjectComponent } from './components/molecules/project-card/project-ca
 import { HomeComponent } from './pages/home/home.component';
 import { QuotesComponent } from './pages/quotes/quotes/quotes.component';
 
-import { ThoughtsComponent } from './pages/thoughts/thoughts/thoughts.component';
-
 //import modules
 import { FooterComponent } from './components/molecules/footer/footer.component';
 import { HeaderComponent } from './components/molecules/header/header.component';
@@ -23,19 +21,57 @@ import { HeaderComponent } from './components/molecules/header/header.component'
 import { RecordsService } from './models/records.service';
 
 // lucide icons
-import { LucideAngularModule, Code, Mail, Image, FileUser, Home, Popcorn, Music, Book, Star, StarHalf, Loader, Activity, FileText } from 'lucide-angular';
+import {
+  LucideAngularModule,
+  Code,
+  Mail,
+  Image,
+  FileUser,
+  Home,
+  Popcorn,
+  Music,
+  Book,
+  Star,
+  StarHalf,
+  Loader,
+  Activity,
+  ScrollText,
+  ArrowLeft,
+} from 'lucide-angular';
 import { LoaderComponent } from 'src/app/components/molecules/loader/loader.component';
 
-import { StravaComponent } from './pages/strava/strava.component';
-
 @NgModule({
-  declarations: [AppComponent, ButtonComponent, ProjectComponent, LinksComponent, FooterComponent, HeaderComponent, HomeComponent, QuotesComponent, ThoughtsComponent],
+  declarations: [
+    AppComponent,
+    ButtonComponent,
+    ProjectComponent,
+    LinksComponent,
+    FooterComponent,
+    HeaderComponent,
+    HomeComponent,
+    QuotesComponent,
+  ],
   bootstrap: [AppComponent],
   imports: [
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    LucideAngularModule.pick({ Code, Mail, Image, FileUser, Home, Popcorn, Music, Book, Star, StarHalf, Loader, Activity, FileText }),
+    LucideAngularModule.pick({
+      Code,
+      Mail,
+      Image,
+      FileUser,
+      Home,
+      Popcorn,
+      Music,
+      Book,
+      Star,
+      StarHalf,
+      Loader,
+      Activity,
+      ScrollText,
+      ArrowLeft,
+    }),
     LoaderComponent,
   ],
   providers: [RecordsService],

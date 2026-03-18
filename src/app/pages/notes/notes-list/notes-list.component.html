@@ -1,12 +1,23 @@
 <section class="notes-intro">
   <p class="page-header">Notes</p>
-  <span>Notes from my Obsidian vault 🌱</span>
+  <span
+    >Sharing some of the notes from my Obsidian vault. Build using Github API & Netlify
+    Functions.</span
+  >
 </section>
 
 <section>
   <div class="notes-list">
-    <div class="note" *ngFor="let note of notes" (click)="openNote(note)">
-      {{ prettify(note.name) }}
-    </div>
+    @for (note of notes; track note.name) {
+      <div class="note" (click)="openNote(note)">
+        <div class="note-header">
+          <p class="note-title">{{ prettify(note.name) }}</p>
+          <span class="note-date">{{ formatDate(note.updatedAt) }}</span>
+        </div>
+        <p class="note-preview">{{ note.preview }}</p>
+      </div>
+    } @empty {
+      <app-loader></app-loader>
+    }
   </div>
 </section>
