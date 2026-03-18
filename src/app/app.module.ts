@@ -23,7 +23,7 @@ import { HeaderComponent } from './components/molecules/header/header.component'
 import { RecordsService } from './models/records.service';
 
 // lucide icons
-import { LucideAngularModule, Code, Mail, Image, FileUser, Home, Popcorn, Music, Book, Star, StarHalf, Loader, Activity } from 'lucide-angular';
+import { LucideAngularModule, Code, Mail, Image, FileUser, Home, Popcorn, Music, Book, Star, StarHalf, Loader, Activity, FileText } from 'lucide-angular';
 import { LoaderComponent } from 'src/app/components/molecules/loader/loader.component';
 
 import { StravaComponent } from './pages/strava/strava.component';
@@ -35,7 +35,7 @@ import { StravaComponent } from './pages/strava/strava.component';
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    LucideAngularModule.pick({ Code, Mail, Image, FileUser, Home, Popcorn, Music, Book, Star, StarHalf, Loader, Activity }),
+    LucideAngularModule.pick({ Code, Mail, Image, FileUser, Home, Popcorn, Music, Book, Star, StarHalf, Loader, Activity, FileText }),
     LoaderComponent,
   ],
   providers: [RecordsService],

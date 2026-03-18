@@ -1,0 +1,12 @@
+<section class="notes-intro">
+  <p class="page-header">Notes</p>
+  <span>Notes from my Obsidian vault 🌱</span>
+</section>
+
+<section>
+  <div class="notes-list">
+    <div class="note" *ngFor="let note of notes" (click)="openNote(note)">
+      {{ prettify(note.name) }}
+    </div>
+  </div>
+</section>
