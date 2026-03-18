@@ -1,1 +1,7 @@
 /* markdown styles are global */
+article {
+  padding: var(--l-spacing);
+  background: var(--background2);
+  border-radius: var(--radius-xl);
+  border: 1px dashed var(--border);
+}
