@@ -13,6 +13,7 @@
 - Only notes in `/shared` folder are displayed (folder-based privacy)
 - Wiki-links `[[note-name]]` converted to clickable links
 - Invalid wiki-links styled grey (broken links)
+- Wiki-style images `![[image.png]]` or `![[images/image.png]]` proxied through Netlify (supports private repo)
 
 ## How to Share a Note
 
@@ -42,6 +43,41 @@ See my note on [[zettelkasten]] for more info.
 
 - **Valid links**: If the target note exists in `/shared`, shows as blue link → `/note/zettelkasten`
 - **Invalid links**: If target doesn't exist in `/shared`, shows as greyed out text with `cursor: not-allowed`
+
+## Images
+
+Obsidian wiki-style images `![[...]]` are automatically displayed:
+
+```markdown
+![[images/my-photo.png]]   ← works (images/ prefix stripped)
+![[my-photo.png]]          ← works (no prefix needed)
+```
+
+Images must be stored in `/shared/images/` in the vault. Both syntaxes work:
+- `![[images/photo.png]]` → loads `shared/images/photo.png`
+- `![[photo.png]]` → loads `shared/images/photo.png`
+
+Images are proxied through the Netlify function to handle the private repo authentication:
+
+1. Browser requests image via `/.netlify/functions/notes-data?image=images/filename.png`
+2. Netlify function fetches from GitHub using `GITHUB_TOKEN`
+3. Returns image with proper `Content-Type` header
+
+Supported formats: PNG, JPG, GIF, WebP, SVG, ICO, BMP
+
+Missing images show the browser's default broken image icon.
+
+### Vault Structure for Images
+```
+your-vault/
+├── /shared/
+│   ├── /images/           ← Public images (synced to GitHub)
+│   │   ├── photo.png
+│   │   └── diagram.jpg
+│   ├── my-note.md         ← Notes can use ![[photo.png]] or ![[images/photo.png]]
+│   └── another.md
+└── private-note.md        ← Private notes
+```
 
 ## External Links
 

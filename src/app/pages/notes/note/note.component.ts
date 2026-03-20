@@ -38,6 +38,13 @@ export class NoteComponent implements OnInit {
       const data = await res.json();
       let content = data.content;
 
+      content = content.replace(/!\[\[([^\]]+)\]\]/g, (_: string, filename: string) => {
+        const trimmed = filename.trim();
+        const imagePath = trimmed.startsWith('images/') ? trimmed.slice(7) : trimmed;
+        const url = `/.netlify/functions/notes-data?image=${encodeURIComponent(imagePath)}`;
+        return `<img src="${url}" alt="">`;
+      });
+
       content = content.replace(/\[\[([^\]]+)\]\]/g, (_: string, linkTitle: string) => {
         const slug = linkTitle.toLowerCase().replace(/\s+/g, '-');
         const isValid = data.availableNotes.includes(linkTitle);

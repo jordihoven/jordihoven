@@ -4,6 +4,25 @@ const REPO = 'notes';
 const BASE_URL = `https://api.github.com/repos/${OWNER}/${REPO}/contents/shared`;
 const COMMITS_URL = `https://api.github.com/repos/${OWNER}/${REPO}/commits`;
 
+const IMAGE_EXTENSIONS = {
+  '.png': 'image/png',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.gif': 'image/gif',
+  '.webp': 'image/webp',
+  '.svg': 'image/svg+xml',
+  '.ico': 'image/x-icon',
+  '.bmp': 'image/bmp',
+};
+
+function getMimeType(filename) {
+  const ext = filename.toLowerCase().match(/\.[^.]+$/);
+  if (ext && IMAGE_EXTENSIONS[ext[0]]) {
+    return IMAGE_EXTENSIONS[ext[0]];
+  }
+  return 'application/octet-stream';
+}
+
 const headers = {
   Authorization: `token ${GITHUB_TOKEN}`,
   Accept: 'application/vnd.github.v3+json',
@@ -49,7 +68,32 @@ function truncatePreview(content, maxChars = 200) {
 
 exports.handler = async (event) => {
   try {
-    const { path } = event.queryStringParameters || {};
+    const { path, image } = event.queryStringParameters || {};
+
+    if (image) {
+      const rawUrl = `https://raw.githubusercontent.com/${OWNER}/${REPO}/main/shared/images/${image}`;
+      const res = await fetch(rawUrl, { headers });
+      
+      if (!res.ok) {
+        return {
+          statusCode: 404,
+          body: 'Image not found',
+        };
+      }
+
+      const buffer = await res.arrayBuffer();
+      const contentType = getMimeType(image);
+
+      return {
+        statusCode: 200,
+        headers: {
+          'Content-Type': contentType,
+          'Access-Control-Allow-Origin': '*',
+        },
+        body: Buffer.from(buffer).toString('base64'),
+        isBase64Encoded: true,
+      };
+    }
 
     const files = await getFiles();
     const mdFiles = files.filter(f => f.name.endsWith('.md'));
