@@ -30,10 +30,24 @@ export class NoteComponent implements OnInit {
     const slug = this.route.snapshot.paramMap.get('slug');
     if (!slug) return;
 
-    const filename = slug.replace(/-/g, ' ');
-    const title = slug.replace(/-/g, ' ');
-
     try {
+      const searchTerm = slug.replace(/-/g, ' ').toLowerCase();
+
+      const listRes = await fetch('/.netlify/functions/notes-data');
+      const notes = await listRes.json();
+
+      const note = notes.find((n: any) =>
+        n.name.toLowerCase().replace('.md', '') === searchTerm
+      );
+
+      if (!note) {
+        this.content = this.sanitizer.bypassSecurityTrustHtml('<p>Note not found.</p>');
+        return;
+      }
+
+      const filename = note.name.replace('.md', '');
+      const title = filename;
+
       const res = await fetch(`/.netlify/functions/notes-data?path=${encodeURIComponent(filename)}`);
       const data = await res.json();
       let content = data.content;
@@ -45,11 +59,13 @@ export class NoteComponent implements OnInit {
         return `<img src="${url}" alt="">`;
       });
 
+      const availableNoteNames = notes.map((n: any) => n.name.replace('.md', ''));
+
       content = content.replace(/\[\[([^\]]+)\]\]/g, (_: string, linkTitle: string) => {
-        const slug = linkTitle.toLowerCase().replace(/\s+/g, '-');
-        const isValid = data.availableNotes.includes(linkTitle);
+        const linkSlug = linkTitle.toLowerCase().replace(/\s+/g, '-');
+        const isValid = availableNoteNames.some((n: string) => n.toLowerCase() === linkTitle.toLowerCase());
         const cssClass = isValid ? 'internal-link' : 'broken-link';
-        return `[${linkTitle}](/note/${slug} "${cssClass}")`;
+        return `[${linkTitle}](/note/${linkSlug} "${cssClass}")`;
       });
 
       const html = marked.parse(`# ${title}\n\n${content}`) as string;
