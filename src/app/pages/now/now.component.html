@@ -1,0 +1,75 @@
+@if (loading) {
+  <div class="loader-wrap">
+    <app-loader></app-loader>
+  </div>
+} @else {
+  <div
+    class="viewport"
+    [class.dragging]="isDragging"
+    (mousedown)="onMouseDown($event)"
+    (touchstart)="onTouchStart($event)"
+    (touchmove)="onTouchMove($event)"
+    (touchend)="onTouchEnd()"
+    (click)="onViewportClick()"
+  >
+    <div
+      class="canvas"
+      [class.smooth]="isAnimating && !isDragging"
+      [style.transform]="canvasTransform"
+    >
+      @for (tile of cachedTiles; track tileTrack($index, tile)) {
+        @for (item of items; track $index) {
+          <div
+            class="card card-{{ item.type }}"
+            [class.focused]="isFocusedCopy($index, tile.col, tile.row)"
+            [class.dimmed]="focusedIndex !== null && !isFocusedCopy($index, tile.col, tile.row)"
+            [style.left.px]="positions[$index]?.x + tile.col * tileW"
+            [style.top.px]="positions[$index]?.y + tile.row * tileH"
+            [style.--card-scale]="getCardScale($index)"
+            [style.--card-rotation]="getCardRotation($index)"
+            [style.z-index]="isFocusedCopy($index, tile.col, tile.row) ? 10 : 1"
+            (click)="onCardClick($event, $index, tile.col, tile.row)"
+          >
+            @switch (item.type) {
+              @case ('book') {
+                <img
+                  class="card-media"
+                  [src]="asBook(item.data).cover"
+                  [alt]="asBook(item.data).title"
+                  draggable="false"
+                />
+                <div class="card-detail">
+                  <span class="card-label">{{ asBook(item.data).title }}</span>
+                  <span class="card-sub">{{ asBook(item.data).author }}</span>
+                  @if (asBook(item.data).rating) {
+                    <app-rating [rating]="asBook(item.data).rating"></app-rating>
+                  }
+                  <a class="card-link" (click)="navigateItem($event, item)">Goodreads &rarr;</a>
+                </div>
+              }
+              @case ('movie') {
+                <app-blueray [poster]="asMovie(item.data).poster"></app-blueray>
+                <div class="card-detail">
+                  <span class="card-label">{{ asMovie(item.data).title }}</span>
+                  <span class="card-sub">{{ asMovie(item.data).year }}</span>
+                  <app-rating [rating]="asMovie(item.data).rating"></app-rating>
+                  <a class="card-link" (click)="navigateItem($event, item)">Letterboxd &rarr;</a>
+                </div>
+              }
+              @case ('note') {
+                <div class="note-header">
+                  <p class="note-title">{{ prettify(asNote(item.data).name) }}</p>
+                  <span class="note-date">{{ formatDate(asNote(item.data).updatedAt) }}</span>
+                </div>
+                <p class="note-preview">{{ asNote(item.data).preview }}</p>
+                <div class="card-detail">
+                  <a class="card-link" (click)="navigateItem($event, item)">Read note &rarr;</a>
+                </div>
+              }
+            }
+          </div>
+        }
+      }
+    </div>
+  </div>
+}
