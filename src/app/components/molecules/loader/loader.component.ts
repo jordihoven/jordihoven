@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { LucideAngularModule } from 'lucide-angular';
+import { LucideLoader } from '@lucide/angular';
 
 @Component({
   selector: 'app-loader',
-  imports: [LucideAngularModule],
+  imports: [LucideLoader],
   templateUrl: './loader.component.html',
   styleUrl: './loader.component.css',
 })

@@ -1,9 +1,9 @@
 import { Component, computed, Input } from '@angular/core';
-import { LucideAngularModule } from 'lucide-angular';
+import { LucideStar, LucideStarHalf } from '@lucide/angular';
 
 @Component({
   selector: 'app-rating',
-  imports: [LucideAngularModule],
+  imports: [LucideStar, LucideStarHalf],
   templateUrl: './rating.component.html',
   styleUrl: './rating.component.css',
   standalone: true,
