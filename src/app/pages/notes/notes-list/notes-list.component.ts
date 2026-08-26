@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
+
 import { formatDate } from 'src/app/utils/date';
 import { LoaderComponent } from 'src/app/components/molecules/loader/loader.component';
 
@@ -15,7 +15,7 @@ interface NoteFile {
 @Component({
   selector: 'app-notes-list',
   standalone: true,
-  imports: [CommonModule, LoaderComponent],
+  imports: [LoaderComponent],
   templateUrl: './notes-list.component.html',
   styleUrl: './notes-list.component.css',
 })

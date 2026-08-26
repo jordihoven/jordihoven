@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { CommonModule } from '@angular/common';
+
 import { marked, Renderer } from 'marked';
 
 const renderer = new Renderer();
@@ -16,7 +16,7 @@ marked.setOptions({ renderer });
 @Component({
   selector: 'app-note',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './note.component.html',
   styleUrl: './note.component.css',
 })
