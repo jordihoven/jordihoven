@@ -1,9 +1,17 @@
 # Project: jordihoven - Personal Portfolio Website
 
+## Rules for agents
+
+1. do not assume, i am the assumer
+2. do not commit, i commit
+3. use ponytail and caveman
+
 ## Overview
+
 Personal portfolio site showcasing projects, books, movies, records, quotes, and thoughts. Built with Angular.
 
 ## Tech Stack
+
 - **Framework**: Angular 20 (standalone components)
 - **Hosting**: Netlify
 - **Data Sources**:
@@ -12,17 +20,19 @@ Personal portfolio site showcasing projects, books, movies, records, quotes, and
   - Local JSON/data files (records, projects, quotes, thoughts)
 
 ## Pages/Routes
-| Route | Component | Description |
-|-------|-----------|-------------|
-| `/` | HomeComponent | Intro + projects |
-| `/movies` | MoviesComponent | Watched movies from Letterboxd |
-| `/books` | BooksComponent | Read books from Goodreads |
-| `/records` | RecordsComponent | Vinyl record collection |
-| `/quotes` | QuotesComponent | Favorite quotes |
-| `/thoughts` | ThoughtsComponent | Blog posts |
-| `/thought/:slug` | ThoughtComponent | Individual blog post |
+
+| Route            | Component         | Description                    |
+| ---------------- | ----------------- | ------------------------------ |
+| `/`              | HomeComponent     | Intro + projects               |
+| `/movies`        | MoviesComponent   | Watched movies from Letterboxd |
+| `/books`         | BooksComponent    | Read books from Goodreads      |
+| `/records`       | RecordsComponent  | Vinyl record collection        |
+| `/quotes`        | QuotesComponent   | Favorite quotes                |
+| `/thoughts`      | ThoughtsComponent | Blog posts                     |
+| `/thought/:slug` | ThoughtComponent  | Individual blog post           |
 
 ## Key Files
+
 - `src/app/app-routing.module.ts` - Routes configuration
 - `src/app/pages/app.component.html` - Main layout with nav dock
 - `netlify/functions/goodreads-data.js` - Goodreads RSS fetcher
@@ -30,12 +40,14 @@ Personal portfolio site showcasing projects, books, movies, records, quotes, and
 - `src/app/models/card-data.ts` - Static project data
 
 ## Build Commands
+
 ```bash
 npm start      # dev server
 npm run build  # production build
 ```
 
 ## TODO (from README)
+
 - [x] show active route
 - [x] make dock component like julien thibeaut
 - [ ] maybe cut records component into smaller components?
@@ -43,5 +55,6 @@ npm run build  # production build
 - [ ] use api for coverarts (musicbrainz)
 
 ## External Dependencies
+
 - Goodreads user: 148826963
 - Letterboxd username: stoicbean
