@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { marked } from 'marked';
 
@@ -6,6 +6,7 @@ import { marked } from 'marked';
     selector: 'Quotes',
     templateUrl: './quotes.component.html',
     styleUrl: './quotes.component.css',
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class QuotesComponent implements OnInit {

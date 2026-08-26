@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
-import { projects } from 'src/app/models/card-data';
-import { Project } from 'src/app/models/card-interface';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { projects } from '../../models/card-data';
+import { Project } from '../../models/card-interface';
 
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class HomeComponent {

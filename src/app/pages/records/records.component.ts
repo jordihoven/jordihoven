@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { RecordsService } from 'src/app/models/records.service';
-import { RecordInterface } from 'src/app/models/record-interface';
-import { LoaderComponent } from 'src/app/components/molecules/loader/loader.component';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { RecordsService } from '../../models/records.service';
+import { RecordInterface } from '../../models/record-interface';
+import { LoaderComponent } from '../../components/molecules/loader/loader.component';
 
 @Component({
   selector: 'records',
   templateUrl: './records.component.html',
   styleUrl: './records.component.css',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [LoaderComponent],
 })
 export class RecordsComponent implements OnInit {

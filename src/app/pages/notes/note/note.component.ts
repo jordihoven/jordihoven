@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
@@ -18,6 +18,7 @@ marked.setOptions({ renderer });
   standalone: true,
   imports: [],
   templateUrl: './note.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './note.component.css',
 })
 export class NoteComponent implements OnInit {

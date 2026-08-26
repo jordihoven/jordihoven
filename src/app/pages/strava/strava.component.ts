@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { LoaderComponent } from 'src/app/components/molecules/loader/loader.component';
-import { openLink } from 'src/app/utils/openLink';
-import { formatDate } from 'src/app/utils/date';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { LoaderComponent } from '../../components/molecules/loader/loader.component';
+import { openLink } from '../../utils/openLink';
+import { formatDate } from '../../utils/date';
 
 interface StravaActivity {
   id: number;
@@ -31,6 +31,7 @@ interface StravaActivity {
   selector: 'app-strava',
   imports: [LoaderComponent],
   templateUrl: './strava.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './strava.component.css',
 })
 export class StravaComponent {

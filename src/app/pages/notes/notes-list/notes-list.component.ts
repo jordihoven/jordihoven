@@ -1,8 +1,8 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { formatDate } from 'src/app/utils/date';
-import { LoaderComponent } from 'src/app/components/molecules/loader/loader.component';
+import { formatDate } from '../../../utils/date';
+import { LoaderComponent } from '../../../components/molecules/loader/loader.component';
 
 interface NoteFile {
   name: string;
@@ -17,6 +17,7 @@ interface NoteFile {
   standalone: true,
   imports: [LoaderComponent],
   templateUrl: './notes-list.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './notes-list.component.css',
 })
 export class NotesListComponent implements OnInit {

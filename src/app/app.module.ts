@@ -38,7 +38,7 @@ import {
   LucideScrollText,
   LucideArrowLeft,
 } from '@lucide/angular';
-import { LoaderComponent } from 'src/app/components/molecules/loader/loader.component';
+import { LoaderComponent } from './components/molecules/loader/loader.component';
 
 @NgModule({
   declarations: [

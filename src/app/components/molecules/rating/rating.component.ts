@@ -1,4 +1,4 @@
-import { Component, computed, Input } from '@angular/core';
+import { Component, computed, Input, ChangeDetectionStrategy } from '@angular/core';
 import { LucideStar, LucideStarHalf } from '@lucide/angular';
 
 @Component({
@@ -6,6 +6,7 @@ import { LucideStar, LucideStarHalf } from '@lucide/angular';
   imports: [LucideStar, LucideStarHalf],
   templateUrl: './rating.component.html',
   styleUrl: './rating.component.css',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: true,
 })
 export class RatingComponent {
