@@ -18,9 +18,4 @@ export class RecordsService {
   getRecords(): RecordInterface[] {
     return this.records;
   }
-
-  addRecord(record: RecordInterface): void {
-    this.records.push(record);
-  }
-  constructor() { }
 }

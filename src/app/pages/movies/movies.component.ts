@@ -4,8 +4,6 @@ import { BluerayComponent } from '../../components/molecules/blueray/blueray.com
 import { LoaderComponent } from '../../components/molecules/loader/loader.component';
 import { LetterboxdMovie } from '../../models/data-models';
 
-import { openLink } from '../../utils/openLink';
-
 @Component({
   selector: 'app-movies',
   imports: [RatingComponent, BluerayComponent, LoaderComponent],
@@ -14,7 +12,7 @@ import { openLink } from '../../utils/openLink';
   styleUrl: './movies.component.css',
 })
 export class MoviesComponent {
-  openFilm = openLink;
+  openFilm(url: string) { window.open(url, '_blank'); }
 
   films: LetterboxdMovie[] = [];
 

@@ -3,8 +3,6 @@ import { RatingComponent } from '../../components/molecules/rating/rating.compon
 import { LoaderComponent } from '../../components/molecules/loader/loader.component';
 import { GoodreadsBook } from '../../models/data-models';
 
-import { openLink } from '../../utils/openLink';
-
 @Component({
   selector: 'app-books',
   imports: [RatingComponent, LoaderComponent],
@@ -15,7 +13,7 @@ import { openLink } from '../../utils/openLink';
 export class BooksComponent {
   books: GoodreadsBook[] = [];
 
-  openBook = openLink;
+  openBook(url: string) { window.open(url, '_blank'); }
 
   async ngOnInit() {
     try {

@@ -1,10 +1,9 @@
-import { Component, inject, ChangeDetectionStrategy, HostListener } from '@angular/core';
+import { Component, inject, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { BluerayComponent } from '../../components/molecules/blueray/blueray.component';
 import { LoaderComponent } from '../../components/molecules/loader/loader.component';
 import { RatingComponent } from '../../components/molecules/rating/rating.component';
 import { GoodreadsBook, LetterboxdMovie } from '../../models/data-models';
-import { openLink } from '../../utils/openLink';
 import { formatDate } from '../../utils/date';
 
 interface NoteFile {
@@ -32,7 +31,6 @@ interface ItemPosition {
   selector: 'app-now',
   imports: [BluerayComponent, LoaderComponent, RatingComponent],
   templateUrl: './now.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './now.component.css',
 })
 export class NowComponent {
@@ -279,10 +277,10 @@ export class NowComponent {
     e.stopPropagation();
     switch (item.type) {
       case 'book':
-        openLink((item.data as GoodreadsBook).link);
+        window.open((item.data as GoodreadsBook).link, '_blank');
         break;
       case 'movie':
-        openLink((item.data as LetterboxdMovie).url);
+        window.open((item.data as LetterboxdMovie).url, '_blank');
         break;
       case 'note':
         const note = item.data as NoteFile;

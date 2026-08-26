@@ -79,22 +79,7 @@
 }
 
 /* Card types */
-.card-book {
-  width: 20em;
-  background: none;
-  box-shadow: none;
-  padding: 0;
-  border-radius: 0;
-}
-
-.card-book:hover:not(.focused):not(.dimmed) {
-  box-shadow: none;
-}
-
-.card-book.focused {
-  box-shadow: none;
-}
-
+.card-book,
 .card-movie {
   width: 20em;
   background: none;
@@ -103,10 +88,12 @@
   border-radius: 0;
 }
 
+.card-book:hover:not(.focused):not(.dimmed),
 .card-movie:hover:not(.focused):not(.dimmed) {
   box-shadow: none;
 }
 
+.card-book.focused,
 .card-movie.focused {
   box-shadow: none;
 }

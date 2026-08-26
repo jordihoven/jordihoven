@@ -1,6 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { LoaderComponent } from '../../components/molecules/loader/loader.component';
-import { openLink } from '../../utils/openLink';
 import { formatDate } from '../../utils/date';
 
 interface StravaActivity {
@@ -35,7 +34,7 @@ interface StravaActivity {
   styleUrl: './strava.component.css',
 })
 export class StravaComponent {
-  openLink = openLink;
+  openLink(url: string) { window.open(url, '_blank'); }
   formatDate = formatDate;
   activities: StravaActivity[] = [];
   loading = true;

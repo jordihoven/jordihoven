@@ -32,36 +32,39 @@
           >
             @switch (item.type) {
               @case ('book') {
+                @let book = asBook(item.data);
                 <img
                   class="card-media"
-                  [src]="asBook(item.data).cover"
-                  [alt]="asBook(item.data).title"
+                  [src]="book.cover"
+                  [alt]="book.title"
                   draggable="false"
                 />
                 <div class="card-detail">
-                  <span class="card-label">{{ asBook(item.data).title }}</span>
-                  <span class="card-sub">{{ asBook(item.data).author }}</span>
-                  @if (asBook(item.data).rating) {
-                    <app-rating [rating]="asBook(item.data).rating"></app-rating>
+                  <span class="card-label">{{ book.title }}</span>
+                  <span class="card-sub">{{ book.author }}</span>
+                  @if (book.rating) {
+                    <app-rating [rating]="book.rating"></app-rating>
                   }
                   <a class="card-link" (click)="navigateItem($event, item)">Goodreads &rarr;</a>
                 </div>
               }
               @case ('movie') {
-                <app-blueray [poster]="asMovie(item.data).poster"></app-blueray>
+                @let movie = asMovie(item.data);
+                <app-blueray [poster]="movie.poster"></app-blueray>
                 <div class="card-detail">
-                  <span class="card-label">{{ asMovie(item.data).title }}</span>
-                  <span class="card-sub">{{ asMovie(item.data).year }}</span>
-                  <app-rating [rating]="asMovie(item.data).rating"></app-rating>
+                  <span class="card-label">{{ movie.title }}</span>
+                  <span class="card-sub">{{ movie.year }}</span>
+                  <app-rating [rating]="movie.rating"></app-rating>
                   <a class="card-link" (click)="navigateItem($event, item)">Letterboxd &rarr;</a>
                 </div>
               }
               @case ('note') {
+                @let note = asNote(item.data);
                 <div class="note-header">
-                  <p class="note-title">{{ prettify(asNote(item.data).name) }}</p>
-                  <span class="note-date">{{ formatDate(asNote(item.data).updatedAt) }}</span>
+                  <p class="note-title">{{ prettify(note.name) }}</p>
+                  <span class="note-date">{{ formatDate(note.updatedAt) }}</span>
                 </div>
-                <p class="note-preview">{{ asNote(item.data).preview }}</p>
+                <p class="note-preview">{{ note.preview }}</p>
                 <div class="card-detail">
                   <a class="card-link" (click)="navigateItem($event, item)">Read note &rarr;</a>
                 </div>

@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 //import components
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './pages/app.component';
-import { ButtonComponent } from './components/atoms/button/button.component';
 import { LinksComponent } from './components/molecules/links/links.component';
 import { ProjectComponent } from './components/molecules/project-card/project-card.component';
 
@@ -25,7 +24,6 @@ import {
   provideLucideIcons,
   LucideCode,
   LucideMail,
-  LucideImage,
   LucideFileUser,
   LucideHome,
   LucidePopcorn,
@@ -43,7 +41,6 @@ import { LoaderComponent } from './components/molecules/loader/loader.component'
 @NgModule({
   declarations: [
     AppComponent,
-    ButtonComponent,
     ProjectComponent,
     LinksComponent,
     FooterComponent,
@@ -58,7 +55,6 @@ import { LoaderComponent } from './components/molecules/loader/loader.component'
     AppRoutingModule,
     LucideCode,
     LucideMail,
-    LucideImage,
     LucideFileUser,
     LucideHome,
     LucidePopcorn,
@@ -77,7 +73,6 @@ import { LoaderComponent } from './components/molecules/loader/loader.component'
     provideLucideIcons(
       LucideCode,
       LucideMail,
-      LucideImage,
       LucideFileUser,
       LucideHome,
       LucidePopcorn,
