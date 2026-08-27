@@ -97,16 +97,7 @@
     "@schematics/angular:guard": {
       "typeSeparator": "."
     },
-    "@schematics/angular:interceptor": {
-      "typeSeparator": "."
-    },
-    "@schematics/angular:module": {
-      "typeSeparator": "."
-    },
     "@schematics/angular:pipe": {
-      "typeSeparator": "."
-    },
-    "@schematics/angular:resolver": {
       "typeSeparator": "."
     }
   }

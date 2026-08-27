@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 
 //import components
 import { AppRoutingModule } from './app-routing.module';
@@ -15,9 +15,6 @@ import { QuotesComponent } from './pages/quotes/quotes/quotes.component';
 //import modules
 import { FooterComponent } from './components/molecules/footer/footer.component';
 import { HeaderComponent } from './components/molecules/header/header.component';
-
-// import services
-import { RecordsService } from './models/records.service';
 
 // lucide icons
 import {
@@ -50,7 +47,6 @@ import { LoaderComponent } from './components/molecules/loader/loader.component'
   ],
   bootstrap: [AppComponent],
   imports: [
-    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     LucideCode,
@@ -69,7 +65,7 @@ import { LoaderComponent } from './components/molecules/loader/loader.component'
     LoaderComponent,
   ],
   providers: [
-    RecordsService,
+    provideHttpClient(),
     provideLucideIcons(
       LucideCode,
       LucideMail,
