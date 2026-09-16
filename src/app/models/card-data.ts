@@ -5,7 +5,7 @@ export const projects: Project[] = [
     title: 'Daily reflections - 2026 ✍️',
     description: 'Public thinking. Built with Nextjs & Atproto.',
     imgUrl: '../../assets/dailyreflections.gif',
-    url: 'https://dailyreflections.netlify.app/',
+    url: 'https://reflections-gules.vercel.app/',
   },
   {
     title: 'Tastebuddies - 2025 🧑‍🍳',
