@@ -1,0 +1,52 @@
+section.thoughts-grid {
+  column-width: 14em;
+  column-gap: var(--s-spacing);
+}
+
+.thought-card {
+  text-decoration: none;
+  color: inherit;
+  cursor: alias;
+  padding: var(--s-spacing);
+  background-color: var(--background2);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  margin-bottom: var(--s-spacing);
+  break-inside: avoid;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: var(--xs-spacing);
+}
+
+.thought-card:hover {
+  transform: translateY(-2px);
+  filter: brightness(95%);
+}
+
+.thought-card img,
+.thought-card video {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  background-color: var(--border);
+  object-fit: cover;
+  max-height: 45em;
+}
+
+.thought-card p {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.thought-card span {
+  font-size: 0.8em;
+  opacity: 0.6;
+}
+
+.infinite-loader {
+  display: flex;
+  justify-content: center;
+  padding: var(--s-spacing);
+}

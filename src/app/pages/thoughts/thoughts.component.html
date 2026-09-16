@@ -1,0 +1,48 @@
+<section class="intro">
+  <p class="page-header">Thoughts</p>
+  <span
+    >All records from
+    <a class="link" target="_blank" href="https://reflections-gules.vercel.app/"
+      >reflections</a
+    ></span
+  >
+</section>
+
+<section class="thoughts-grid">
+  @for (reflection of reflections; track reflection.uri) {
+    <a class="thought-card" [href]="atprotoUrl(reflection.uri)" target="_blank" rel="noopener">
+      @for (attachment of reflection.value.attachments; track $index) {
+        @if (attachment.blob.mimeType.startsWith("video")) {
+          <video
+            [src]="blobUrl(attachment)"
+            [style.aspect-ratio]="ratio(attachment)"
+            controls
+            muted
+            loop
+            playsinline
+            preload="metadata"
+          ></video>
+        } @else {
+          <img
+            [src]="blobUrl(attachment)"
+            [style.aspect-ratio]="ratio(attachment)"
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
+        }
+      }
+      <p>{{ reflection.value.text }}</p>
+      <span>{{ reflection.value.createdAt | date: "medium" }}</span>
+    </a>
+  } @empty {
+    <app-loader></app-loader>
+  }
+</section>
+
+@if (loading && reflections.length) {
+  <div class="infinite-loader">
+    <app-loader></app-loader>
+  </div>
+}
+<div #sentinel></div>

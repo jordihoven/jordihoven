@@ -32,6 +32,7 @@ import {
   LucideActivity,
   LucideScrollText,
   LucideArrowLeft,
+  LucideCloud,
 } from '@lucide/angular';
 import { LoaderComponent } from './components/molecules/loader/loader.component';
 
@@ -62,6 +63,7 @@ import { LoaderComponent } from './components/molecules/loader/loader.component'
     LucideActivity,
     LucideScrollText,
     LucideArrowLeft,
+    LucideCloud,
     LoaderComponent,
   ],
   providers: [
@@ -80,6 +82,7 @@ import { LoaderComponent } from './components/molecules/loader/loader.component'
       LucideActivity,
       LucideScrollText,
       LucideArrowLeft,
+      LucideCloud,
     ),
   ],
 })
