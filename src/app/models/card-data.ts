@@ -2,7 +2,7 @@ import { Project } from './card-interface';
 
 export const projects: Project[] = [
   {
-    title: 'Daily reflections - 2026 ✍️',
+    title: 'Reflections - 2026 ✍️',
     description: 'Public thinking. Built with Nextjs & Atproto.',
     imgUrl: '../../assets/dailyreflections.gif',
     url: 'https://reflections-gules.vercel.app/',

@@ -1,6 +1,36 @@
 /* settings */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400..600&family=Lora&display=swap");
 
+/* Libron (SIL OFL) — assets/fonts */
+@font-face {
+  font-family: "Libron";
+  src: url("assets/fonts/Libron-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Libron";
+  src: url("assets/fonts/Libron-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Libron";
+  src: url("assets/fonts/Libron-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Libron";
+  src: url("assets/fonts/Libron-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
 * {
   font-family: "Inter", sans-serif;
   box-sizing: border-box;
@@ -30,10 +60,13 @@ html {
   --white: #fff;
   --background: #fafafa;
   --background2: #fff;
+  --background-media: #ededed;
   --border: #e4e4e4;
   --elevated: #f2f2f2;
   --text: #1a1a1a;
   --text2: #6e6e6e;
+  --article-text: #696969;
+  --marks: #bbb;
   --link: #0969da;
   --primary: #0969da;
   --selection: #eee;
@@ -223,10 +256,13 @@ a {
   :root {
     --background: #151515;
     --background2: #1e1e1e;
+    --background-media: #2f2f2f;
     --border: #464646;
     --elevated: #2f2f2f;
     --text: #e2e2e2;
     --text2: #b2b2b2;
+    --article-text: #cccccc;
+    --marks: #888;
     --link: #4493f8;
     --selection: #3d3d3d;
   }
@@ -248,7 +284,88 @@ a {
   cursor: alias;
 }
 
+/* note reader */
+app-note article,
+app-note article * {
+  font-family: "Libron", Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+app-note article {
+  font-size: clamp(14px, 0.45vi + 12.42px, 26px);
+  line-height: 1.85;
+}
+
+app-note article p,
+app-note article li {
+  font-size: inherit;
+}
+
+app-note article h1 {
+  font-size: 1.6em;
+  line-height: 1.5;
+}
+
+app-note article h2 {
+  font-size: 1.3em;
+  line-height: 1.6;
+}
+
+app-note article h3 {
+  font-size: 1.15em;
+  line-height: 1.7;
+}
+
+.img-box {
+  width: 100%;
+  background: var(--background-media);
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  padding: 1lh;
+  margin: var(--l-spacing) 0;
+}
+
+.img-box img {
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: 3px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+app-note article blockquote {
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  box-shadow: var(--shadow);
+  position: relative;
+  font-style: italic;
+  padding: 1lh;
+  margin: var(--m-spacing) 0;
+}
+
+app-note article blockquote::before {
+  content: "❊ ❈ ❊";
+  color: var(--marks);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--background);
+  padding: 0 0.25rem;
+  font-style: normal;
+}
+
+app-note article blockquote:nth-child(odd)::before {
+  content: "❈ ❊ ❈";
+}
+
 /* markdown styles */
+
+article,
+article * {
+  color: var(--article-text);
+}
 
 article {
   display: flex;
@@ -257,14 +374,12 @@ article {
 }
 
 article p {
-  color: var(--text2);
   margin-bottom: var(--s-spacing);
 }
 
 article ul,
 article ol {
   list-style-position: inside;
-  color: var(--text2);
 }
 
 article li:has(input[type="checkbox"]) {

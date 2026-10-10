@@ -57,7 +57,7 @@ export class NoteComponent implements OnInit {
         const trimmed = filename.trim();
         const imagePath = trimmed.startsWith('images/') ? trimmed.slice(7) : trimmed;
         const url = `/.netlify/functions/notes-data?image=${encodeURIComponent(imagePath)}`;
-        return `<img src="${url}" alt="">`;
+        return `<div class="img-box"><img src="${url}" alt=""></div>`;
       });
 
       const availableNoteNames = notes.map((n: any) => n.name.replace('.md', ''));

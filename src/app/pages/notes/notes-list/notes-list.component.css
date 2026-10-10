@@ -71,6 +71,7 @@ section.notes-intro p {
 
 .note-preview {
   color: var(--text2);
+  font-family: "Libron", Georgia, "Times New Roman", serif;
   font-size: 0.9em;
   line-height: 1.4;
   margin: 0;
