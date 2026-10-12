@@ -292,7 +292,7 @@ app-note article * {
 }
 
 app-note article {
-  font-size: clamp(14px, 0.45vi + 12.42px, 26px);
+  font-size: clamp(16px, 0.5vi + 14px, 29px);
   line-height: 1.85;
 }
 
@@ -302,24 +302,24 @@ app-note article li {
 }
 
 app-note article h1 {
-  font-size: 1.6em;
+  font-size: 1.75em;
   line-height: 1.5;
 }
 
 app-note article h2 {
-  font-size: 1.3em;
+  font-size: 1.45em;
   line-height: 1.6;
 }
 
 app-note article h3 {
-  font-size: 1.15em;
+  font-size: 1.25em;
   line-height: 1.7;
 }
 
 .img-box {
   width: 100%;
   background: var(--background-media);
-  border-radius: 3px;
+  border-radius: 8px;
   display: flex;
   justify-content: center;
   padding: 1lh;
@@ -330,7 +330,7 @@ app-note article h3 {
   max-width: 100%;
   height: auto;
   margin: 0;
-  border-radius: 3px;
+  border-radius: 6px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
 }
 
