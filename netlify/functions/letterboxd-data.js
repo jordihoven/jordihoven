@@ -9,7 +9,7 @@ const LETTERBOXD_FILM_URL = (slug) => `${LETTERBOXD_URL}/film/${slug}/`;
 
 exports.handler = async (event, context) => {
   try {
-    const limit = parseInt(event.queryStringParameters.limit) || 4;
+    const limit = parseInt(event.queryStringParameters?.limit) || 50;
     // Fetch RSS feed server-side
     const xml = await fetch(LETTERBOXD_FEED).then((res) => res.text());
 
