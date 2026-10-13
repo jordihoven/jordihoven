@@ -479,6 +479,69 @@ article img {
   margin: var(--s-spacing) 0;
 }
 
+article pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85em;
+  line-height: 1.6;
+  background: var(--elevated);
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  padding: var(--s-spacing);
+  max-height: 800px;
+  overflow: auto;
+  margin: var(--m-spacing) 0;
+}
+
+article pre code {
+  font-family: inherit;
+  font-size: inherit;
+  background: none;
+  padding: 0;
+}
+
+article .code-block {
+  position: relative;
+}
+
+article .copy-btn {
+  position: absolute;
+  top: var(--l-spacing);
+  right: var(--m-spacing);
+  display: flex;
+  padding: var(--xs-spacing);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  opacity: 0;
+  transition: var(--transition);
+  z-index: 1;
+}
+
+article .code-block:hover .copy-btn,
+article .copy-btn:focus-visible {
+  opacity: 1;
+}
+
+article .copy-btn .check {
+  display: none;
+}
+
+article .copy-btn.copied .copy {
+  display: none;
+}
+
+article .copy-btn.copied .check {
+  display: block;
+}
+
+article :not(pre) > code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  background: var(--elevated);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+}
+
 /* responsiveness */
 @media only screen and (max-width: 600px) {
   header {
