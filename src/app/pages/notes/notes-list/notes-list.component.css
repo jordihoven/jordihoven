@@ -30,7 +30,6 @@ section.notes-intro p {
   display: flex;
   flex-direction: column;
   gap: var(--xs-spacing);
-  height: 17em;
   overflow: hidden;
   aspect-ratio: 4 / 5;
 }
@@ -82,8 +81,6 @@ section.notes-intro p {
     grid-template-columns: repeat(2, minmax(0px, 1fr));
   }
   .note {
-    aspect-ratio: unset;
-    height: 14em;
     padding: var(--xs-spacing);
   }
 }
