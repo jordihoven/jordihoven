@@ -319,10 +319,10 @@ app-note article h3 {
 .img-box {
   width: 100%;
   background: var(--background-media);
-  border-radius: 8px;
+  border-radius: 12px;
   display: flex;
   justify-content: center;
-  padding: 1lh;
+  padding: 24px;
   margin: var(--l-spacing) 0;
 }
 
@@ -483,5 +483,9 @@ article img {
 @media only screen and (max-width: 600px) {
   header {
     max-width: 100%;
+  }
+
+  .img-box {
+    padding: 12px;
   }
 }
