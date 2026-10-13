@@ -14,8 +14,7 @@
 nav {
   position: fixed;
   display: flex;
-  gap: 4px;
-  padding: var(--xs-spacing);
+  padding: 0.25rem;
   background-color: var(--background);
   border-radius: var(--rounded);
   border: 1px solid var(--border);
@@ -28,7 +27,7 @@ nav {
 
 nav a {
   display: flex;
-  padding: var(--xs-spacing);
+  padding: 0.75rem;
   border-radius: var(--rounded);
   transition: all 0.3s ease-in-out;
 }
