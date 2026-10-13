@@ -291,9 +291,22 @@ app-note article * {
   font-weight: 400;
 }
 
+app-note article strong,
+app-note article b {
+  font-weight: 700;
+}
+
 app-note article {
   font-size: clamp(16px, 0.5vi + 14px, 29px);
   line-height: 1.85;
+}
+
+app-note article ol li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+app-note article ul {
+  margin-bottom: 1rem;
 }
 
 app-note article p,
@@ -455,7 +468,7 @@ article a[target="_blank"]::after {
 article h1,
 h2,
 h3 {
-  margin-bottom: var(--m-spacing);
+  margin-bottom: var(--xs-spacing);
 }
 
 article h1 {
