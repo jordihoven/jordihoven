@@ -14,13 +14,7 @@
   } @else {
     <div class="notes-list">
       @for (note of notes; track note.name) {
-        <div class="note" (click)="openNote(note)">
-          <div class="note-header">
-            <p class="note-title">{{ prettify(note.name) }}</p>
-            <span class="note-date">{{ formatDate(note.updatedAt) }}</span>
-          </div>
-          <p class="note-preview">{{ note.preview }}</p>
-        </div>
+        <app-note-card [note]="note" (click)="openNote(note)"></app-note-card>
       }
     </div>
   }

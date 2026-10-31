@@ -35,6 +35,7 @@ import {
   LucideCloud,
 } from '@lucide/angular';
 import { LoaderComponent } from './components/molecules/loader/loader.component';
+import { RecentsComponent } from './components/molecules/recents/recents.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { LoaderComponent } from './components/molecules/loader/loader.component'
     LucideArrowLeft,
     LucideCloud,
     LoaderComponent,
+    RecentsComponent,
   ],
   providers: [
     provideHttpClient(),

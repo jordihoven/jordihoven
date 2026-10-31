@@ -1,0 +1,36 @@
+<section id="recents">
+  <ul class="track" dragScroll>
+    @for (item of items; track item.link) {
+    <li class="card">
+      @if (item.external) {
+      <a [href]="item.link" target="_blank" rel="noopener">
+        <ng-container *ngTemplateOutlet="content; context: { $implicit: item }"></ng-container>
+      </a>
+      } @else {
+      <a [routerLink]="item.link">
+        <ng-container *ngTemplateOutlet="content; context: { $implicit: item }"></ng-container>
+      </a>
+      }
+    </li>
+    }
+  </ul>
+</section>
+
+<ng-template #content let-item>
+  @switch (item.type) {
+    @case ('movie') {
+    <app-blueray [poster]="item.image"></app-blueray>
+    <app-rating [rating]="item.rating"></app-rating>
+    }
+    @case ('note') {
+    <app-note-card [note]="item.note"></app-note-card>
+    }
+    @default {
+    <!-- book: placeholder until we pick a style -->
+    <div class="media">
+      <img [src]="item.image" [alt]="item.title" loading="lazy" />
+    </div>
+    <span class="meta">{{ item.type }} · {{ formatDate(item.date) }}</span>
+    }
+  }
+</ng-template>

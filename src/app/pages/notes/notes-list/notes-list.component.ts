@@ -1,21 +1,15 @@
 import { Component, inject, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { formatDate } from '../../../utils/date';
+import { noteSlug } from '../../../utils/note';
+import { NoteFile } from '../../../models/data-models';
 import { LoaderComponent } from '../../../components/molecules/loader/loader.component';
-
-interface NoteFile {
-  name: string;
-  path: string;
-  sha: string;
-  updatedAt: string;
-  preview: string;
-}
+import { NoteCardComponent } from '../../../components/molecules/note-card/note-card.component';
 
 @Component({
   selector: 'app-notes-list',
   standalone: true,
-  imports: [LoaderComponent],
+  imports: [LoaderComponent, NoteCardComponent],
   templateUrl: './notes-list.component.html',
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './notes-list.component.css',
@@ -25,7 +19,6 @@ export class NotesListComponent implements OnInit {
 
   notes: NoteFile[] = [];
   loading = true;
-  formatDate = formatDate;
 
   async ngOnInit() {
     try {
@@ -39,15 +32,6 @@ export class NotesListComponent implements OnInit {
   }
 
   openNote(note: NoteFile) {
-    const slug = note.name.replace('.md', '').replace(/ /g, '-');
-    this.router.navigate(['/note', slug]);
-  }
-
-  prettify(filename: string): string {
-    return filename
-      .replace('.md', '')
-      .split('-')
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
+    this.router.navigate(['/note', noteSlug(note.name)]);
   }
 }

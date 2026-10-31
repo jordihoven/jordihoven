@@ -32,6 +32,7 @@ exports.handler = async (event, context) => {
       review: stripHtml(entry.user_review),
       link: entry.link,
       dateAdded: entry.user_date_added,
+      readAt: entry.user_read_at,
     }));
 
     return {
