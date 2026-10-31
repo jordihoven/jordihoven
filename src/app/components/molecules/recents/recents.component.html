@@ -20,7 +20,6 @@
   @switch (item.type) {
     @case ('movie') {
     <app-blueray [poster]="item.image"></app-blueray>
-    <app-rating [rating]="item.rating"></app-rating>
     }
     @case ('note') {
     <app-note-card [note]="item.note"></app-note-card>

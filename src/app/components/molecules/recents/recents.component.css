@@ -1,7 +1,44 @@
+/* mobile full bleed: stretch into the page gutter so cards scroll to the screen edge.
+   desktop: --bleed 0, carousel stays inside the content column (no bleed, no blur) */
+#recents {
+  --bleed: 0px;
+  position: relative;
+  margin: 0 calc(-1 * var(--bleed)) var(--m-spacing);
+}
+
+@media only screen and (max-width: 600px) {
+  #recents {
+    --bleed: var(--page-gutter);
+  }
+}
+
+/* subtle safari-style edge blur, fades out toward the content */
+#recents::before,
+#recents::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--bleed);
+  z-index: 2; /* above bluray .case (z-index: 1) */
+  pointer-events: none; /* drag + clicks pass through */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+#recents::before {
+  left: 0;
+  mask-image: linear-gradient(to right, black, transparent);
+}
+
+#recents::after {
+  right: 0;
+  mask-image: linear-gradient(to left, black, transparent);
+}
+
 /* native css carousel: horizontal scroll + snap, no js */
 .track {
-  --visible: 2;
-  --peek: var(--m-spacing); /* side padding where neighbour cards peek in */
+  --visible: 3.25; /* cards per view, fraction = next card peeks */
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: calc((100% - (var(--visible) - 1) * var(--xs-spacing)) / var(--visible));
@@ -10,9 +47,11 @@
   scroll-snap-type: x mandatory;
   overscroll-behavior-x: contain;
   list-style: none;
-  padding: var(--xs-spacing) var(--peek); /* top room so hover lift + shadow aren't clipped by overflow */
-  scroll-padding-inline: var(--peek); /* snap respects the padding */
-  margin: 0 0 var(--m-spacing);
+  margin: 0;
+  /* side padding pushes cards back in line with page content (see #recents bleed).
+     top/bottom room so hover lift + shadow aren't clipped by overflow */
+  padding: var(--xs-spacing) var(--bleed);
+  scroll-padding-inline: var(--bleed);
   cursor: grab;
   user-select: none;
 }
@@ -23,9 +62,9 @@
   cursor: grabbing;
 }
 
-@media only screen and (min-width: 601px) {
+@media only screen and (max-width: 600px) {
   .track {
-    --visible: 3;
+    --visible: 1.75;
   }
 }
 
@@ -67,4 +106,9 @@ app-blueray {
 
 app-blueray:hover {
   transform: translateY(-2px);
+}
+
+/* bluray has margin: 0 10px for the /movies grid, drop it here so cards align */
+app-blueray ::ng-deep article {
+  margin: 0;
 }

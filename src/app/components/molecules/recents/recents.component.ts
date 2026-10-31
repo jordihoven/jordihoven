@@ -4,7 +4,6 @@ import { NgTemplateOutlet } from '@angular/common';
 import { DragScrollDirective } from '../../../utils/drag-scroll.directive';
 import { BluerayComponent } from '../blueray/blueray.component';
 import { NoteCardComponent } from '../note-card/note-card.component';
-import { RatingComponent } from '../rating/rating.component';
 import { GoodreadsBook, LetterboxdMovie, NoteFile } from '../../../models/data-models';
 import { formatDate } from '../../../utils/date';
 import { noteSlug, noteTitle } from '../../../utils/note';
@@ -19,7 +18,6 @@ interface RecentItem {
   external: boolean;
   image?: string;
   note?: NoteFile;
-  rating?: number;
 }
 
 async function fetchJson<T>(url: string): Promise<T[]> {
@@ -29,7 +27,7 @@ async function fetchJson<T>(url: string): Promise<T[]> {
 
 @Component({
   selector: 'app-recents',
-  imports: [RouterLink, NgTemplateOutlet, DragScrollDirective, BluerayComponent, NoteCardComponent, RatingComponent],
+  imports: [RouterLink, NgTemplateOutlet, DragScrollDirective, BluerayComponent, NoteCardComponent],
   templateUrl: './recents.component.html',
   styleUrl: './recents.component.css',
   changeDetection: ChangeDetectionStrategy.Eager,
@@ -63,7 +61,6 @@ export class RecentsComponent implements OnInit {
         link: m.url,
         external: true,
         image: m.poster,
-        rating: m.rating,
       })),
       ...ok(notes).map((n): RecentItem => ({
         type: 'note',
