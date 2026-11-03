@@ -25,11 +25,7 @@
     <app-note-card [note]="item.note"></app-note-card>
     }
     @default {
-    <!-- book: placeholder until we pick a style -->
-    <div class="media">
-      <img [src]="item.image" [alt]="item.title" loading="lazy" />
-    </div>
-    <span class="meta">{{ item.type }} · {{ formatDate(item.date) }}</span>
+    <img class="book" [src]="item.image" [alt]="item.title" loading="lazy" />
     }
   }
 </ng-template>

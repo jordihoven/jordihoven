@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { BluerayComponent } from '../../components/molecules/blueray/blueray.component';
 import { LoaderComponent } from '../../components/molecules/loader/loader.component';
 import { RatingComponent } from '../../components/molecules/rating/rating.component';
-import { GoodreadsBook, LetterboxdMovie } from '../../models/data-models';
+import { BookhiveBook, LetterboxdMovie } from '../../models/data-models';
 import { formatDate } from '../../utils/date';
 
 interface NoteFile {
@@ -17,7 +17,7 @@ interface NoteFile {
 interface NowItem {
   type: 'book' | 'movie' | 'note';
   date: Date;
-  data: GoodreadsBook | LetterboxdMovie | NoteFile;
+  data: BookhiveBook | LetterboxdMovie | NoteFile;
 }
 
 interface ItemPosition {
@@ -65,7 +65,7 @@ export class NowComponent {
   async ngOnInit() {
     try {
       const [books, movies, notes] = await Promise.all([
-        fetch('/.netlify/functions/goodreads-data').then(r => r.json()) as Promise<GoodreadsBook[]>,
+        fetch('/.netlify/functions/bookhive-data').then(r => r.json()) as Promise<BookhiveBook[]>,
         fetch('/.netlify/functions/letterboxd-data?limit=10').then(r => r.json()) as Promise<LetterboxdMovie[]>,
         fetch('/.netlify/functions/notes-data').then(r => r.json()) as Promise<NoteFile[]>,
       ]);
@@ -277,7 +277,7 @@ export class NowComponent {
     e.stopPropagation();
     switch (item.type) {
       case 'book':
-        window.open((item.data as GoodreadsBook).link, '_blank');
+        window.open((item.data as BookhiveBook).link, '_blank');
         break;
       case 'movie':
         window.open((item.data as LetterboxdMovie).url, '_blank');
@@ -290,15 +290,15 @@ export class NowComponent {
     }
   }
 
-  asBook(data: GoodreadsBook | LetterboxdMovie | NoteFile): GoodreadsBook {
-    return data as GoodreadsBook;
+  asBook(data: BookhiveBook | LetterboxdMovie | NoteFile): BookhiveBook {
+    return data as BookhiveBook;
   }
 
-  asMovie(data: GoodreadsBook | LetterboxdMovie | NoteFile): LetterboxdMovie {
+  asMovie(data: BookhiveBook | LetterboxdMovie | NoteFile): LetterboxdMovie {
     return data as LetterboxdMovie;
   }
 
-  asNote(data: GoodreadsBook | LetterboxdMovie | NoteFile): NoteFile {
+  asNote(data: BookhiveBook | LetterboxdMovie | NoteFile): NoteFile {
     return data as NoteFile;
   }
 

@@ -4,8 +4,7 @@ import { NgTemplateOutlet } from '@angular/common';
 import { DragScrollDirective } from '../../../utils/drag-scroll.directive';
 import { BluerayComponent } from '../blueray/blueray.component';
 import { NoteCardComponent } from '../note-card/note-card.component';
-import { GoodreadsBook, LetterboxdMovie, NoteFile } from '../../../models/data-models';
-import { formatDate } from '../../../utils/date';
+import { BookhiveBook, LetterboxdMovie, NoteFile } from '../../../models/data-models';
 import { noteSlug, noteTitle } from '../../../utils/note';
 
 const RECENTS_COUNT = 6;
@@ -34,22 +33,22 @@ async function fetchJson<T>(url: string): Promise<T[]> {
 })
 export class RecentsComponent implements OnInit {
   items: RecentItem[] = [];
-  formatDate = formatDate;
 
   async ngOnInit() {
     // allSettled: one broken feed shouldn't hide the others
     const [books, movies, notes] = await Promise.allSettled([
-      fetchJson<GoodreadsBook>('/.netlify/functions/goodreads-data'),
+      fetchJson<BookhiveBook>('/.netlify/functions/bookhive-data'),
       fetchJson<LetterboxdMovie>(`/.netlify/functions/letterboxd-data?limit=${RECENTS_COUNT}`),
       fetchJson<NoteFile>('/.netlify/functions/notes-data'),
     ]);
     const ok = <T>(r: PromiseSettledResult<T[]>) => (r.status === 'fulfilled' ? r.value : []);
 
     this.items = [
-      ...ok(books).map((b): RecentItem => ({
+      // only books with a finished date, bookhive import stamped every createdAt with the import day
+      ...ok(books).filter((b) => b.readAt).map((b): RecentItem => ({
         type: 'book',
         title: b.title,
-        date: b.readAt || b.dateAdded,
+        date: b.readAt,
         link: b.link,
         external: true,
         image: b.cover,

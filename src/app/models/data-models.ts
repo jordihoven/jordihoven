@@ -1,8 +1,8 @@
-export interface GoodreadsBook {
+export interface BookhiveBook {
   title: string;
   author: string;
   dateAdded: string;
-  readAt: string; // empty when no read date set in goodreads
+  readAt: string; // empty when no finishedAt set in bookhive
   rating: number | 0; // TODO: check whether this is type safe?
   cover: string;
   url: string;

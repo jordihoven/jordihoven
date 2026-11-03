@@ -15,7 +15,7 @@ Personal portfolio site showcasing projects, books, movies, records, quotes, and
 - **Framework**: Angular 20 (standalone components)
 - **Hosting**: Netlify
 - **Data Sources**:
-  - Goodreads RSS (books)
+  - BookHive atproto records (books)
   - Letterboxd RSS (movies)
   - Local JSON/data files (records, projects, quotes, thoughts)
 
@@ -25,7 +25,7 @@ Personal portfolio site showcasing projects, books, movies, records, quotes, and
 | ---------------- | ----------------- | ------------------------------ |
 | `/`              | HomeComponent     | Intro + projects               |
 | `/movies`        | MoviesComponent   | Watched movies from Letterboxd |
-| `/books`         | BooksComponent    | Read books from Goodreads      |
+| `/books`         | BooksComponent    | Read books from BookHive       |
 | `/records`       | RecordsComponent  | Vinyl record collection        |
 | `/quotes`        | QuotesComponent   | Favorite quotes                |
 | `/thoughts`      | ThoughtsComponent | Blog posts                     |
@@ -35,7 +35,7 @@ Personal portfolio site showcasing projects, books, movies, records, quotes, and
 
 - `src/app/app-routing.module.ts` - Routes configuration
 - `src/app/pages/app.component.html` - Main layout with nav dock
-- `netlify/functions/goodreads-data.js` - Goodreads RSS fetcher
+- `netlify/functions/bookhive-data.js` - BookHive (atproto) books fetcher
 - `netlify/functions/letterboxd-data.js` - Letterboxd RSS fetcher
 - `src/app/models/card-data.ts` - Static project data
 
@@ -56,5 +56,5 @@ npm run build  # production build
 
 ## External Dependencies
 
-- Goodreads user: 148826963
+- BookHive: jordihoven.nl (did:plc:o67xeqqjchzzecfvkyq2wlfs)
 - Letterboxd username: stoicbean

@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RatingComponent } from '../../components/molecules/rating/rating.component';
 import { LoaderComponent } from '../../components/molecules/loader/loader.component';
-import { GoodreadsBook } from '../../models/data-models';
+import { BookhiveBook } from '../../models/data-models';
 
 @Component({
   selector: 'app-books',
@@ -11,13 +11,13 @@ import { GoodreadsBook } from '../../models/data-models';
   styleUrl: './books.component.css',
 })
 export class BooksComponent {
-  books: GoodreadsBook[] = [];
+  books: BookhiveBook[] = [];
 
   openBook(url: string) { window.open(url, '_blank'); }
 
   async ngOnInit() {
     try {
-      const res = await fetch('/.netlify/functions/goodreads-data');
+      const res = await fetch('/.netlify/functions/bookhive-data');
       this.books = await res.json();
     } catch (error) {
       console.error(error);

@@ -78,25 +78,25 @@
   gap: var(--xs-spacing);
 }
 
-/* book placeholder */
-.media {
-  aspect-ratio: 2 / 3;
-  border: 1px dashed var(--border);
-  border-radius: var(--radius);
-  background-color: var(--background-media);
-  overflow: hidden;
-}
-
-.media img {
+/* book: bare cover, bluray ratio so it lines up with movies, border/shadow/lift from note-card */
+.book {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 142 / 179; /* same as bluray .case */
   object-fit: cover;
   display: block;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
 }
 
-.meta {
-  font-size: var(--span);
-  color: var(--marks);
+.book:hover {
+  transform: translateY(-2px);
+}
+
+/* note-card is 4/5 for the /notes grid, match bluray here so all cards line up */
+app-note-card {
+  aspect-ratio: 142 / 179;
 }
 
 /* same lift as note-card hover */
