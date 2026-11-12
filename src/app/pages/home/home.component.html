@@ -1,11 +1,9 @@
 <p class="page-header">Jordi <span>/ 'jor.di /</span></p>
 <Header></Header>
-<Links></Links>
 <main>
-  <app-recents></app-recents>
   <section id="projects" class="grid">
-    @for(project of projects; track project.title) {
-    <project-card [project]="project"></project-card>
+    @for (project of projects; track project.title) {
+      <project-card [project]="project"></project-card>
     }
   </section>
 </main>

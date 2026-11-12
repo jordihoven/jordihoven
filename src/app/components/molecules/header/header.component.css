@@ -6,21 +6,7 @@
   line-height: 1.6;
 }
 
-.name {
-  font-weight: var(--medium);
-}
-
 p {
   font-size: 18px;
-}
-
-.past,
-:host .highlighted,
-.name {
-  color: var(--text);
-}
-
-.now,
-.past {
   color: var(--text2);
 }

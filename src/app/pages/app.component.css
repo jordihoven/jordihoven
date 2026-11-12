@@ -2,8 +2,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  --page-gutter: 2rem; /* side padding, also used by full-bleed carousels */
-  padding: 4rem var(--page-gutter) 6rem;
+  padding: 4rem 2rem 6rem 2rem;
   max-width: calc(620px + 8rem);
   margin: 0 auto;
 }
@@ -43,7 +42,6 @@ nav a:hover {
 /* mobile */
 @media only screen and (max-width: 600px) {
   #app {
-    --page-gutter: 16px;
-    padding: 2rem var(--page-gutter) 6rem;
+    padding: 2rem 16px 6rem 16px;
   }
 }

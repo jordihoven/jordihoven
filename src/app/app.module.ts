@@ -5,7 +5,6 @@ import { provideHttpClient } from '@angular/common/http';
 //import components
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './pages/app.component';
-import { LinksComponent } from './components/molecules/links/links.component';
 import { ProjectComponent } from './components/molecules/project-card/project-card.component';
 
 // import pages
@@ -19,9 +18,6 @@ import { HeaderComponent } from './components/molecules/header/header.component'
 // lucide icons
 import {
   provideLucideIcons,
-  LucideCode,
-  LucideMail,
-  LucideFileUser,
   LucideHome,
   LucidePopcorn,
   LucideMusic,
@@ -32,16 +28,13 @@ import {
   LucideActivity,
   LucideScrollText,
   LucideArrowLeft,
-  LucideCloud,
 } from '@lucide/angular';
 import { LoaderComponent } from './components/molecules/loader/loader.component';
-import { RecentsComponent } from './components/molecules/recents/recents.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjectComponent,
-    LinksComponent,
     FooterComponent,
     HeaderComponent,
     HomeComponent,
@@ -51,9 +44,6 @@ import { RecentsComponent } from './components/molecules/recents/recents.compone
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LucideCode,
-    LucideMail,
-    LucideFileUser,
     LucideHome,
     LucidePopcorn,
     LucideMusic,
@@ -64,16 +54,11 @@ import { RecentsComponent } from './components/molecules/recents/recents.compone
     LucideActivity,
     LucideScrollText,
     LucideArrowLeft,
-    LucideCloud,
     LoaderComponent,
-    RecentsComponent,
   ],
   providers: [
     provideHttpClient(),
     provideLucideIcons(
-      LucideCode,
-      LucideMail,
-      LucideFileUser,
       LucideHome,
       LucidePopcorn,
       LucideMusic,
@@ -84,7 +69,6 @@ import { RecentsComponent } from './components/molecules/recents/recents.compone
       LucideActivity,
       LucideScrollText,
       LucideArrowLeft,
-      LucideCloud,
     ),
   ],
 })

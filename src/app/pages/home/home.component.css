@@ -1,0 +1,7 @@
+main {
+  margin-top: var(--xl-spacing);
+}
+
+.section-title {
+  margin-bottom: var(--s-spacing);
+}
