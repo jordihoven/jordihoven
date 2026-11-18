@@ -8,8 +8,7 @@
   <div class="book-item" (click)="openBook(book.link)">
     @if(book.cover) {
     <div class="cover-wrapper">
-      <img #cover [src]="book.cover" (error)="cover.hidden = true" alt="" />
-      <div class="cover-placeholder"><svg lucideImageOff class="lucide-icon"></svg></div>
+      <app-book [cover]="book.cover"></app-book>
     </div>
     }
     <div class="book-details">

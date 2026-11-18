@@ -1,12 +1,12 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RatingComponent } from '../../components/molecules/rating/rating.component';
-import { LucideImageOff } from '@lucide/angular';
+import { BookComponent } from '../../components/molecules/book/book.component';
 import { LoaderComponent } from '../../components/molecules/loader/loader.component';
 import { BookhiveBook } from '../../models/data-models';
 
 @Component({
   selector: 'app-books',
-  imports: [RatingComponent, LoaderComponent, LucideImageOff],
+  imports: [RatingComponent, LoaderComponent, BookComponent],
   templateUrl: './books.component.html',
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './books.component.css',

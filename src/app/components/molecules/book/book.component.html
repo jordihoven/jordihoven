@@ -1,0 +1,4 @@
+<div class="book" [class.loaded]="loaded">
+  <img #img [src]="cover" (load)="loaded = true" (error)="img.hidden = true" alt="" />
+  <div class="cover-placeholder"><svg lucideImageOff class="lucide-icon"></svg></div>
+</div>
