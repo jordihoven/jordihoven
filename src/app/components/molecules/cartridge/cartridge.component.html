@@ -1,0 +1,15 @@
+<div class="cartridge">
+  <div class="shell">
+    <!-- stacked copies of the silhouette = plastic thickness -->
+    @for (i of depth; track i) {
+    <span class="layer" [style.--i]="i"></span>
+    }
+    <div class="front">
+      <div class="label">
+        <img #img [src]="cover" (error)="coverError(img)" alt="" />
+        <div class="cover-placeholder"><svg lucideImageOff class="lucide-icon"></svg></div>
+      </div>
+      <span class="connector"></span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,106 @@
+/* N64 cartridge in 3D, inspired by depmots.com/socket */
+.cartridge {
+  --plastic: #a9abb6;
+  --plastic-edge: #7f818c;
+  height: 10em;
+  aspect-ratio: 3 / 2;
+  perspective: 50em;
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.25));
+}
+
+.shell {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: translateY(-0.4em) scale(0.9) rotateX(14deg) rotateY(-10deg); /* scale keeps the tilted corners inside the box */
+}
+
+/* shared silhouette: arched top, small step in the outer edges near the bottom */
+.layer,
+.front {
+  position: absolute;
+  inset: 0;
+  border-radius: 28% 28% 3% 3% / 24% 24% 3% 3%;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 98.5% 74%, 98.5% 100%, 1.5% 100%, 1.5% 74%, 0 70%);
+}
+
+.layer {
+  background: var(--plastic-edge);
+  transform: translateZ(calc(var(--i) * -0.3em));
+}
+
+.front {
+  box-sizing: border-box;
+  padding: 1em 26.5% 1.3em;
+  display: flex;
+  background:
+    /* grooves between center panel and wings */
+    linear-gradient(to right,
+      transparent 23.6%, rgba(0, 0, 0, 0.35) 23.6% 24%, rgba(255, 255, 255, 0.35) 24% 24.4%, transparent 24.4%,
+      transparent 75.6%, rgba(0, 0, 0, 0.35) 75.6% 76%, rgba(255, 255, 255, 0.35) 76% 76.4%, transparent 76.4%),
+    /* wings curve away from the light */
+    linear-gradient(to right,
+      rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.06) 24%,
+      transparent 24%, transparent 76%,
+      rgba(0, 0, 0, 0.1) 76%, rgba(0, 0, 0, 0.32)),
+    /* soft sheen */
+    linear-gradient(160deg, rgba(255, 255, 255, 0.35), transparent 45%, rgba(0, 0, 0, 0.12)),
+    var(--plastic);
+}
+
+/* label sits in a shallow recess */
+.label {
+  flex: 1;
+  min-width: 0;
+  border-radius: 0.45em;
+  overflow: hidden;
+  display: grid;
+  grid-template: minmax(0, 1fr) / minmax(0, 1fr);
+  background: var(--border);
+  box-shadow:
+    0 0 0 0.15em rgba(0, 0, 0, 0.12),
+    0 0 0 0.2em rgba(255, 255, 255, 0.25);
+}
+
+/* glare over the label */
+.label::after {
+  content: "";
+  grid-area: 1 / 1;
+  z-index: 1;
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.25), transparent 40%);
+  pointer-events: none;
+}
+
+.label img,
+.label .cover-placeholder {
+  grid-area: 1 / 1;
+}
+
+/* global placeholder is sized for a full cover, fill the label instead */
+.label .cover-placeholder {
+  height: auto;
+  aspect-ratio: auto;
+}
+
+.label img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top; /* keep the title in view */
+  display: block;
+}
+
+/* connector teeth peeking out at the bottom of the center panel */
+.connector {
+  position: absolute;
+  left: 26.5%;
+  right: 26.5%;
+  bottom: 0.35em;
+  height: 0.35em;
+  border-radius: 1px;
+  background:
+    repeating-linear-gradient(to right, rgba(255, 255, 255, 0.18) 0 2px, transparent 2px 5px),
+    #4a4b52;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3);
+}

@@ -15,14 +15,6 @@
   box-shadow: var(--shadow);
 }
 
-.game-item img {
-  height: 10em;
-  aspect-ratio: 2 / 3;
-  object-fit: cover;
-  border-radius: 3px;
-  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.2);
-}
-
 .game-item .cover-wrapper {
   background-color: var(--border);
   padding: var(--s-spacing) var(--m-spacing);
