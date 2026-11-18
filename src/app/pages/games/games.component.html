@@ -1,0 +1,21 @@
+<section class="intro">
+  <p class="page-header">Games</p>
+  <span>Recently played games, straight from my Steam library.</span>
+</section>
+
+<section class="game-grid">
+  @for (game of games; track game.appid) {
+  <div class="game-item" (click)="openGame(game.url)">
+    <div class="cover-wrapper">
+      <img [src]="game.cover" (error)="$any($event.target).src = game.coverFallback" alt="" />
+    </div>
+    <div class="game-details">
+      <span class="title">{{ game.name }}</span>
+      <span>{{ game.hours }}h played</span>
+      <span>Last played {{ game.lastPlayed | date }}</span>
+    </div>
+  </div>
+  } @empty {
+  <app-loader></app-loader>
+  }
+</section>

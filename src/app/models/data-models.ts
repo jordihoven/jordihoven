@@ -28,3 +28,13 @@ export interface NoteFile {
   updatedAt: string;
   preview: string;
 }
+
+export interface SteamGame {
+  appid: number;
+  name: string;
+  hours: number;
+  lastPlayed: string;
+  cover: string;
+  coverFallback: string;
+  url: string;
+}

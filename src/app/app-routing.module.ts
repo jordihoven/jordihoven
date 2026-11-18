@@ -10,6 +10,7 @@ import { NotesListComponent } from './pages/notes/notes-list/notes-list.componen
 import { NoteComponent } from './pages/notes/note/note.component';
 import { NowComponent } from './pages/now/now.component';
 import { ThoughtsComponent } from './pages/thoughts/thoughts.component';
+import { GamesComponent } from './pages/games/games.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'quotes', component: QuotesComponent },
   { path: 'movies', component: MoviesComponent },
   { path: 'books', component: BooksComponent },
+  { path: 'games', component: GamesComponent },
   { path: 'now', component: NowComponent },
   { path: 'thoughts', component: ThoughtsComponent },
 ];
