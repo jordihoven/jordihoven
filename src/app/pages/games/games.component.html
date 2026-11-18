@@ -7,7 +7,8 @@
   @for (game of games; track game.appid) {
   <div class="game-item" (click)="openGame(game.url)">
     <div class="cover-wrapper">
-      <img [src]="game.cover" (error)="$any($event.target).src = game.coverFallback" alt="" />
+      <img #cover [src]="game.cover" (error)="coverError(cover, game.coverFallback)" alt="" />
+      <div class="cover-placeholder"><svg lucideImageOff class="lucide-icon"></svg></div>
     </div>
     <div class="game-details">
       <span class="title">{{ game.name }}</span>

@@ -249,6 +249,19 @@ a {
   color: var(--text2);
 }
 
+/* shown when a cover image fails to load (img gets [hidden]) */
+.cover-placeholder {
+  display: none;
+  height: 10em;
+  aspect-ratio: 2 / 3;
+  align-items: center;
+  justify-content: center;
+}
+
+img[hidden] + .cover-placeholder {
+  display: flex;
+}
+
 /* darkmode */
 @media (prefers-color-scheme: dark) {
   /* replace color variables with dark variants */
