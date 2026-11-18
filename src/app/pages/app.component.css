@@ -26,6 +26,7 @@ nav {
 }
 
 nav a {
+  position: relative;
   display: flex;
   padding: 0.75rem;
   border-radius: var(--rounded);
@@ -33,6 +34,31 @@ nav a {
 }
 nav a:hover {
   background-color: var(--elevated);
+}
+
+/* macOS-dock style tooltip, text from aria-label */
+nav a::after {
+  content: attr(aria-label);
+  position: absolute;
+  bottom: calc(100% + 0.75rem);
+  left: 50%;
+  transform: translate(-50%, 4px);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--rounded);
+  border: 1px solid var(--border);
+  background-color: var(--background);
+  box-shadow: var(--shadow);
+  color: var(--text);
+  font-size: var(--span);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+nav a:hover::after,
+nav a:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
 }
 
 .active-link {
