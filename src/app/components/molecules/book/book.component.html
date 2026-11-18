@@ -1,4 +1,9 @@
 <div class="book" [class.loaded]="loaded">
+  <!-- page sheets, outermost first so inner sheets overlap them -->
+  <span class="page" style="--i: 4"></span>
+  <span class="page" style="--i: 3"></span>
+  <span class="page" style="--i: 2"></span>
+  <span class="page" style="--i: 1"></span>
   <img #img [src]="cover" (load)="loaded = true" (error)="img.hidden = true" alt="" />
   <div class="cover-placeholder"><svg lucideImageOff class="lucide-icon"></svg></div>
 </div>
