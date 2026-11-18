@@ -40,3 +40,19 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+@media only screen and (max-width: 600px) {
+  .book-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .book-item .cover-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .book-details {
+    padding: var(--s-spacing);
+  }
+}

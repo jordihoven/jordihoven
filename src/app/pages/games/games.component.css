@@ -47,3 +47,19 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+@media only screen and (max-width: 600px) {
+  .game-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .game-item .cover-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .game-details {
+    padding: var(--s-spacing);
+  }
+}
