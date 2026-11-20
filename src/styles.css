@@ -297,46 +297,46 @@ img[hidden] + .cover-placeholder {
 }
 
 /* note reader */
-app-note article,
-app-note article * {
+:is(app-note, app-note-card) article,
+:is(app-note, app-note-card) article * {
   font-family: "Libron", Georgia, "Times New Roman", serif;
   font-weight: 400;
 }
 
-app-note article strong,
-app-note article b {
+:is(app-note, app-note-card) article strong,
+:is(app-note, app-note-card) article b {
   font-weight: 700;
 }
 
-app-note article {
+:is(app-note, app-note-card) article {
   font-size: clamp(16px, 0.5vi + 14px, 29px);
   line-height: 1.85;
 }
 
-app-note article ol li:not(:last-child) {
+:is(app-note, app-note-card) article ol li:not(:last-child) {
   margin-bottom: 1rem;
 }
 
-app-note article ul {
+:is(app-note, app-note-card) article ul {
   margin-bottom: 1rem;
 }
 
-app-note article p,
-app-note article li {
+:is(app-note, app-note-card) article p,
+:is(app-note, app-note-card) article li {
   font-size: inherit;
 }
 
-app-note article h1 {
+:is(app-note, app-note-card) article h1 {
   font-size: 1.75em;
   line-height: 1.5;
 }
 
-app-note article h2 {
+:is(app-note, app-note-card) article h2 {
   font-size: 1.45em;
   line-height: 1.6;
 }
 
-app-note article h3 {
+:is(app-note, app-note-card) article h3 {
   font-size: 1.25em;
   line-height: 1.7;
 }
@@ -359,7 +359,7 @@ app-note article h3 {
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
 }
 
-app-note article blockquote {
+:is(app-note, app-note-card) article blockquote {
   border: 1px solid var(--border);
   border-radius: 2px;
   box-shadow: var(--shadow);
@@ -369,7 +369,7 @@ app-note article blockquote {
   margin: var(--m-spacing) 0;
 }
 
-app-note article blockquote::before {
+:is(app-note, app-note-card) article blockquote::before {
   content: "❊ ❈ ❊";
   color: var(--marks);
   position: absolute;
@@ -381,7 +381,7 @@ app-note article blockquote::before {
   font-style: normal;
 }
 
-app-note article blockquote:nth-child(odd)::before {
+:is(app-note, app-note-card) article blockquote:nth-child(odd)::before {
   content: "❈ ❊ ❈";
 }
 

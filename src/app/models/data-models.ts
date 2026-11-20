@@ -27,6 +27,7 @@ export interface NoteFile {
   sha: string;
   updatedAt: string;
   preview: string;
+  content: string;
 }
 
 export interface SteamGame {

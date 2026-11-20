@@ -122,6 +122,7 @@ exports.handler = async (event) => {
           sha: file.sha,
           updatedAt,
           preview: truncatePreview(content),
+          content: extractContent(content),
         };
       })
     );

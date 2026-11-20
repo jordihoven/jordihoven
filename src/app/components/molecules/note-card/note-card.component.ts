@@ -1,7 +1,8 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, inject, OnInit } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { NoteFile } from '../../../models/data-models';
 import { formatDate } from '../../../utils/date';
-import { noteTitle } from '../../../utils/note';
+import { noteTitle, renderNote } from '../../../utils/note';
 
 @Component({
   selector: 'app-note-card',
@@ -9,8 +10,16 @@ import { noteTitle } from '../../../utils/note';
   styleUrl: './note-card.component.css',
   changeDetection: ChangeDetectionStrategy.Eager,
 })
-export class NoteCardComponent {
+export class NoteCardComponent implements OnInit {
+  private sanitizer = inject(DomSanitizer);
+
   @Input({ required: true }) note!: NoteFile;
+  @Input() noteNames: string[] = [];
   formatDate = formatDate;
   noteTitle = noteTitle;
+  html: SafeHtml = '';
+
+  ngOnInit() {
+    this.html = this.sanitizer.bypassSecurityTrustHtml(renderNote(this.note.content, this.noteNames));
+  }
 }

@@ -39,12 +39,17 @@
   font-size: 0.85em;
 }
 
+/* rendered note, shrunk to fit the card, faded at the bottom */
 .note-preview {
-  color: var(--text2);
-  font-family: "Libron", Georgia, "Times New Roman", serif;
-  font-size: 0.9em;
-  line-height: 1.4;
-  margin: 0;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  zoom: 0.5;
+  mask-image: linear-gradient(to bottom, black 75%, transparent);
+}
+
+.note-preview ::ng-deep .copy-btn {
+  display: none;
 }
 
 @media only screen and (max-width: 600px) {

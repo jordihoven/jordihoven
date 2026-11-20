@@ -18,12 +18,14 @@ export class NotesListComponent implements OnInit {
   private router = inject(Router);
 
   notes: NoteFile[] = [];
+  noteNames: string[] = [];
   loading = true;
 
   async ngOnInit() {
     try {
       const res = await fetch('/.netlify/functions/notes-data');
       this.notes = await res.json();
+      this.noteNames = this.notes.map((n) => n.name.replace('.md', ''));
     } catch (err) {
       console.error('Could not load notes', err);
     } finally {
