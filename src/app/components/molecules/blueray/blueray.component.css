@@ -141,3 +141,9 @@ img {
   display: block;
   border-radius: 0 3px 3px 0;
 }
+
+/* global placeholder is sized for a full cover, fill the case instead */
+.case .cover-placeholder {
+  height: 100%;
+  aspect-ratio: auto;
+}

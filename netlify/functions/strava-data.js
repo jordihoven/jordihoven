@@ -1,3 +1,4 @@
+const { CACHE_HEADERS } = require('../lib/cache');
 const STRAVA_CLIENT_ID = process.env.STRAVA_CLIENT_ID;
 const STRAVA_CLIENT_SECRET = process.env.STRAVA_CLIENT_SECRET;
 const STRAVA_REFRESH_TOKEN = process.env.STRAVA_REFRESH_TOKEN;
@@ -82,6 +83,7 @@ exports.handler = async (event) => {
 
     return {
       statusCode: 200,
+      headers: CACHE_HEADERS,
       body: JSON.stringify(formatted),
     };
   } catch (err) {

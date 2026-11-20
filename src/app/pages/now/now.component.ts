@@ -26,6 +26,7 @@ interface ItemPosition {
   rotation: number;
   compactScale: number;
 }
+import { getData } from '../../utils/data';
 
 @Component({
   selector: 'app-now',
@@ -65,9 +66,9 @@ export class NowComponent {
   async ngOnInit() {
     try {
       const [books, movies, notes] = await Promise.all([
-        fetch('/.netlify/functions/bookhive-data').then(r => r.json()) as Promise<BookhiveBook[]>,
-        fetch('/.netlify/functions/letterboxd-data?limit=10').then(r => r.json()) as Promise<LetterboxdMovie[]>,
-        fetch('/.netlify/functions/notes-data').then(r => r.json()) as Promise<NoteFile[]>,
+        getData<BookhiveBook[]>('bookhive-data'),
+        getData<LetterboxdMovie[]>('letterboxd-data?limit=10'),
+        getData<NoteFile[]>('notes-data'),
       ]);
 
       const bookItems: NowItem[] = books.map(b => ({ type: 'book', date: new Date(b.dateAdded), data: b }));

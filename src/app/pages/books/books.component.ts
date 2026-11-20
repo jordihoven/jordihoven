@@ -3,6 +3,7 @@ import { RatingComponent } from '../../components/molecules/rating/rating.compon
 import { BookComponent } from '../../components/molecules/book/book.component';
 import { LoaderComponent } from '../../components/molecules/loader/loader.component';
 import { BookhiveBook } from '../../models/data-models';
+import { getData } from '../../utils/data';
 
 @Component({
   selector: 'app-books',
@@ -18,8 +19,7 @@ export class BooksComponent {
 
   async ngOnInit() {
     try {
-      const res = await fetch('/.netlify/functions/bookhive-data');
-      this.books = await res.json();
+      this.books = await getData('bookhive-data');
     } catch (error) {
       console.error(error);
     }

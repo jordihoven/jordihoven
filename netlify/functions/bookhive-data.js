@@ -1,4 +1,5 @@
 // books from bookhive (atproto), goodreads killed their rss feeds in oct 2026
+const { CACHE_HEADERS } = require('../lib/cache');
 
 const DID = "did:plc:o67xeqqjchzzecfvkyq2wlfs"; // jordihoven.nl
 const PDS = "https://pholiota.us-west.host.bsky.network"; // ponytail: hardcoded, resolve via plc.directory if the PDS ever moves
@@ -30,6 +31,7 @@ exports.handler = async () => {
 
     return {
       statusCode: 200,
+      headers: CACHE_HEADERS,
       body: JSON.stringify(books),
     };
   } catch (err) {

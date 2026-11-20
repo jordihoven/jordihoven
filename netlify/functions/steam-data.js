@@ -1,4 +1,5 @@
 // steam owned games, sorted by last played
+const { CACHE_HEADERS } = require('../lib/cache');
 
 const STEAM_API_KEY = process.env.STEAM_API_KEY;
 const STEAM_ID = "76561198746733639";
@@ -54,6 +55,7 @@ exports.handler = async (event) => {
 
     return {
       statusCode: 200,
+      headers: CACHE_HEADERS,
       body: JSON.stringify(games),
     };
   } catch (err) {

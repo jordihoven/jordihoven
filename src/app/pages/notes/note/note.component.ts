@@ -4,6 +4,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 import { renderNote } from '../../../utils/note';
 import { NoteFile } from '../../../models/data-models';
+import { getData } from '../../../utils/data';
 
 @Component({
   selector: 'app-note',
@@ -38,8 +39,7 @@ export class NoteComponent implements OnInit {
     try {
       const searchTerm = slug.replace(/-/g, ' ').toLowerCase();
 
-      const listRes = await fetch('/.netlify/functions/notes-data');
-      const notes: NoteFile[] = await listRes.json();
+      const notes = await getData<NoteFile[]>('notes-data');
 
       const note = notes.find((n) =>
         n.name.toLowerCase().replace('.md', '') === searchTerm

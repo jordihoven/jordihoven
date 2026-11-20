@@ -5,6 +5,7 @@ import { noteSlug } from '../../../utils/note';
 import { NoteFile } from '../../../models/data-models';
 import { LoaderComponent } from '../../../components/molecules/loader/loader.component';
 import { NoteCardComponent } from '../../../components/molecules/note-card/note-card.component';
+import { getData } from '../../../utils/data';
 
 @Component({
   selector: 'app-notes-list',
@@ -23,8 +24,7 @@ export class NotesListComponent implements OnInit {
 
   async ngOnInit() {
     try {
-      const res = await fetch('/.netlify/functions/notes-data');
-      this.notes = await res.json();
+      this.notes = await getData('notes-data');
       this.noteNames = this.notes.map((n) => n.name.replace('.md', ''));
     } catch (err) {
       console.error('Could not load notes', err);

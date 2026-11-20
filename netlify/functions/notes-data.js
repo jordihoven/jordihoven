@@ -1,3 +1,4 @@
+const { CACHE_HEADERS } = require('../lib/cache');
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const OWNER = 'jordihoven';
 const REPO = 'notes';
@@ -22,12 +23,6 @@ function getMimeType(filename) {
   }
   return 'application/octet-stream';
 }
-
-// browser revalidates after 1 min, Netlify CDN serves stale for a day while refetching
-const CACHE_HEADERS = {
-  'Cache-Control': 'public, max-age=60',
-  'Netlify-CDN-Cache-Control': 'public, max-age=60, stale-while-revalidate=86400',
-};
 
 const headers = {
   Authorization: `token ${GITHUB_TOKEN}`,

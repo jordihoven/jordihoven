@@ -3,6 +3,7 @@ import { RatingComponent } from '../../components/molecules/rating/rating.compon
 import { BluerayComponent } from '../../components/molecules/blueray/blueray.component';
 import { LoaderComponent } from '../../components/molecules/loader/loader.component';
 import { LetterboxdMovie } from '../../models/data-models';
+import { getData } from '../../utils/data';
 
 @Component({
   selector: 'app-movies',
@@ -20,8 +21,7 @@ export class MoviesComponent {
 
   async ngOnInit() {
     try {
-      const res = await fetch('/.netlify/functions/letterboxd-data?limit=50'); // letterboxd rss caps at 50
-      this.films = await res.json();
+      this.films = await getData('letterboxd-data?limit=50'); // letterboxd rss caps at 50
     } catch (error) {
       console.error(error);
     }

@@ -1,4 +1,5 @@
 // letterboxd rss data, based on https://github.com/marcbouchenoire/marcbouchenoire.com/blob/main/src/app/data/get-latest-films.ts
+const { CACHE_HEADERS } = require('../lib/cache');
 
 const { XMLParser } = require("fast-xml-parser");
 
@@ -45,6 +46,7 @@ exports.handler = async (event, context) => {
 
     return {
       statusCode: 200,
+      headers: CACHE_HEADERS,
       body: JSON.stringify(films),
     };
   } catch (err) {

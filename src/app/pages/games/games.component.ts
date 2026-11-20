@@ -3,6 +3,7 @@ import { DatePipe } from '@angular/common';
 import { CartridgeComponent } from '../../components/molecules/cartridge/cartridge.component';
 import { LoaderComponent } from '../../components/molecules/loader/loader.component';
 import { SteamGame } from '../../models/data-models';
+import { getData } from '../../utils/data';
 
 @Component({
   selector: 'app-games',
@@ -18,8 +19,7 @@ export class GamesComponent {
 
   async ngOnInit() {
     try {
-      const res = await fetch('/.netlify/functions/steam-data');
-      this.games = await res.json();
+      this.games = await getData('steam-data');
     } catch (error) {
       console.error(error);
     }
