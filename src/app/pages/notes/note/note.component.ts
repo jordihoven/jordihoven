@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, OnInit, ChangeDetectionStrategy, ElementRef, viewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
@@ -19,9 +19,19 @@ export class NoteComponent implements OnInit {
   private sanitizer = inject(DomSanitizer);
 
   content: SafeHtml = '';
+  lightboxImage: HTMLImageElement | null = null;
+  private lightbox = viewChild.required<ElementRef<HTMLDialogElement>>('lightbox');
 
   onContentClick(event: MouseEvent) {
-    const btn = (event.target as Element).closest('.copy-btn');
+    const target = event.target as Element;
+
+    if (target instanceof HTMLImageElement) {
+      this.lightboxImage = target;
+      this.lightbox().nativeElement.showModal();
+      return;
+    }
+
+    const btn = target.closest('.copy-btn');
     if (!btn) return;
 
     const code = btn.closest('.code-block')?.querySelector('pre code');
