@@ -8,7 +8,6 @@ import { MoviesComponent } from './pages/movies/movies.component';
 import { BooksComponent } from './pages/books/books.component';
 import { NotesListComponent } from './pages/notes/notes-list/notes-list.component';
 import { NoteComponent } from './pages/notes/note/note.component';
-import { NowComponent } from './pages/now/now.component';
 import { ThoughtsComponent } from './pages/thoughts/thoughts.component';
 import { GamesComponent } from './pages/games/games.component';
 
@@ -21,7 +20,6 @@ const routes: Routes = [
   { path: 'movies', component: MoviesComponent },
   { path: 'books', component: BooksComponent },
   { path: 'games', component: GamesComponent },
-  { path: 'now', component: NowComponent },
   { path: 'thoughts', component: ThoughtsComponent },
 ];
 
