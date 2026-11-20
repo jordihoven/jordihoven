@@ -2,7 +2,8 @@
 .book {
   position: relative;
   height: 10em;
-  aspect-ratio: 2 / 3;
+  /* explicit width: iOS Safari miscomputes aspect-ratio width inside flex items */
+  width: calc(10em * 2 / 3);
 }
 
 /* back cover, peeking out behind the pages */
