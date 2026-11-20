@@ -46,6 +46,13 @@
   overflow: hidden;
   zoom: 0.5;
   mask-image: linear-gradient(to bottom, black 75%, transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* fade preview in once its images are ready, card shell stays put */
+:host.loaded .note-preview {
+  opacity: 1;
 }
 
 .note-preview ::ng-deep .copy-btn {

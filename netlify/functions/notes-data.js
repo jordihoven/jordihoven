@@ -23,6 +23,12 @@ function getMimeType(filename) {
   return 'application/octet-stream';
 }
 
+// browser revalidates after 1 min, Netlify CDN serves stale for a day while refetching
+const CACHE_HEADERS = {
+  'Cache-Control': 'public, max-age=60',
+  'Netlify-CDN-Cache-Control': 'public, max-age=60, stale-while-revalidate=86400',
+};
+
 const headers = {
   Authorization: `token ${GITHUB_TOKEN}`,
   Accept: 'application/vnd.github.v3+json',
@@ -89,6 +95,7 @@ exports.handler = async (event) => {
         headers: {
           'Content-Type': contentType,
           'Access-Control-Allow-Origin': '*',
+          'Cache-Control': 'public, max-age=86400',
         },
         body: Buffer.from(buffer).toString('base64'),
         isBase64Encoded: true,
@@ -106,7 +113,11 @@ exports.handler = async (event) => {
       const content = await getContent(file.path);
       const cleanContent = extractContent(content);
       const availableNotes = mdFiles.map(f => f.name.replace('.md', ''));
-      return { statusCode: 200, body: JSON.stringify({ content: cleanContent, availableNotes }) };
+      return {
+        statusCode: 200,
+        headers: CACHE_HEADERS,
+        body: JSON.stringify({ content: cleanContent, availableNotes }),
+      };
     }
 
     const notes = await Promise.all(
@@ -131,6 +142,7 @@ exports.handler = async (event) => {
 
     return {
       statusCode: 200,
+      headers: CACHE_HEADERS,
       body: JSON.stringify(notes),
     };
   } catch (err) {
